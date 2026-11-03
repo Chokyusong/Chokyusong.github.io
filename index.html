@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>조규송 포트폴리오</title>
+<meta name="description" content="방송 자동화 제품 AutoLed를 만들어 판매하고, 라이선스 서버와 홈페이지까지 직접 운영하는 1인 개발자 조규송의 작업 모음입니다.">
+<meta property="og:title" content="조규송 포트폴리오">
+<meta property="og:description" content="방송 자동화 제품을 만들고, 팔고, 직접 운영합니다.">
+<meta property="og:image" content="assets/img/autoled-app-main-mapping.jpg">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#work">본문으로 건너뛰기</a>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">조규송</a>
+    <nav aria-label="주요 메뉴">
+      <a href="#work">작업</a>
+      <a href="#history">연혁</a>
+      <a href="#how">일하는 방식</a>
+      <a href="#contact">연락</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 첫 화면 -->
+  <section class="hero wrap">
+    <div class="hero-text reveal">
+      <p class="eyebrow">1인 개발자 · 오닉소프트 대표</p>
+      <h1>방송 자동화 제품을 만들고, 팔고, 직접 운영합니다.</h1>
+      <p class="lead">기획부터 Windows 앱, 라이선스 서버, 배포와 운영까지 혼자 맡아 실제로 판매하는 제품을 만들었습니다.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#work">작업 보기</a>
+        <a class="btn btn-ghost" href="https://github.com/Chokyusong"><i class="ph ph-github-logo" aria-hidden="true"></i>GitHub</a>
+      </div>
+    </div>
+    <figure class="hero-shot reveal">
+      <img src="assets/img/autoled-app-main-mapping.jpg" width="1600" height="900" alt="AutoLed 기본창과 매핑 관리 화면. 후원 개수마다 실행할 LED 칼럼과 OBS 장면을 정해 둔 표" fetchpriority="high">
+      <figcaption>AutoLed 실제 화면. 후원 개수마다 실행할 연출을 표로 정해 둡니다.</figcaption>
+    </figure>
+  </section>
+
+  <!-- 숫자 -->
+  <section class="facts wrap" aria-label="요약">
+    <dl>
+      <div><dt>AutoLed 정식 버전</dt><dd>1.12.1</dd></div>
+      <div><dt>여기 소개한 저장소의 커밋</dt><dd>2,300+</dd></div>
+      <div><dt>AutoLed 자동 테스트</dt><dd>800+</dd></div>
+      <div><dt>판매 중인 자체 제품</dt><dd>AutoLed</dd></div>
+    </dl>
+    <p class="facts-note">2026년 11월 3일 기준. 커밋 수는 GitHub 저장소 기록입니다.</p>
+  </section>
+
+  <!-- 대표 작업 -->
+  <section id="work" class="feature wrap">
+    <div class="feature-head reveal">
+      <h2>AutoLed</h2>
+      <p class="feature-sub">후원 알림이 뜨는 순간 방송 연출을 자동으로 실행하고, 끝나면 원래 장면으로 돌려놓는 Windows 앱입니다. 정식 판매하고 업데이트하며 운영 중입니다.</p>
+      <ul class="chips" aria-label="사용 기술">
+        <li>Python</li><li>Tkinter</li><li>OBS WebSocket</li><li>Resolume OSC</li><li>Bitfocus Companion</li><li>Nuitka</li><li>Inno Setup</li>
+      </ul>
+    </div>
+
+    <div class="feature-grid">
+      <figure class="f-main reveal">
+        <img src="assets/img/autoled-cover-app.jpg" width="1672" height="941" alt="AutoLed 기본창이 실행 중인 화면과, 후원 알림이 뜨며 전광판과 조명이 켜진 방송 무대" loading="lazy">
+        <figcaption>왼쪽은 실제 기본창, 오른쪽은 후원이 들어온 순간의 무대입니다. 무대 그림은 AI로 만든 예시입니다.</figcaption>
+      </figure>
+
+      <div class="f-story reveal">
+        <div>
+          <h3>문제</h3>
+          <p>후원이 들어올 때마다 방송 중인 사람이 알림을 보고 장면을 바꾸고, 조명과 연출을 손으로 틀어야 했습니다.</p>
+        </div>
+        <div>
+          <h3>만든 것</h3>
+          <p>팬더TV, SOOP, 투네이션, 위플랩, 펀네이션 후원 알림을 감지해 후원 개수에 맞춘 OBS 장면 전환, Resolume LED 칼럼, 조명과 카메라, 배경음악 음소거를 실행합니다. 연출은 시간축 편집기(Timeline)로 직접 짭니다.</p>
+        </div>
+        <div>
+          <h3>결과</h3>
+          <p>버튼을 누르지 않아도 후원이 들어오는 순간 연출이 실행되고 스스로 돌아옵니다. 처음 설치한 사람도 5단계 준비 화면만 따라 하면 방송을 시작할 수 있습니다.</p>
+        </div>
+      </div>
+
+      <figure class="f-side reveal">
+        <img src="assets/img/autoled-app-control.jpg" width="1600" height="900" alt="AutoLed 관리센터. OBS, 플랫폼 감시, Resolume, Companion 연결 상태 카드" loading="lazy">
+        <figcaption>관리센터. 연결 상태를 카드로 한눈에 봅니다.</figcaption>
+      </figure>
+      <figure class="f-side reveal">
+        <img src="assets/img/autoled-crew-timeline.jpg" width="1600" height="900" alt="크루 방송 데모. OBS 출력 화면과 AutoLed 실행 기록, Timeline" loading="lazy">
+        <figcaption>Timeline 블록이 지나가는 순간 장면과 조명이 바뀝니다.</figcaption>
+      </figure>
+    </div>
+
+    <div class="feature-foot reveal">
+      <ul class="points">
+        <li><i class="ph ph-arrows-clockwise" aria-hidden="true"></i>앱 안에서 새 버전을 알리고 바로 업데이트합니다. 업데이트 정보에는 서명과 SHA-256 체크섬을 붙입니다.</li>
+        <li><i class="ph ph-user-circle" aria-hidden="true"></i>계정과 이용 기간은 직접 만든 로그인 서버가 확인합니다.</li>
+        <li><i class="ph ph-lock-simple" aria-hidden="true"></i>소스 코드와 감지 방식은 공개하지 않습니다. 공개 저장소에는 설치 파일만 둡니다.</li>
+      </ul>
+      <div class="links">
+        <a class="text-link" href="https://onicsoft.co.kr/autoled.html">제품 페이지<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+        <a class="text-link" href="https://github.com/Chokyusong/AutoLed-Releases">설치 파일 저장소<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 다른 작업 -->
+  <section class="more wrap" aria-labelledby="more-title">
+    <h2 id="more-title">그 밖에 만든 것들</h2>
+    <p class="more-sub">칸을 누르면 자세한 설명이 열립니다. 비공개 저장소는 화면과 기능만 소개합니다.</p>
+
+    <div class="bento">
+
+      <article class="cell c-wide reveal">
+        <button class="cell-btn" data-open="d-cctv" aria-haspopup="dialog">
+          <span class="cell-media"><img src="assets/img/cctv-cover.jpg" width="1600" height="900" alt="CCTV 관제 화면. 방송 중인 BJ 영상 타일과 오른쪽 이벤트 기록. 예시 데이터" loading="lazy"></span>
+          <span class="cell-body">
+            <span class="cell-tag"><i class="ph ph-lock-simple" aria-hidden="true"></i>비공개 저장소</span>
+            <span class="cell-title">CCTV · BJ 방송 통합 관제</span>
+            <span class="cell-text">BJ 최대 60명의 방송을 한 화면에서 지켜보고, 챙길 일은 텔레그램으로 알립니다.</span>
+          </span>
+        </button>
+      </article>
+
+      <article class="cell reveal">
+        <button class="cell-btn" data-open="d-payroll" aria-haspopup="dialog">
+          <span class="cell-media"><img src="assets/img/enter-payroll-cover.jpg" width="1600" height="900" alt="엔터 정산 프로그램의 이번 주 정산 화면. 예시 데이터" loading="lazy"></span>
+          <span class="cell-body">
+            <span class="cell-tag"><i class="ph ph-lock-simple" aria-hidden="true"></i>비공개 저장소</span>
+            <span class="cell-title">BJ 엔터 주간 정산</span>
+            <span class="cell-text">엑셀 여러 장으로 하던 주간 정산을 프로그램이 계산하고, 담당자는 예외만 확인합니다.</span>
+          </span>
+        </button>
+      </article>
+
+      <article class="cell cell-tint reveal">
+        <button class="cell-btn" data-open="d-bighand" aria-haspopup="dialog">
+          <span class="cell-stat">
+            <span class="stat-row"><span class="stat-from">22초</span><i class="ph ph-arrow-right" aria-hidden="true"></i><span class="stat-to">0.25초</span></span>
+            <span class="stat-cap">1,350만 건 부하 시험에서 대시보드 첫 화면</span>
+          </span>
+          <span class="cell-body">
+            <span class="cell-tag"><i class="ph ph-lock-simple" aria-hidden="true"></i>비공개 저장소</span>
+            <span class="cell-title">큰손탐지기 수집 서버</span>
+            <span class="cell-text">라이브 방송 수백 곳의 후원 데이터를 실시간으로 모아 집계하는 24시간 서버.</span>
+          </span>
+        </button>
+      </article>
+
+      <article class="cell c-wide reveal">
+        <button class="cell-btn" data-open="d-licsrv" aria-haspopup="dialog">
+          <span class="cell-media"><img src="assets/img/admin-dashboard.webp" width="1440" height="900" alt="로그인 서버 관리자 첫 화면. 회원, 입금, 방문, 서버 상태 요약. 예시 자료" loading="lazy"></span>
+          <span class="cell-body">
+            <span class="cell-tag"><i class="ph ph-lock-simple" aria-hidden="true"></i>비공개 저장소</span>
+            <span class="cell-title">로그인 · 라이선스 서버</span>
+            <span class="cell-text">AutoLed와 다른 프로그램이 함께 쓰는 계정, 이용 기간, 입금 자동 연장, 관리자 화면.</span>
+          </span>
+        </button>
+      </article>
+
+      <article class="cell reveal">
+        <button class="cell-btn" data-open="d-home" aria-haspopup="dialog">
+          <span class="cell-media"><img src="assets/img/home-pc-top.webp" width="1200" height="750" alt="ONICSOFT 홈페이지 첫 화면" loading="lazy"></span>
+          <span class="cell-body">
+            <span class="cell-tag"><i class="ph ph-globe" aria-hidden="true"></i>운영 중인 사이트</span>
+            <span class="cell-title">ONICSOFT 홈페이지</span>
+            <span class="cell-text">제품 데모와 블로그, 업종별 홈페이지 견본까지 직접 만들고 서버도 운영합니다.</span>
+          </span>
+        </button>
+      </article>
+
+      <article class="cell reveal">
+        <button class="cell-btn" data-open="d-motion" aria-haspopup="dialog">
+          <span class="cell-media"><video class="loop" src="assets/img/motion-chromeText.mp4" poster="assets/img/motion-chromeText.jpg" width="1280" height="720" muted loop playsinline preload="none" aria-label="코드로 만든 크롬 글자 모션그래픽"></video></span>
+          <span class="cell-body">
+            <span class="cell-tag"><i class="ph ph-play-circle" aria-hidden="true"></i>공개 미리보기 있음</span>
+            <span class="cell-title">코드로 만드는 모션그래픽</span>
+            <span class="cell-text">편집 프로그램 없이 HTML, three.js, Blender로 영상과 음악까지 만듭니다.</span>
+          </span>
+        </button>
+      </article>
+
+      <article class="cell cell-tint reveal">
+        <button class="cell-btn" data-open="d-aios" aria-haspopup="dialog">
+          <span class="cell-flow" aria-hidden="true">
+            <span>아이디어</span><i class="ph ph-arrow-down"></i>
+            <span>질문으로 구체화</span><i class="ph ph-arrow-down"></i>
+            <span class="on">설계 승인</span><i class="ph ph-arrow-down"></i>
+            <span>구현 · 검증 반복</span>
+          </span>
+          <span class="cell-body">
+            <span class="cell-tag"><i class="ph ph-flask" aria-hidden="true"></i>개발 중</span>
+            <span class="cell-title">AIOS</span>
+            <span class="cell-text">사람이 승인한 범위 안에서만 AI 에이전트가 개발을 이어 가는 로컬 개발 도구.</span>
+          </span>
+        </button>
+      </article>
+
+      <article class="cell reveal">
+        <button class="cell-btn" data-open="d-pdf" aria-haspopup="dialog">
+          <span class="cell-media"><img src="assets/img/pdf2obsidian-gui.png" width="1200" height="720" alt="PDF2Obsidian 프로그램 화면. 예시 PDF와 강의 자막 파일을 불러온 모습" loading="lazy"></span>
+          <span class="cell-body">
+            <span class="cell-tag"><i class="ph ph-code" aria-hidden="true"></i>오픈소스 · MIT</span>
+            <span class="cell-title">PDF2Obsidian</span>
+            <span class="cell-text">PDF, 이미지, 강의 자막을 옵시디언 노트로 바꾸는 데스크톱 도구. 파일을 내 PC 밖으로 보내지 않습니다.</span>
+          </span>
+        </button>
+      </article>
+
+      <article class="cell c-wide reveal">
+        <button class="cell-btn" data-open="d-ledger" aria-haspopup="dialog">
+          <span class="cell-media"><img src="assets/img/mart-flyer-ledger-cover.jpg" width="1280" height="720" alt="엑셀 장부와 거래장부 프로그램을 나란히 놓은 비교 화면. 예시 데이터" loading="lazy"></span>
+          <span class="cell-body">
+            <span class="cell-tag"><i class="ph ph-briefcase" aria-hidden="true"></i>고객 맞춤 제작</span>
+            <span class="cell-title">납품 거래장부 · 엑셀에서 프로그램으로</span>
+            <span class="cell-text">엑셀 장부에 두 번씩 적던 납품과 입금을, 한 번 적으면 받을 돈까지 계산되는 Windows 프로그램으로 바꿨습니다.</span>
+          </span>
+        </button>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- 연혁 -->
+  <section id="history" class="history wrap" aria-labelledby="history-title">
+    <h2 id="history-title">연혁</h2>
+    <ol class="timeline">
+      <li class="reveal"><time datetime="2025-10">2025.10</time><p>AutoLed 개발 시작</p></li>
+      <li class="reveal"><time datetime="2026-06">2026.06</time><p>PDF2Obsidian 공개, AIOS 시작</p></li>
+      <li class="reveal"><time datetime="2026-08">2026.08</time><p>로그인 서버 운영, AutoLed 정식 배포, 회사 홈페이지</p></li>
+      <li class="reveal"><time datetime="2026-09">2026.09</time><p>모션그래픽 작업실, 유튜브 채널 시작, 납품 업체 엑셀 장부 자동화</p></li>
+      <li class="reveal"><time datetime="2026-10">2026.10</time><p>큰손탐지기 서버, 엔터 정산, CCTV 관제, 거래장부 프로그램</p></li>
+      <li class="reveal"><time datetime="2026-11">2026.11</time><p>AutoLed 1.12.1</p></li>
+    </ol>
+    <p class="history-note">각 저장소를 만든 달 기준입니다.</p>
+  </section>
+
+  <!-- 일하는 방식 -->
+  <section id="how" class="how wrap" aria-labelledby="how-title">
+    <h2 id="how-title">일하는 방식</h2>
+    <div class="how-grid">
+      <div class="how-item reveal">
+        <i class="ph ph-robot" aria-hidden="true"></i>
+        <h3>AI와 나눠서 만듭니다</h3>
+        <p>코드는 Claude Code, Codex 같은 AI 코딩 도구와 함께 씁니다. 무엇을 만들지, 무엇을 공개할지, 언제 내보낼지는 제가 정합니다.</p>
+      </div>
+      <div class="how-item reveal">
+        <i class="ph ph-check-square-offset" aria-hidden="true"></i>
+        <h3>테스트로 확인하고 내보냅니다</h3>
+        <p>자동 테스트를 먼저 통과시키고, 실제 OBS나 실제 서버에서 한 번 더 확인한 뒤 배포합니다. 엔터 정산은 테스트 141개가 계산과 화면 버튼까지 봅니다.</p>
+      </div>
+      <div class="how-item reveal">
+        <i class="ph ph-hard-drives" aria-hidden="true"></i>
+        <h3>만든 뒤에도 운영합니다</h3>
+        <p>서버를 직접 세우고, 멈추면 다시 켜지고 알림이 오게 둡니다. 백업은 암호화해 매일 받고, 매달 실제로 풀어 보는 복원 연습까지 자동으로 돌립니다.</p>
+      </div>
+      <div class="how-item reveal">
+        <i class="ph ph-shield-check" aria-hidden="true"></i>
+        <h3>공개 범위를 나눕니다</h3>
+        <p>제품 소스와 핵심 로직은 비공개 저장소에 둡니다. 고객 정보와 서버 정보는 커밋 기록에도 남기지 않습니다. 이 페이지의 화면도 예시 데이터로 찍었습니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 기술 -->
+  <section class="stack wrap" aria-labelledby="stack-title">
+    <h2 id="stack-title">주로 쓰는 기술</h2>
+    <div class="stack-groups">
+      <div class="reveal"><h3>언어</h3><ul class="chips"><li>Python</li><li>JavaScript</li><li>HTML/CSS</li></ul></div>
+      <div class="reveal"><h3>데스크톱 앱</h3><ul class="chips"><li>Tkinter</li><li>PySide6</li><li>Nuitka</li><li>PyInstaller</li><li>Inno Setup</li></ul></div>
+      <div class="reveal"><h3>서버</h3><ul class="chips"><li>FastAPI</li><li>Nginx</li><li>Caddy</li><li>systemd</li><li>SQLite</li><li>Ubuntu</li></ul></div>
+      <div class="reveal"><h3>방송 · 영상</h3><ul class="chips"><li>OBS WebSocket</li><li>Resolume OSC</li><li>Companion</li><li>three.js</li><li>Blender</li><li>ffmpeg</li></ul></div>
+      <div class="reveal"><h3>운영</h3><ul class="chips"><li>GitHub Actions</li><li>Telegram 봇 알림</li><li>fail2ban</li><li>암호화 백업</li></ul></div>
+    </div>
+  </section>
+
+  <!-- 연락 -->
+  <section id="contact" class="contact wrap">
+    <div class="contact-in reveal">
+      <h2>함께 일할 자리가 있다면 연락 주세요.</h2>
+      <p>Python 데스크톱 앱, 서버 개발과 운영, 방송·영상 자동화 경험을 살릴 수 있는 일에 관심이 있습니다. 비공개 저장소의 자세한 내용은 면담에서 화면으로 보여 드릴 수 있습니다.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://pf.kakao.com/_exgErX/chat">카카오톡으로 연락</a>
+        <a class="btn btn-ghost" href="mailto:joung2156@gmail.com"><i class="ph ph-envelope-simple" aria-hidden="true"></i>joung2156@gmail.com</a>
+      </div>
+      <div class="links">
+        <a class="text-link" href="https://github.com/Chokyusong">GitHub<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+        <a class="text-link" href="https://onicsoft.co.kr/">onicsoft.co.kr<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot wrap">
+  <p>© 2026 조규송 (Cho Kyusong)</p>
+  <p>비공개 저장소의 소스 코드와 핵심 로직은 공개하지 않습니다. 화면 속 이름, 금액, 계정은 예시입니다.</p>
+</footer>
+
+<!-- 자세히 보기 -->
+<dialog id="d-cctv" aria-labelledby="d-cctv-t">
+  <div class="dlg">
+    <button class="dlg-close" data-close aria-label="닫기"><i class="ph ph-x" aria-hidden="true"></i></button>
+    <p class="dlg-tag">비공개 저장소 · Python</p>
+    <h2 id="d-cctv-t">CCTV · BJ 방송 통합 관제</h2>
+    <img src="assets/img/cctv-cover.jpg" width="1600" height="900" alt="방송 중인 BJ가 위로 모이고 오른쪽에 방송 시작과 종료 기록이 쌓이는 관제 화면. 예시 데이터" loading="lazy">
+    <dl class="dlg-story">
+      <div><dt>문제</dt><dd>매니저가 BJ 방을 하나씩 돌며 방송을 확인했습니다. 언제 켜고 몇 시간 했는지는 BJ 말에 기대야 했고, 큰 후원이나 채팅 끊김은 다음 날에야 알았습니다.</dd></div>
+      <div><dt>만든 것</dt><dd>등록한 BJ(최대 60명)의 방송 시작과 종료를 약 1분마다 확인해, 방송 중인 방을 타일로 동시에 보여 주고 채팅을 함께 띄웁니다. 방송마다 하트, 채팅 참여, 매일 10시 순위를 기록하고 정해 둔 상황은 텔레그램으로 알립니다.</dd></div>
+      <div><dt>결과</dt><dd>매니저 한 명이 여러 BJ를 한 화면과 휴대폰 알림으로 챙깁니다. 방송 기록이 쌓여 면담 때 바로 꺼내 봅니다.</dd></div>
+    </dl>
+    <img src="assets/img/cctv-telegram.jpg" width="1600" height="900" alt="텔레그램 알림 대화와 BJ 상세 보기 버튼 메뉴. 예시 데이터" loading="lazy">
+    <ul class="dlg-list">
+      <li>서버형은 화면 없이 돌고, 휴대폰에서는 앱 모양 화면과 텔레그램 버튼 메뉴로 봅니다.</li>
+      <li>플랫폼에 무리가 가지 않게 확인 간격과 동시 요청 수를 제한합니다.</li>
+      <li>보관하는 로그인 정보는 그 PC에서만 풀리게 암호화합니다.</li>
+    </ul>
+    <p class="dlg-note">공개하지 않는 것: 플랫폼 연결 방식과 소스 코드. 화면은 예시 데이터입니다.</p>
+  </div>
+</dialog>
+
+<dialog id="d-payroll" aria-labelledby="d-payroll-t">
+  <div class="dlg">
+    <button class="dlg-close" data-close aria-label="닫기"><i class="ph ph-x" aria-hidden="true"></i></button>
+    <p class="dlg-tag">비공개 저장소 · Python · PySide6</p>
+    <h2 id="d-payroll-t">BJ 엔터 주간 정산</h2>
+    <img src="assets/img/enter-payroll-cover.jpg" width="1600" height="900" alt="이번 주 받을 돈, 줄 돈, 회사 몫 카드와 확인이 필요한 항목 목록. 예시 데이터" loading="lazy">
+    <dl class="dlg-story">
+      <div><dt>문제</dt><dd>매주 BJ 정산을 엑셀 시트 여러 장과 수식으로 했습니다. 개인방송과 경쟁방마다 나누는 방식이 달랐고, 수식이 틀리거나 자료가 빠져도 확정 전에 알아채기 어려웠습니다.</dd></div>
+      <div><dt>만든 것</dt><dd>사무실 PC에 설치하는 Windows 프로그램입니다. 정해진 요일에 관리자 화면의 자료를 가져와 BJ와 맞추고, 개인방송, 경쟁방, 회사 수익, 지분 분배까지 계산합니다.</dd></div>
+      <div><dt>원칙</dt><dd>모르는 조건은 0원으로 채우지 않고 그 줄만 보류합니다. 원본 합계와 계산 금액이 원 단위까지 맞아야 확정 버튼이 열립니다. 확정한 주는 다시 계산되지 않습니다.</dd></div>
+    </dl>
+    <img src="assets/img/enter-payroll-calc.jpg" width="1600" height="900" alt="받는 사람별 자동 계산 내역 표. 조건이 정해지지 않은 줄은 보류로 표시. 예시 데이터" loading="lazy">
+    <ul class="dlg-list">
+      <li>원천세와 부가세는 회사 수익과 따로 "보관해야 할 세금"으로 모아 납부 기한과 함께 보여 줍니다.</li>
+      <li>웹 서버 없이 사무실 PC에만 저장하고, 비밀번호는 Windows 계정으로만 풀리게 암호화합니다.</li>
+      <li>소스를 기계어로 컴파일(Nuitka)해 설치 파일로 배포합니다. 자동 테스트 141개.</li>
+    </ul>
+    <p class="dlg-note">공개하지 않는 것: 정산 계산 규칙과 고객 정보. 업체 이름과 화면 속 사람, 금액은 모두 가상입니다.</p>
+  </div>
+</dialog>
+
+<dialog id="d-bighand" aria-labelledby="d-bighand-t">
+  <div class="dlg">
+    <button class="dlg-close" data-close aria-label="닫기"><i class="ph ph-x" aria-hidden="true"></i></button>
+    <p class="dlg-tag">비공개 저장소 · Python · Linux 서버</p>
+    <h2 id="d-bighand-t">큰손탐지기 수집 서버</h2>
+    <dl class="dlg-story">
+      <div><dt>목적</dt><dd>AutoLed와 조회 화면에 쓸 방송 후원 통계를 직접 모으는 서버가 필요했습니다.</dd></div>
+      <div><dt>만든 것</dt><dd>공개 라이브 방송 수백 곳의 후원 기록을 모아 저장하고 집계합니다. 방송 목록은 1분마다 새로 확인합니다. 관리자만 보는 대시보드에서 기간별 방송 순위와 집계를 봅니다.</dd></div>
+      <div><dt>성능</dt><dd>시험용으로 만든 3달 치 기록 1,350만 건으로 부하 시험을 해 병목을 고쳤습니다. 대시보드 첫 화면 22초에서 0.25초, 30일과 3달 순위 27~118초에서 1~7초. 실제로는 하루 7만여 건을 1vCPU, 1GB 서버 한 대로 받습니다.</dd></div>
+    </dl>
+    <ul class="dlg-list">
+      <li>서비스는 부팅하면 저절로 켜지고, 5분마다 멈춤을 감시합니다. 재부팅 시험에서 약 20초 만에 모두 복구했습니다.</li>
+      <li>매일 암호화 백업을 받고, 매달 백업을 실제로 풀어 건수를 맞춰 보는 복원 연습을 자동으로 돌립니다.</li>
+      <li>바깥 감시는 GitHub Actions가 30분마다, 코드가 바뀌면 자동 테스트 84개가 돕니다.</li>
+      <li>요청한 사람의 기록은 지우고 더 모으지 않는 수집 거부 목록을 둡니다.</li>
+    </ul>
+    <p class="dlg-note">공개하지 않는 것: 플랫폼 연결 방식, 모은 데이터, 대시보드 화면. 실제 사람 이름이 보이는 화면이라 캡처도 싣지 않았습니다.</p>
+  </div>
+</dialog>
+
+<dialog id="d-licsrv" aria-labelledby="d-licsrv-t">
+  <div class="dlg">
+    <button class="dlg-close" data-close aria-label="닫기"><i class="ph ph-x" aria-hidden="true"></i></button>
+    <p class="dlg-tag">비공개 저장소 · Python · FastAPI</p>
+    <h2 id="d-licsrv-t">로그인 · 라이선스 서버</h2>
+    <img src="assets/img/admin-dashboard.webp" width="1440" height="900" alt="관리자 첫 화면. 회원, 입금, 방문, 서버 상태를 한 화면에서 봄. 예시 자료" loading="lazy">
+    <dl class="dlg-story">
+      <div><dt>목적</dt><dd>AutoLed를 판매하려면 계정과 이용 기간을 관리하고, 앱이 켜질 때마다 확인할 서버가 필요했습니다.</dd></div>
+      <div><dt>만든 것</dt><dd>앱 로그인과 이용권 검증을 하는 서버와 관리자 화면입니다. 은행 입금 문자를 읽어 이용 기간을 자동으로 늘리고, 새 프로그램은 서버 코드를 고치지 않고 관리자 화면에서 등록해 같은 로그인을 씁니다.</dd></div>
+      <div><dt>함께 맡는 일</dt><dd>홈페이지 블로그와 구축 사례를 올리는 작은 CMS, 방문 통계도 이 서버가 맡습니다.</dd></div>
+    </dl>
+    <ul class="dlg-list">
+      <li>관리자 여러 명과 역할, OTP, 모든 쓰기에 감사 기록을 남깁니다.</li>
+      <li>앱이 받는 토큰은 서버 키로 서명합니다.</li>
+      <li>커밋마다 별도 폴더로 배포하고 버전 태그를 달아, 문제가 생기면 이전 버전으로 바로 돌아갑니다.</li>
+    </ul>
+    <p class="dlg-note">공개하지 않는 것: 서버 주소, 키, 검증 절차의 세부. 화면은 예시 자료로 띄워 찍었습니다.</p>
+  </div>
+</dialog>
+
+<dialog id="d-home" aria-labelledby="d-home-t">
+  <div class="dlg">
+    <button class="dlg-close" data-close aria-label="닫기"><i class="ph ph-x" aria-hidden="true"></i></button>
+    <p class="dlg-tag">운영 중 · HTML · CSS · JavaScript</p>
+    <h2 id="d-home-t">ONICSOFT 홈페이지</h2>
+    <img src="assets/img/home-pc-top.webp" width="1200" height="750" alt="ONICSOFT 홈페이지 첫 화면" loading="lazy">
+    <dl class="dlg-story">
+      <div><dt>만든 것</dt><dd>빌드 도구 없는 정적 사이트입니다. 회사 소개, 서비스, 제품, 모션그래픽, 구축 사례, 블로그, 문의 페이지가 있고 PC와 휴대폰 화면에 맞춥니다.</dd></div>
+      <div><dt>눌러 보는 화면</dt><dd>AutoLed 데모와 자동화 체험, 절감 계산을 페이지에서 바로 실행합니다. 업종별 홈페이지 견본 20여 개를 만들어 직접 넘겨 볼 수 있게 했습니다.</dd></div>
+      <div><dt>검색</dt><dd>사이트맵과 검색용 정보를 갖추고, 블로그 글은 서버가 글마다 페이지를 만들어 보여 줍니다.</dd></div>
+    </dl>
+    <div class="links">
+      <a class="text-link" href="https://onicsoft.co.kr/">onicsoft.co.kr<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+      <a class="text-link" href="https://onicsoft.co.kr/portfolio.html">홈페이지 견본<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="d-motion" aria-labelledby="d-motion-t">
+  <div class="dlg">
+    <button class="dlg-close" data-close aria-label="닫기"><i class="ph ph-x" aria-hidden="true"></i></button>
+    <p class="dlg-tag">비공개 작업실 + 공개 미리보기 · JavaScript · Blender</p>
+    <h2 id="d-motion-t">코드로 만드는 모션그래픽</h2>
+    <video class="loop" src="assets/img/motion-fireBurst.mp4" poster="assets/img/motion-fireBurst.jpg" width="1280" height="720" muted loop playsinline preload="none" aria-label="Blender로 만든 불꽃 폭발 효과"></video>
+    <dl class="dlg-story">
+      <div><dt>만든 것</dt><dd>영상 편집 프로그램 없이 화면을 HTML, three.js, Blender로 그리고 프레임마다 찍어 MP4로 만듭니다. 배경음악도 코드로 합성해 사용 권리가 분명합니다.</dd></div>
+      <div><dt>쌓아 둔 것</dt><dd>여러 영상이 같이 쓰는 효과 부품 117종(그중 95가지는 공개)과, 미리보기와 타임라인으로 문구와 효과를 고치는 편집기가 있습니다.</dd></div>
+      <div><dt>쓰는 곳</dt><dd>AutoLed 홍보영상, 유튜브 영상, 방송 후원 알림 효과를 여기서 만듭니다.</dd></div>
+    </dl>
+    <div class="links">
+      <a class="text-link" href="https://chokyusong.github.io/motion-parts/">효과 95가지 미리보기<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+      <a class="text-link" href="https://onicsoft.co.kr/motion/">모션그래픽 페이지<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+    </div>
+    <p class="dlg-note">작업실 저장소는 재배포할 수 없는 글꼴이 들어 있어 비공개입니다.</p>
+  </div>
+</dialog>
+
+<dialog id="d-aios" aria-labelledby="d-aios-t">
+  <div class="dlg">
+    <button class="dlg-close" data-close aria-label="닫기"><i class="ph ph-x" aria-hidden="true"></i></button>
+    <p class="dlg-tag">비공개 저장소 · 개발 중 · Python</p>
+    <h2 id="d-aios-t">AIOS</h2>
+    <dl class="dlg-story">
+      <div><dt>무엇인가</dt><dd>프로그램 아이디어를 질문으로 구체화해 설계 문서를 만들고, 사람이 승인하면 그 범위 안에서 AI 개발 에이전트가 작업을 나눠 구현, 테스트, 검증을 반복하는 로컬 개발 도구입니다.</dd></div>
+      <div><dt>안전하게</dt><dd>설계를 승인하기 전에는 파일을 고칠 권한이 없습니다. 승인 뒤에도 기본은 읽기 전용이고, 코드는 따로 떼어 낸 Git 작업 공간에서만 바뀝니다. push, PR, 배포, 결제는 승인에 포함되지 않아 자동으로 하지 않습니다.</dd></div>
+      <div><dt>끝나는 조건</dt><dd>설계에 적은 완료 조건을 모두 테스트로 확인했을 때만 최종 결과를 만들고, 그 뒤 사람이 마지막으로 확인합니다.</dd></div>
+    </dl>
+    <p class="dlg-note">개발 중인 프로젝트라 화면은 싣지 않았습니다.</p>
+  </div>
+</dialog>
+
+<dialog id="d-ledger" aria-labelledby="d-ledger-t">
+  <div class="dlg">
+    <button class="dlg-close" data-close aria-label="닫기"><i class="ph ph-x" aria-hidden="true"></i></button>
+    <p class="dlg-tag">고객 맞춤 제작 · Python · SQLite · Excel 연동</p>
+    <h2 id="d-ledger-t">납품 거래장부 · 엑셀에서 프로그램으로</h2>
+    <img src="assets/img/mart-flyer-ledger-01-before-ledger.jpg" width="1280" height="565" alt="자동화 전 엑셀 총원장. 입금과 납품을 손으로 적은 표. 예시 데이터로 재현" loading="lazy">
+    <dl class="dlg-story">
+      <div><dt>문제</dt><dd>마트 전단, POP, 현수막을 납품하는 업체가 같은 거래를 엑셀 총원장과 거래처 시트에 두 번씩 적고, 월말에는 두 합계의 차액을 손으로 맞췄습니다. 입금내역을 붙여넣을 때마다 수식이 깨지곤 했습니다.</dd></div>
+      <div><dt>1단계</dt><dd>먼저 엑셀을 고쳤습니다. 총원장 한 곳에만 적으면 거래처 시트와 현황판이 수식으로 채워지게 했습니다. 차액이 0이면 정상이라고 알려 주는 검증 칸도 넣었습니다. 그래도 행을 붙여넣으면 수식이 지워지는 문제가 남았습니다.</dd></div>
+      <div><dt>2단계</dt><dd>수식이 아예 없는 Windows 프로그램 '거래장부'로 옮겼습니다. 메뉴는 '납품 적기', '입금 적기'처럼 할 일 이름이고, 통장 내역을 붙여넣으면 입금자 이름으로 거래처를 찾아 주고 이미 적은 입금은 뺍니다. 엑셀로 저장하면 예전 장부 모양 그대로 나옵니다.</dd></div>
+    </dl>
+    <img src="assets/img/mart-flyer-ledger-09-app-bank-import.jpg" width="1280" height="774" alt="통장 내역 불러오기 화면. 붙여넣은 입금 줄마다 거래처가 자동으로 연결되고 이미 있는 입금은 빠짐. 예시 데이터" loading="lazy">
+    <ul class="dlg-list">
+      <li>옮기면서 원본 장부끼리 맞지 않는 줄이 드러났습니다. 임의로 고치지 않고 목록으로 정리해 고객에게 확인받았습니다.</li>
+      <li>설치하면 기존 장부를 그대로 이어서 씁니다.</li>
+      <li>자동 테스트 14개, 화면을 눌러 보는 테스트 15개, 엑셀 왕복 확인 4가지를 통과한 뒤 전달했습니다.</li>
+    </ul>
+    <div class="links">
+      <a class="text-link" href="https://onicsoft.co.kr/work.html?slug=mart-flyer-ledger">구축 사례 전체 보기<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+    </div>
+    <p class="dlg-note">공개하지 않는 것: 고객 이름과 실제 장부 숫자. 화면 속 업체와 금액은 모두 예시입니다.</p>
+  </div>
+</dialog>
+
+<dialog id="d-pdf" aria-labelledby="d-pdf-t">
+  <div class="dlg">
+    <button class="dlg-close" data-close aria-label="닫기"><i class="ph ph-x" aria-hidden="true"></i></button>
+    <p class="dlg-tag">공개 저장소 · MIT · Python</p>
+    <h2 id="d-pdf-t">PDF2Obsidian</h2>
+    <img src="assets/img/pdf2obsidian-gui.png" width="1200" height="720" alt="PDF2Obsidian 프로그램 화면" loading="lazy">
+    <dl class="dlg-story">
+      <div><dt>만든 것</dt><dd>PDF, 이미지, 강의 자막 파일을 옵시디언에서 바로 쓰는 마크다운 노트와 가벼운 그림 파일로 바꿉니다.</dd></div>
+      <div><dt>원칙</dt><dd>파일을 서버로 보내지 않고 외부 AI API도 쓰지 않습니다. 모두 내 PC 안에서 처리합니다.</dd></div>
+      <div><dt>배포</dt><dd>Windows용 실행 파일을 GitHub Releases로 내보내고, 코드가 바뀔 때마다 CI가 테스트합니다.</dd></div>
+    </dl>
+    <div class="links">
+      <a class="text-link" href="https://github.com/Chokyusong/pdf2obsidian">저장소 보기<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</dialog>
+
+<script src="assets/site.js" defer></script>
+</body>
+</html>
