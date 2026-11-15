@@ -21,21 +21,22 @@ RESUME_EN = {
     "css": "@media print { body { font-size:8.5pt; line-height:1.45; } .proj { margin-bottom:2.6mm; } .skills p { font-size:8.2pt; } h2 { margin-top:4mm; } .foot { margin-top:3mm; } body { line-height:1.4; } li { margin-bottom:.3mm; } .summary { font-size:9.4pt; } .job { margin-bottom:3.5mm; } }",
     "name": "Cho Kyusong",
     "name_en": "조규송",
-    "title": "AI Builder · Service Planning · Workflow Automation",
-    "availability": "Open to full-time, contract or freelance work · on-site or remote",
+    "title": "AI Builder · AI Service Planning · Workflow Automation",
+    "availability": "Open to full-time, contract or freelance work · on-site or remote · ONICSOFT continues as a side business",
     "contacts": [("Email", R.RESUME["contacts"][0][1], R.RESUME["contacts"][0][2]),
                  ("Portfolio", "chokyusong.github.io", "https://chokyusong.github.io/"),
                  ("GitHub", "github.com/Chokyusong", "https://github.com/Chokyusong"),
                  ("Company", "onicsoft.co.kr", "https://onicsoft.co.kr/")],
     "summary": [
-        "A service planning and workflow automation specialist who uses AI coding agents to turn ideas into "
+        "An AI service planning and workflow automation specialist who uses AI coding agents to turn ideas into "
         "working services, then sells and operates them.",
         "For over four years as Content Planning Team Lead at an MCN, I managed creators, planned content, built "
-        "broadcast systems, and ran studio operations and technical support. That is where I started building the "
-        "tools the company needed, such as settlement automation and automatic scene switching. Since September 2025 "
-        "I have run my own company, ONICSOFT, leading software planning, development and service operations.",
+        "broadcast systems, and ran studio operations and technical support. There I began automating company work "
+        "myself with GPT and Python, including settlements, invoice checks and automatic broadcast scene switching. "
+        "In September 2025 I founded ONICSOFT, where I sell and operate the broadcast automation product AutoLed "
+        "for about 15 paying customers.",
     ],
-    "numbers": [("6 yrs 2 mos", "Experience"), ("2.1.0", "AutoLed, on sale"), ("78,844", "Donation records processed in one day"),
+    "numbers": [("6 yrs 2 mos", "Experience"), ("~15", "Paying AutoLed customers"), ("78,844", "Donation records processed in one day"),
                 ("22 s → 0.25 s", "Dashboard first load"), ("47 / 48 wks", "Matched the legacy payroll sheet")],
     "way": "I write code together with AI coding agents. What to build, what is wrong, and when to ship are my "
            "decisions, and I verify them myself.",
@@ -69,7 +70,7 @@ RESUME_EN = {
                  "did": ["Analyzed requirements from live broadcasting to plan features, set priorities and judge compatibility with existing features",
                          "Set the scope and acceptance criteria for AI coding agents, checked test results and real broadcast-equipment integration, and made release decisions",
                          "Led customer feedback, incident response and product improvement"],
-                 "got": ["Commercialized as an automation tool for live streamers (including Korean “Excel broadcast” shows) with paying customers; version 2.1.0 on sale",
+                 "got": ["Commercialized as an automation tool for live streamers (including Korean “Excel broadcast” shows) with about 15 paying customers; version 2.1.0 on sale",
                          "Unified donation alerts from PandaTV, SOOP, Toonation, Weflab and Funnation into one processing flow, automating everything from OBS and Resolume effects to returning to the original scene",
                          "Fixed an on-air screen freeze by reproducing its conditions: froze 3 of 3 times before the fix, ran normally 5 of 5 times after",
                          "Runs 2,051 automated tests, version control, release approval and update integrity checks (signatures and checksums)"],
@@ -104,18 +105,6 @@ RESUME_EN = {
                  "did": ["Replaced the duplicate Excel ledgers of a printed-advertising supplier with a program where each entry is typed once"],
                  "got": ["Found and listed the rows where the original ledgers disagreed during migration; verified Excel export round trips"],
                  "tech": "Python, SQLite, Excel integration"},
-                {"title": "Company website · client websites", "period": "2026.08 –", "link": "work/onicsoft-homepage.html",
-                 "did": ["Planned, built and run the ONICSOFT website (responsive, SEO metadata and structured data, admin, blog and visit statistics)",
-                         "22 industry website samples and a template that builds a site from a client's company info and photos",
-                         "ASTRA entertainment company website: an 8-page animated draft built from the client's PowerPoint outline (2026.11)"],
-                 "got": ["A standardized workflow for building, editing and verifying websites"],
-                 "tech": "HTML, CSS, JavaScript, Python, Jinja2, SEO, GitHub"},
-                {"title": "3D · motion graphics video production system", "period": "2026.09 –", "link": "work/motion.html",
-                 "did": ["Code-driven animation with HTML, CSS, JavaScript and three.js, plus Blender 3D effects (logos, particles, fire, smoke)",
-                         "Automated frame rendering, compositing and MP4 output with Python and FFmpeg; keyframes, easing and beat sync",
-                         "A web-based editing and preview tool with 117 reusable parts"],
-                 "got": ["271 effects; AutoLed promo videos, broadcast alerts and Shorts"],
-                 "tech": "Blender, three.js, JavaScript, Python, FFmpeg, Photoshop"},
                 {"title": "AI-assisted content planning · marketing", "period": "2026.09 –", "link": None,
                  "did": ["Designed a one-source multi-use system that adapts one piece of content to blog, YouTube, Naver and social formats",
                          "Keyword research, SEO titles, metadata and structure; fact-checking before publishing and keeping publishing records",
@@ -129,7 +118,7 @@ RESUME_EN = {
             "role": "Content Planning Team Lead",
             "period": "2021.07 – 2025.11 (4 yrs 5 mos)",
             "desc": "Held concurrently with the broadcast technology company (2021.07–10) and ONICSOFT (2025.09–11).",
-            "bullets": ["Built in-house tools for company operations: automatic settlement, invoice checks, automatic OBS · Resolume switching for “Excel broadcast” shows",
+            "bullets": ["Built in-house automation tools in Python with GPT: automatic settlement, invoice checks, automatic OBS · Resolume switching for “Excel broadcast” shows",
                         "Installed and set up broadcast equipment (PCs, lighting, cameras, audio) and trained creators to use it",
                         "Created broadcast design assets (signature emotes, LIVE standby screens, banner GIFs) in Photoshop and After Effects",
                         "Managed affiliated creators and streamers, including care and revenue-share consultations"],
@@ -144,7 +133,9 @@ RESUME_EN = {
         },
     ],
     "extra_projects": [("PDF2Obsidian", "Open-source tool that turns PDFs and lecture transcripts into Obsidian notes (2026.06, MIT). "
-                        "Code and automated tests are public.", "work/pdf2obsidian.html", "https://github.com/Chokyusong/pdf2obsidian")],
+                        "Code and automated tests are public.", "work/pdf2obsidian.html", "https://github.com/Chokyusong/pdf2obsidian"),
+                       ("Websites", "Planned, built and run the ONICSOFT website; 22 industry samples; an 8-page animated draft for the ASTRA entertainment company (2026.08 –)", "work/onicsoft-homepage.html"),
+                       ("Motion graphics", "271 effects made with code and Blender; AutoLed promo videos and broadcast alerts (2026.09 –)", "work/motion.html")],
     "education": None,
     "tools": R.RESUME["tools"][:-1] + ["Claude Code · AI coding agents"],
     "language": "Korean (native) · English (conversational)",

@@ -67,7 +67,7 @@ PROJECTS = [
         "story": [
             ("문제", "후원이 들어올 때마다 방송 중인 사람이 알림을 보고 장면을 바꾸고, 조명과 연출을 손으로 틀어야 했습니다. 방송을 하면서 동시에 하기에는 놓치는 순간이 많았습니다."),
             ("만든 것", "팬더TV, SOOP, 투네이션, 위플랩, 펀네이션 후원 알림을 감지해 <strong>후원 개수에 맞춘 OBS 장면 전환, Resolume LED 칼럼, 조명과 카메라, 배경음악 음소거</strong>를 실행합니다. 연출은 음원에 맞춰 놓는 시간축 편집기(Timeline)로 직접 짭니다."),
-            ("결과", "버튼을 누르지 않아도 후원이 들어오는 순간 연출이 실행되고 스스로 원래 장면으로 돌아옵니다. 처음 설치한 사람도 준비 단계 화면만 따라 하면 방송을 시작할 수 있습니다. 지금 유료 고객이 실제 방송에 쓰고 있습니다."),
+            ("결과", "버튼을 누르지 않아도 후원이 들어오는 순간 연출이 실행되고 스스로 원래 장면으로 돌아옵니다. 처음 설치한 사람도 준비 단계 화면만 따라 하면 방송을 시작할 수 있습니다. 지금 유료 고객 약 15명이 실제 방송에 쓰고 있습니다."),
         ],
         "blocks": [
             ("states", {"title": "상태를 눌러 보세요", "text": "기본창은 지금 무슨 일이 일어나는지 한눈에 보이게 다섯 가지 상태로 나눴습니다. 아래 버튼을 누르면 실제 화면이 바뀝니다.", "items": [
@@ -439,8 +439,8 @@ PROJECTS = [
 CATS = [
     ("program", "프로그램", "ph-app-window", "설치해서 쓰는 Windows 프로그램과 도구입니다. 방송 자동화 제품 AutoLed는 직접 판매하고 업데이트까지 운영합니다.", ("autoled", "ui-timeline"), ["autoled", "cctv", "pdf2obsidian"]),
     ("automation", "업무 자동화", "ph-briefcase", "회사에서 사람이 손으로 반복하던 일을 그 회사에 맞춘 프로그램으로 바꿉니다. 지금까지 주간 정산과 거래장부를 만들었습니다.", ("ledger", "cover"), ["enter-payroll", "ledger"]),
-    ("web", "홈페이지", "ph-browser", "회사 사이트와 손님 홈페이지를 기획, 디자인, 개발하고 블로그와 구축 사례까지 운영합니다.", ("astra", "home-pc"), ["onicsoft-homepage", "astra"]),
     ("server", "서버", "ph-hard-drives", "로그인과 이용 기간을 확인하는 서버, 24시간 수집 서버를 세우고 감시와 백업까지 맡습니다.", ("login-server", "dashboard"), ["login-server", "bighand"]),
+    ("web", "홈페이지", "ph-browser", "회사 사이트와 손님 홈페이지를 기획, 디자인, 개발하고 블로그와 구축 사례까지 운영합니다.", ("astra", "home-pc"), ["onicsoft-homepage", "astra"]),
     ("motion", "모션그래픽", "ph-film-strip", "편집 프로그램 없이 코드로 홍보영상과 효과를 만듭니다. 효과 271종을 만들었습니다.", None, ["motion"]),
 ]
 CAT_OF = {sl: c[0] for c in CATS for sl in c[5]}
@@ -785,7 +785,7 @@ def home():
     mq = "".join(f"<span>{e(w)}</span>" for w in marquee_words) * 2
 
     history = [("2020.10", "방송 기술 회사 입사. 방송 장비 세팅과 방송 화면 디자인"),
-               ("2021.07", "MCN 회사 콘텐츠기획팀 팀장. 크리에이터 관리와 함께 정산, 계산서 확인, OBS·레졸룸 자동 전환 프로그램을 회사 안에서 만듦. 2021.10까지 방송 기술 회사와 겸직"),
+               ("2021.07", "MCN 회사 콘텐츠기획팀 팀장. 크리에이터 관리와 함께 정산, 계산서 확인, OBS·레졸룸 자동 전환 프로그램을 GPT와 Python으로 회사 안에서 만듦. 2021.10까지 방송 기술 회사와 겸직"),
                ("2025.09", "오닉소프트 시작. 2025.11까지 MCN 회사와 겸직"), ("2025.10", "AutoLed 개발 시작"), ("2026.06", "PDF2Obsidian 공개"), ("2026.08", "로그인 서버 운영, AutoLed 정식 배포, 회사 홈페이지"),
                ("2026.09", "모션그래픽 작업실, 유튜브 채널 시작, 납품 업체 엑셀 장부 자동화"), ("2026.10", "후원 데이터 집계 서버, 엔터 정산, CCTV 관제, 거래장부 프로그램"),
                ("2026.11", "AutoLed 2.1.0, 엔터 회사 홈페이지 ASTRA 제작")]
@@ -814,10 +814,10 @@ def home():
     <p class="eyebrow" data-hero-fade>AI BUILDER · 조규송</p>
     <h1 class="h-display hero-title" data-lines data-hero><span class="line-mask"><span>AI로 필요한 것을</span></span><span class="line-mask"><span>만들고, 팔고,</span></span><span class="line-mask"><span><em>직접 운영</em>합니다.</span></span></h1>
     <div class="hero-foot">
-      <p class="lead" data-hero-fade>기획, 디자인, 개발, 배포, 운영까지 AI와 함께 혼자 끝내는 AI&nbsp;Builder입니다. 방송 자동화 제품 AutoLed를 만들어 팔고, 업무 자동화 프로그램, 홈페이지, 서버, 영상까지 직접 만들고 운영합니다. 이 페이지에서 만든 것을 전부 직접 보고 눌러 볼 수 있습니다.</p>
+      <p class="lead" data-hero-fade>기획, 디자인, 개발, 배포, 운영까지 AI와 함께 혼자 끝내는 AI&nbsp;Builder입니다. 방송 자동화 제품 AutoLed를 만들어 유료 고객 약 15명에게 팔고, 회사 업무를 줄이는 자동화 프로그램과 서버를 직접 만들고 운영합니다. 이 페이지에서 만든 것을 전부 직접 보고 눌러 볼 수 있습니다.</p>
       <div class="btn-row" data-hero-fade><a class="btn btn-primary" href="#works" data-magnet>작업 보기<i class="ph ph-arrow-down" aria-hidden="true"></i></a><a class="btn btn-ghost" href="resume.html" data-magnet><i class="ph ph-identification-card" aria-hidden="true"></i>이력서</a></div>
     </div>
-    <div class="hero-meta" data-hero-fade><div>ROLE<b>{e(ROLE)}</b></div><div>NOW<b>AutoLed 2.1.0 판매 중</b></div><div>FOCUS<b>앱 · 업무 자동화 · 웹 · 서버</b></div></div>
+    <div class="hero-meta" data-hero-fade><div>ROLE<b>{e(ROLE)}</b></div><div>NOW<b>AutoLed 2.1.0 · 유료 고객 약 15명</b></div><div>FOCUS<b>AI 서비스 기획 · 업무 자동화 · 서버</b></div></div>
   </div>
   <div class="scroll-hint" aria-hidden="true">SCROLL</div>
 </section>
@@ -827,10 +827,10 @@ def home():
 <section class="section wrap" id="about">
   <div class="section-head">
     <div><p class="idx" data-reveal>01 — 요약</p>{lines_html(["혼자 만들고,", "끝까지 책임집니다."], "h2", "h-1")}</div>
-    <p class="lead" data-reveal>방송 자동화 제품, 업무 자동화 프로그램, 홈페이지, 서버 운영, 영상 제작까지 한 사람이 맡습니다. 코드는 AI 코딩 도구와 함께 쓰고, 무엇을 만들고 언제 내보낼지는 제가 정합니다.</p>
+    <p class="lead" data-reveal>방송 자동화 제품, 업무 자동화 프로그램, 서버를 기획부터 운영까지 한 사람이 맡습니다. 홈페이지와 영상도 직접 만듭니다. 코드는 AI 코딩 도구와 함께 쓰고, 무엇을 만들고 언제 내보낼지는 제가 정합니다.</p>
   </div>
   <div class="stats">
-    <div class="stat" data-reveal><span class="stat-num" data-scramble="2.1.0">2.1.0</span><span class="stat-label">AutoLed 현재 버전 · 판매 중</span></div>
+    <div class="stat" data-reveal><span class="stat-num"><span data-count="15">15</span><small>명</small></span><span class="stat-label">AutoLed 유료 고객(약) · 2.1.0 판매 중</span></div>
     <div class="stat" data-reveal><span class="stat-num"><span data-count="6">6</span><small>년</small></span><span class="stat-label">방송·MCN 현장부터 제품 개발까지 경력</span></div>
     <div class="stat" data-reveal><span class="stat-num"><span data-count="2200">2,200</span><small>+</small></span><span class="stat-label">소개한 작업의 자동 테스트</span></div>
     <div class="stat" data-reveal><span class="stat-num"><span data-count="{N}">{N}</span></span><span class="stat-label">상세 페이지로 소개한 작업</span></div>
@@ -841,7 +841,7 @@ def home():
 <section class="section wrap" id="fields">
   <div class="section-head">
     <div><p class="idx" data-reveal>02 — 하는 일</p>{lines_html(["한 분야만", "하지 않습니다."], "h2", "h-1")}</div>
-    <p class="lead" data-reveal>방송 자동화 제품을 팔면서, 회사 업무를 줄이는 프로그램, 홈페이지, 서버, 영상까지 직접 만들고 운영합니다. 그림을 누르면 아래 작업 목록이 그 분류로 정리되고, 이름표를 누르면 상세 페이지가 열립니다.</p>
+    <p class="lead" data-reveal>방송 자동화 제품을 팔면서, 회사 업무를 줄이는 프로그램과 서버를 직접 만들고 운영합니다. 홈페이지와 영상도 직접 만듭니다. 그림을 누르면 아래 작업 목록이 그 분류로 정리되고, 이름표를 누르면 상세 페이지가 열립니다.</p>
   </div>
   <div class="fields">{fields_html}</div>
 </section>
@@ -868,18 +868,9 @@ def home():
   </div></div>
 </section>
 
-<section class="section reel" data-reel id="motion">
-  <div class="wrap section-head">
-    <div><p class="idx" data-reveal>05 — 모션그래픽</p>{lines_html(["편집 프로그램 없이,", "코드로 만든 영상"], "h2", "h-1")}</div>
-    <p class="lead" data-reveal>HTML, three.js, Blender로 그리고 프레임마다 찍어 만든 효과입니다. 271종 가운데 일부를 옮겼습니다.</p>
-  </div>
-  <div class="reel-track">{reel}</div>
-  <div class="wrap reel-foot"><a class="text-link" href="work/motion.html">홍보영상과 효과 더 보기<i class="ph ph-arrow-right" aria-hidden="true"></i></a></div>
-</section>
-
 <section class="section wrap" id="how">
   <div class="section-head">
-    <div><p class="idx" data-reveal>06 — 일하는 방식</p>{lines_html(["만들고 끝내지 않고,", "운영까지 맡습니다."], "h2", "h-1")}</div>
+    <div><p class="idx" data-reveal>05 — 일하는 방식</p>{lines_html(["만들고 끝내지 않고,", "운영까지 맡습니다."], "h2", "h-1")}</div>
   </div>
   <div class="how">
     <div class="how-item" data-reveal><i class="ph ph-robot" aria-hidden="true"></i><h3 class="h-3">AI와 나눠서 만듭니다</h3><p>코드는 Claude Code, Codex 같은 AI 코딩 도구와 함께 씁니다. 무엇을 만들지, 무엇을 공개할지, 언제 내보낼지는 제가 정합니다.</p></div>
@@ -891,14 +882,14 @@ def home():
 
 <section class="section wrap" id="history">
   <div class="section-head">
-    <div><p class="idx" data-reveal>07 — 연혁</p>{lines_html(["방송 현장에서", "제품까지"], "h2", "h-1")}</div>
+    <div><p class="idx" data-reveal>06 — 연혁</p>{lines_html(["방송 현장에서", "제품까지"], "h2", "h-1")}</div>
     <p class="lead" data-reveal>MCN과 방송 현장에서 6년 동안 일하며 필요한 프로그램을 직접 만들었고, 2025년 9월부터는 오닉소프트에서 제품으로 만들어 팝니다. 오닉소프트 뒤의 날짜는 각 저장소를 만든 달입니다.</p>
   </div>
   <div class="tl"><span class="tl-line" aria-hidden="true"><b></b></span><ol>{tl}</ol></div>
 </section>
 
 <section class="section wrap" id="stack" style="padding-top:0">
-  <div class="section-head"><div><p class="idx" data-reveal>08 — 기술</p>{lines_html(["주로 쓰는 기술"], "h2", "h-2")}</div></div>
+  <div class="section-head"><div><p class="idx" data-reveal>07 — 기술</p>{lines_html(["주로 쓰는 기술"], "h2", "h-2")}</div></div>
   <div class="stack-grid">
     <div data-reveal><h3>언어</h3><ul><li>Python</li><li>JavaScript</li><li>HTML / CSS</li><li>PHP</li></ul></div>
     <div data-reveal><h3>데스크톱 앱</h3><ul><li>Tkinter</li><li>PySide6</li><li>Nuitka</li><li>PyInstaller</li><li>Inno Setup</li></ul></div>
@@ -908,11 +899,20 @@ def home():
   </div>
 </section>
 
+<section class="section reel" data-reel id="motion">
+  <div class="wrap section-head">
+    <div><p class="idx" data-reveal>08 — 모션그래픽</p>{lines_html(["편집 프로그램 없이,", "코드로 만든 영상"], "h2", "h-1")}</div>
+    <p class="lead" data-reveal>HTML, three.js, Blender로 그리고 프레임마다 찍어 만든 효과입니다. 271종 가운데 일부를 옮겼습니다.</p>
+  </div>
+  <div class="reel-track">{reel}</div>
+  <div class="wrap reel-foot"><a class="text-link" href="work/motion.html">홍보영상과 효과 더 보기<i class="ph ph-arrow-right" aria-hidden="true"></i></a></div>
+</section>
+
 <section class="contact wrap" id="contact">
   <p class="idx" data-reveal>09 — 연락</p>
   <h2 class="contact-title" data-lines><span class="line-mask"><span>함께 일할 자리가</span></span><span class="line-mask"><span>있다면<span class="accent">.</span></span></span></h2>
   <div class="contact-grid">
-    <p class="lead" data-reveal>Python 데스크톱 앱, 업무 자동화, 서버 개발과 운영, 웹과 영상 경험을 살릴 수 있는 일에 관심이 있습니다. 정규직, 계약직, 프리랜서 모두 가능하고 출근과 원격 모두 괜찮습니다. 비공개 저장소의 자세한 내용은 면담에서 화면으로 보여 드릴 수 있습니다.</p>
+    <p class="lead" data-reveal>Python 데스크톱 앱, 업무 자동화, 서버 개발과 운영, 웹과 영상 경험을 살릴 수 있는 일에 관심이 있습니다. 정규직, 계약직, 프리랜서 모두 가능하고 출근과 원격 모두 괜찮습니다. 입사하면 오닉소프트는 부업으로 운영합니다. 비공개 저장소의 자세한 내용은 면담에서 화면으로 보여 드릴 수 있습니다.</p>
     <div class="btn-row" data-reveal><a class="btn btn-primary" href="{KAKAO}" data-magnet><i class="ph ph-chat-circle-dots" aria-hidden="true"></i>카카오톡으로 연락</a><a class="btn btn-ghost" href="mailto:{EMAIL}" data-magnet><i class="ph ph-envelope-simple" aria-hidden="true"></i>{EMAIL}</a></div>
   </div>
   <div class="big-links" data-reveal style="margin-top:clamp(48px,6vw,80px)">

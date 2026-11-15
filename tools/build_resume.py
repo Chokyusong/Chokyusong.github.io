@@ -15,17 +15,17 @@ e = html.escape
 RESUME = {
     "name": "조규송",
     "name_en": "Cho Kyusong",
-    "title": "AI Builder · 서비스 기획 · 업무 자동화",
-    "availability": "정규직 · 계약직 · 프리랜서 모두 가능 · 출근과 원격 모두 가능",
+    "title": "AI Builder · AI 서비스 기획 · 업무 자동화",
+    "availability": "정규직 · 계약직 · 프리랜서 모두 가능 · 출근과 원격 모두 가능 · 입사하면 오닉소프트는 부업으로 운영",
     "contacts": [("이메일", "joung2156@gmail.com", "mailto:joung2156@gmail.com"),
                  ("포트폴리오", "chokyusong.github.io", "https://chokyusong.github.io/"),
                  ("GitHub", "github.com/Chokyusong", "https://github.com/Chokyusong"),
                  ("회사", "onicsoft.co.kr", "https://onicsoft.co.kr/")],
     "summary": [
-        "AI 코딩 에이전트로 아이디어를 실제로 작동하는 서비스로 만들고, 판매하고, 운영하는 서비스 기획·업무 자동화 전문가입니다.",
-        "MCN 콘텐츠기획팀 팀장으로 4년 넘게 크리에이터 관리, 콘텐츠 기획, 방송 시스템 구축, 스튜디오 운영과 기술 지원을 맡았고, 그때부터 회사에 필요한 정산·자동 전환 프로그램을 직접 만들었습니다. 2025년 9월부터는 오닉소프트를 세워 소프트웨어 기획, 제작, 서비스 운영을 총괄하고 있습니다.",
+        "AI 코딩 에이전트로 아이디어를 실제로 작동하는 서비스로 만들고, 판매하고, 운영하는 AI 서비스 기획·업무 자동화 전문가입니다.",
+        "MCN 콘텐츠기획팀 팀장으로 4년 넘게 크리에이터 관리, 콘텐츠 기획, 방송 시스템 구축, 스튜디오 운영과 기술 지원을 맡았고, 그때부터 GPT와 Python으로 정산, 계산서 확인, 방송 화면 자동 전환 같은 회사 업무를 직접 자동화했습니다. 2025년 9월 오닉소프트를 세워 방송 자동화 제품 AutoLed를 유료 고객 약 15명에게 팔고 운영하고 있습니다.",
     ],
-    "numbers": [("6년 2개월", "경력"), ("2.1.0", "AutoLed 판매 중"), ("78,844건", "하루 처리한 후원 기록"), ("22초 → 0.25초", "대시보드 첫 화면 개선"), ("47 / 48주", "정산 엑셀과 계산 일치")],
+    "numbers": [("6년 2개월", "경력"), ("약 15명", "AutoLed 유료 고객"), ("78,844건", "하루 처리한 후원 기록"), ("22초 → 0.25초", "대시보드 첫 화면 개선"), ("47 / 48주", "정산 엑셀과 계산 일치")],
     "skills": [
         ("AI 활용 개발 관리", "요구사항 정의, 기능 설계, AI 에이전트 작업 지시, 구현 결과 검증과 오류 개선"),
         ("서비스 기획 · 제품화", "사용자 문제 분석, 기능 우선순위 결정, UI/UX 기획, 제품 출시와 유료 서비스 운영"),
@@ -52,7 +52,7 @@ RESUME = {
                  "did": ["방송 현장 요구사항을 분석해 제품 기능을 기획하고, 기능 우선순위와 기존 기능 호환성을 판단",
                          "AI 코딩 에이전트의 작업 범위와 검증 조건을 정하고, 테스트 결과와 실제 방송 장비 연동을 확인해 배포 결정",
                          "고객 의견 수집, 장애 대응, 제품 개선 총괄"],
-                 "got": ["개인방송·엑셀방송 자동화 솔루션으로 상용화해 유료 고객 확보, 2.1.0 판매 중",
+                 "got": ["개인방송·엑셀방송 자동화 솔루션으로 상용화해 유료 고객 약 15명 확보, 2.1.0 판매 중",
                          "팬더TV, SOOP, 투네이션, 위플랩, 펀네이션 후원 알림을 한 가지 처리 구조로 묶어 OBS·Resolume 연출부터 원래 장면 복귀까지 자동화",
                          "방송 중 화면 멈춤 문제를 재현 조건부터 찾아 해결: 고치기 전 3번 모두 멈춤 → 고친 뒤 5번 모두 정상",
                          "자동 테스트 2,051개, 버전 관리, 배포 승인, 업데이트 무결성(서명·체크섬) 검증 절차 운영"],
@@ -87,18 +87,6 @@ RESUME = {
                  "did": ["인쇄 광고물 납품 업체가 두 번씩 적던 엑셀 장부를 한 번 입력으로 끝나게 바꾼 프로그램"],
                  "got": ["옮기는 과정에서 원본 장부끼리 맞지 않는 줄을 찾아 목록으로 정리, 엑셀 내보내기 왕복 확인"],
                  "tech": "Python, SQLite, Excel 연동"},
-                {"title": "기업 홈페이지 · 손님 홈페이지 제작", "period": "2026.08 –", "link": "work/onicsoft-homepage.html",
-                 "did": ["오닉소프트 공식 홈페이지 기획·제작·운영(반응형, SEO 메타데이터·구조화 데이터, 관리자·블로그·방문 통계 연동)",
-                         "업종별 홈페이지 견본 22종과, 손님 회사 정보와 사진으로 홈페이지를 만드는 템플릿 구성",
-                         "엔터테인먼트 회사 홈페이지 ASTRA: 손님 PPT 초안에서 움직이는 시안 8쪽 제작(2026.11)"],
-                 "got": ["홈페이지 제작·수정·검증 과정을 표준화한 작업 흐름"],
-                 "tech": "HTML, CSS, JavaScript, Python, Jinja2, SEO, GitHub"},
-                {"title": "3D · 모션그래픽 영상 자동 제작 시스템", "period": "2026.09 –", "link": "work/motion.html",
-                 "did": ["HTML·CSS·JavaScript·three.js 코드 애니메이션과 Blender 3D 효과(로고, 파티클, 불꽃, 연기)",
-                         "Python·FFmpeg로 프레임 렌더링, 합성, MP4 출력 자동화, 키프레임·이징·박자 연동",
-                         "웹 기반 편집·미리보기 도구와 재사용 부품 117종"],
-                 "got": ["효과 271종, AutoLed 홍보영상과 방송 알림·쇼츠 제작"],
-                 "tech": "Blender, three.js, JavaScript, Python, FFmpeg, Photoshop"},
                 {"title": "AI 활용 콘텐츠 기획 · 마케팅", "period": "2026.09 –", "link": None,
                  "did": ["원본 콘텐츠 하나를 블로그·유튜브·네이버·SNS 형식으로 나눠 쓰는 OSMU 체계 설계",
                          "검색 키워드 분석, SEO 제목·메타데이터·글 구조 최적화, 게시 전 사실 확인과 게시 기록 관리",
@@ -112,7 +100,7 @@ RESUME = {
             "role": "콘텐츠기획팀 팀장 · 총괄",
             "period": "2021.07 – 2025.11 (4년 5개월)",
             "desc": "2021.07~10은 방송 기술 회사, 2025.09~11은 오닉소프트와 겸직했습니다.",
-            "bullets": ["회사 운영에 필요한 프로그램 직접 제작: 자동 정산, 계산서 발행 확인, 엑셀방송 OBS·레졸룸 자동 전환",
+            "bullets": ["GPT를 활용해 Python으로 회사 업무 자동화 프로그램 직접 제작: 자동 정산, 계산서 발행 확인, 엑셀방송 OBS·레졸룸 자동 전환",
                         "방송 장비(PC·조명·카메라·오디오) 설치와 세팅, 크리에이터 장비 교육",
                         "방송 디자인 요소(시그니처 이모티콘, LIVE 대기 화면, 방송 배너 GIF) 제작: Photoshop, After Effects",
                         "소속 크리에이터·BJ 관리, 케어와 정산 비율 상담"],
@@ -127,7 +115,9 @@ RESUME = {
         },
     ],
     "extra_projects": [("PDF2Obsidian", "PDF와 강의 자막을 옵시디언 노트로 바꾸는 오픈소스 도구 (2026.06, MIT). 코드와 자동 테스트를 공개했습니다.",
-                        "work/pdf2obsidian.html", "https://github.com/Chokyusong/pdf2obsidian")],
+                        "work/pdf2obsidian.html", "https://github.com/Chokyusong/pdf2obsidian"),
+                       ("홈페이지", "오닉소프트 공식 홈페이지 기획·제작·운영, 업종별 견본 22종, 엔터 회사 ASTRA 움직이는 시안 8쪽 (2026.08 –)", "work/onicsoft-homepage.html"),
+                       ("모션그래픽", "코드와 Blender로 만든 효과 271종, AutoLed 홍보영상과 방송 알림 (2026.09 –)", "work/motion.html")],
     "education": None,
     "tools": ["Python", "FastAPI", "PySide6 · Tkinter", "SQLite", "Linux · Nginx · systemd", "HTML · CSS · JavaScript", "three.js · Blender", "FFmpeg",
               "OBS WebSocket · Resolume OSC", "GitHub · GitHub Actions", "Excel · Pandas", "Photoshop · After Effects", "Claude Code · AI 코딩 에이전트"],
@@ -225,7 +215,7 @@ h2 small {{ font-size:8.5pt; font-weight:500; color:var(--mute); }}
 .proj {{ border-left:1.5pt solid var(--line); padding:0 0 0 4mm; margin:0 0 3.2mm; break-inside:avoid; }}
 .proj header {{ display:flex; justify-content:space-between; align-items:baseline; gap:4mm; }}
 .proj h4 {{ font-size:10pt; font-weight:700; }}
-.more {{ font-size:7.8pt; font-weight:500; color:var(--acc); margin-left:2mm; }}
+.more {{ font-size:7.8pt; font-weight:500; color:var(--acc); margin-left:2mm; white-space:nowrap; }}
 ul {{ margin:1.2mm 0 0; padding-left:4.2mm; }} li {{ margin-bottom:.5mm; }}
 .lab {{ margin:1.6mm 0 0; font-size:8pt; font-weight:700; color:var(--acc); }}
 .got {{ margin-top:.5mm; }} .got li {{ font-weight:600; }}

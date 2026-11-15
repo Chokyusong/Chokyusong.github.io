@@ -213,9 +213,9 @@ h3 {{ font-size:10.5pt; margin-bottom:2.5mm; padding-bottom:1.5mm; border-bottom
 <section class="cover"><div class="wrap">
   <p class="eyebrow">조규송 (CHO KYUSONG) · {html.escape(B.ROLE)}</p>
   <h1>AI로 필요한 것을<br>만들고, 팔고,<br><em>직접 운영</em>합니다.</h1>
-  <p class="lead">기획, 디자인, 개발, 배포, 운영까지 AI와 함께 혼자 끝내는 AI&nbsp;Builder입니다. 방송 자동화 제품 AutoLed를 만들어 팔고, 업무 자동화 프로그램, 홈페이지, 서버, 영상까지 직접 만들고 운영합니다. 코드는 AI 코딩 도구와 함께 쓰고, 무엇을 만들고 언제 내보낼지는 제가 정합니다.</p>
+  <p class="lead">기획, 디자인, 개발, 배포, 운영까지 AI와 함께 혼자 끝내는 AI&nbsp;Builder입니다. 방송 자동화 제품 AutoLed를 만들어 유료 고객 약 15명에게 팔고, 회사 업무를 줄이는 자동화 프로그램과 서버를 직접 만들고 운영합니다. 코드는 AI 코딩 도구와 함께 쓰고, 무엇을 만들고 언제 내보낼지는 제가 정합니다.</p>
   <div class="stats">
-    <div><b>2.1.0</b><span>AutoLed 현재 버전 · 판매 중</span></div>
+    <div><b>약 15명</b><span>AutoLed 유료 고객 · 2.1.0 판매 중</span></div>
     <div><b>6년</b><span>방송·MCN 현장부터 제품 개발까지</span></div>
     <div><b>2,200+</b><span>소개한 작업의 자동 테스트</span></div>
     <div><b>{B.N}</b><span>소개한 작업</span></div>
@@ -224,7 +224,7 @@ h3 {{ font-size:10.5pt; margin-bottom:2.5mm; padding-bottom:1.5mm; border-bottom
   <div class="cols">
     <div><h3>연혁</h3><ol class="hist">
       <li><time>2020.10</time>방송 기술 회사 입사. 장비 세팅과 방송 디자인</li>
-      <li><time>2021.07</time>MCN 회사 팀장(방송 기술 회사와 겸직). 사내 자동화 프로그램</li>
+      <li><time>2021.07</time>MCN 회사 팀장(방송 기술 회사와 겸직). GPT·Python 사내 자동화</li>
       <li><time>2025.09</time>오닉소프트 시작(MCN과 겸직), AutoLed</li>
       <li><time>2026.06</time>PDF2Obsidian 공개</li>
       <li><time>2026.08</time>로그인 서버 운영, AutoLed 정식 배포, 회사 홈페이지</li>
@@ -250,7 +250,7 @@ h3 {{ font-size:10.5pt; margin-bottom:2.5mm; padding-bottom:1.5mm; border-bottom
     <div><span>웹 포트폴리오 · 이력서</span>chokyusong.github.io</div>
     <div><span>이메일</span>{e(B.EMAIL)}</div>
     <div><span>GitHub</span>github.com/Chokyusong</div>
-    <div><span>근무 형태 (모두 가능)</span>정규직·계약직·프리랜서 / 출근·원격</div>
+    <div><span>근무 형태 · 모두 가능 · 오닉소프트는 부업</span>정규직·계약직·프리랜서 / 출근·원격</div>
   </div>
 </div></section>
 <section class="toc"><div class="wrap"><h2>하는 일</h2><div class="fields">{fields}</div><h2>작업 {B.N}가지</h2><ol>{idx}</ol>
