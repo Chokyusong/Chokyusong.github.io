@@ -102,6 +102,8 @@ def project(i, p):
     meta = "".join(f"<div><dt>{e(k)}</dt><dd>{e(v)}</dd></div>" for k, v in p["meta"])
     story = "".join(f"<div><h4>{e(h)}</h4><p>{t}</p></div>" for h, t in p["story"])
     pts, nums = facts(p)
+    if p.get("first") and p["first"][0] == "perf" and p["first"][1].get("rows"):
+        nums = [(f"{bars[0][2]} → {bars[1][2]}", h) for h, bars in p["first"][1]["rows"]]
     if p.get("pv_stat") and not nums:
         nums = [p["pv_stat"]]
     nums_html = "".join(f"<div><b>{e(a)}</b><span>{e(b)}</span></div>" for a, b in nums)

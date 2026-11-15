@@ -4,7 +4,7 @@ GitHub Pages로 올린 개인 포트폴리오 사이트. 방문자에게는 빌�
 
 ## 구조
 
-- `index.html` 첫 화면, `work/<slug>.html` 작업 11개 상세, `print.html` 인쇄판(검색 제외)
+- `index.html` 첫 화면, `work/<slug>.html` 작업 상세(작업마다 하나), `print.html` 인쇄판(검색 제외)
 - `assets/css/site.css`, `assets/js/site.js` 디자인과 움직임(GSAP, ScrollTrigger, Lenis)
 - `assets/img/<slug>/` 작업별 실제 화면(webp), `assets/print/` 인쇄판용 작은 그림
 - `assets/cho-kyusong-portfolio.pdf` 인쇄판을 찍은 PDF

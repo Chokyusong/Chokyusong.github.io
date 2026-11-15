@@ -186,6 +186,34 @@ PROJECTS = [
         "links": [],
     },
     {
+        "slug": "mcn-automation",
+        "title": "MCN 업무 자동화",
+        "lines": ["MCN", "업무 자동화"],
+        "kind": "회사 업무 자동화 · 재직 중 제작",
+        "tags": "GPT · Python · 정산",
+        "year": "2021 — 2025",
+        "short": "5시간 걸리던 정산을 3분으로 줄인 사내 자동화 프로그램",
+        "summary": "MCN 콘텐츠기획팀 팀장으로 일하면서, 사람이 손으로 하던 정산, 계산서 발행 확인, 크리에이터 랭킹·동향 확인을 GPT와 Python으로 직접 자동화했습니다. 정산은 5시간에서 3분으로 줄고 계산 실수가 없어졌습니다.",
+        "preview": None,
+        "pv_stat": ("5시간 → 3분", "MCN 정산 · GPT와 Python으로 자동화"),
+        "meta": [("맡은 일", "팀장 · 자동화 기획과 제작"), ("기간", "2021년 7월 – 2025년 11월 재직"), ("기술", "Python, ChatGPT, Excel"), ("팀", "팀원 5명 · 크리에이터 20명")],
+        "cover": None,
+        "first": ("perf", {"title": "자동화 전과 뒤", "text": "같은 일을 사람이 할 때와 프로그램이 할 때 걸린 시간입니다. 막대 길이는 걸린 시간입니다.", "rows": [
+            ("정산", [("전", "100%", "5시간"), ("후", "1%", "3분")]),
+            ("계산서 발행 확인", [("전", "100%", "1시간"), ("후", "0.8%", "30초")]),
+            ("크리에이터 랭킹 · 동향 확인", [("전", "100%", "1시간"), ("후", "0.8%", "30초")]),
+        ]}),
+        "story": [
+            ("상황", "팀원 5명과 소속 크리에이터 20명을 맡은 팀에서 정산, 계산서 발행 확인, 크리에이터 랭킹·동향 확인을 사람이 손으로 하고 있었습니다. 정산 한 번에 5시간이 걸렸고 계산 실수도 생겼습니다."),
+            ("만든 것", "ChatGPT가 나온 뒤 GPT의 도움을 받아 Python으로 회사 업무 자동화 프로그램을 직접 만들었습니다. 정산을 계산하는 프로그램, 계산서가 발행됐는지 확인하는 프로그램, 소속 크리에이터의 랭킹과 동향을 모아 보는 프로그램입니다. 엑셀방송에서 OBS와 레졸룸 장면을 자동으로 바꾸는 프로그램도 이 회사에서 만들었습니다."),
+            ("결과", "<strong>정산은 5시간에서 3분으로 줄고 계산 실수가 없어졌습니다.</strong> 계산서 발행 확인과 크리에이터 랭킹·동향 확인은 각각 1시간에서 30초가 됐습니다."),
+            ("그 뒤", "이때 시작한 업무 자동화가 오닉소프트의 엔터 주간 정산, 납품 거래장부, AutoLed로 이어졌습니다."),
+        ],
+        "blocks": [],
+        "notice": "회사 내부 자료라 프로그램 화면과 코드는 싣지 않았습니다. 숫자는 자동화 전과 뒤에 걸린 시간입니다.",
+        "links": [],
+    },
+    {
         "slug": "enter-payroll",
         "title": "BJ 엔터 주간 정산",
         "lines": ["BJ 엔터", "주간 정산"],
@@ -437,7 +465,7 @@ PROJECTS = [
 # (키, 이름, 아이콘, 설명, 대표 그림(폴더, 이름) 또는 None, 속한 작업 순서)
 CATS = [
     ("program", "프로그램", "ph-app-window", "설치해서 쓰는 Windows 프로그램과 도구입니다. 방송 자동화 제품 AutoLed는 직접 판매하고 업데이트까지 운영합니다.", ("autoled", "ui-timeline"), ["autoled", "cctv", "pdf2obsidian"]),
-    ("automation", "업무 자동화", "ph-briefcase", "회사에서 사람이 손으로 반복하던 일을 그 회사에 맞춘 프로그램으로 바꿉니다. 지금까지 주간 정산과 거래장부를 만들었습니다.", ("ledger", "cover"), ["enter-payroll", "ledger"]),
+    ("automation", "업무 자동화", "ph-briefcase", "회사에서 사람이 손으로 반복하던 일을 그 회사에 맞춘 프로그램으로 바꿉니다. MCN 재직 때 정산 자동화부터 시작해 주간 정산과 거래장부를 만들었습니다.", ("ledger", "cover"), ["mcn-automation", "enter-payroll", "ledger"]),
     ("server", "서버", "ph-hard-drives", "로그인과 이용 기간을 확인하는 서버, 24시간 수집 서버를 세우고 감시와 백업까지 맡습니다.", ("login-server", "dashboard"), ["login-server", "bighand"]),
     ("web", "홈페이지", "ph-browser", "회사 사이트와 손님 홈페이지를 기획, 디자인, 개발하고 블로그와 구축 사례까지 운영합니다.", ("astra", "home-pc"), ["onicsoft-homepage", "astra"]),
     ("motion", "모션그래픽", "ph-film-strip", "편집 프로그램 없이 코드로 홍보영상과 효과를 만듭니다. 효과 271종을 만들었습니다.", None, ["motion"]),
@@ -589,7 +617,7 @@ def b_flow(p, d, rel):
 
 
 def b_perf(p, d, rel):
-    rows = [
+    rows = d.get("rows") or [
         ("대시보드 첫 화면", [("전", "100%", "22초"), ("후", "1.6%", "0.25초")]),
         ("30일 · 3달 방송 순위", [("전", "100%", "27~118초"), ("후", "6%", "1~7초")]),
     ]
@@ -597,8 +625,10 @@ def b_perf(p, d, rel):
     for h, bars in rows:
         bs = "".join(f'<div class="perf-bar{" after" if k == "후" else ""}"><span>{k}</span><i><b style="--w:{w}"></b></i><em>{v}</em></div>' for k, w, v in bars)
         out.append(f'<div class="perf-row" data-reveal><h4>{h}</h4><div class="perf-bars">{bs}</div></div>')
-    return (f'<section class="block"><div class="block-head" data-reveal><h2 class="h-2">1,350만 건 부하 시험 전과 뒤</h2>'
-            f'<p>시험용으로 만든 3달 치 기록으로 병목을 찾아 고쳤습니다. 막대 길이는 걸린 시간입니다.</p></div><div class="perf">{"".join(out)}</div></section>')
+    title = d.get("title", "1,350만 건 부하 시험 전과 뒤")
+    text = d.get("text", "시험용으로 만든 3달 치 기록으로 병목을 찾아 고쳤습니다. 막대 길이는 걸린 시간입니다.")
+    return (f'<section class="block"><div class="block-head" data-reveal><h2 class="h-2">{e(title)}</h2>'
+            f'<p>{e(text)}</p></div><div class="perf">{"".join(out)}</div></section>')
 
 
 def b_kpis(p, d, rel):
@@ -790,7 +820,7 @@ def home():
                ("2026.09", "모션그래픽 작업실, 유튜브 채널 시작, 납품 업체 엑셀 장부 자동화"), ("2026.10", "후원 데이터 집계 서버, 엔터 정산, CCTV 관제, 거래장부 프로그램"),
                ("2026.11", "AutoLed 2.1.0, 엔터 회사 홈페이지 ASTRA 제작")]
     by = {p["slug"]: p for p in PROJECTS}
-    short = {"autoled": "AutoLed", "cctv": "CCTV 관제", "bighand": "후원 집계 서버", "enter-payroll": "엔터 주간 정산", "ledger": "납품 거래장부",
+    short = {"autoled": "AutoLed", "cctv": "CCTV 관제", "bighand": "후원 집계 서버", "mcn-automation": "MCN 정산 자동화", "enter-payroll": "엔터 주간 정산", "ledger": "납품 거래장부",
              "pdf2obsidian": "PDF2Obsidian", "onicsoft-homepage": "회사 홈페이지", "astra": "ASTRA 손님 홈페이지", "login-server": "로그인 서버",
              "motion": "모션그래픽"}
     cards = []
