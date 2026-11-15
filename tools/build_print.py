@@ -135,7 +135,7 @@ def main(projects):
     page = f"""<!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
-<title>조규송 포트폴리오 (인쇄판)</title>
+<title>조규송 · AI Builder 포트폴리오 (인쇄판)</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
 @page {{ size: A4; margin: 14mm 14mm 16mm; }}
@@ -205,9 +205,9 @@ h3 {{ font-size:10.5pt; margin-bottom:2.5mm; padding-bottom:1.5mm; border-bottom
 </style></head>
 <body>
 <section class="cover"><div class="wrap">
-  <p class="eyebrow">PORTFOLIO · 조규송 (CHO KYUSONG)</p>
-  <h1>필요한 프로그램을<br>만들고, 팔고,<br><em>직접 운영</em>합니다.</h1>
-  <p class="lead">1인 개발자이자 오닉소프트 대표입니다. 방송 자동화 제품 AutoLed를 만들어 팔고, 업무 자동화 프로그램, 홈페이지, 서버, 영상까지 기획부터 운영까지 혼자 맡습니다. 코드는 AI 코딩 도구와 함께 쓰고, 무엇을 만들고 언제 내보낼지는 제가 정합니다.</p>
+  <p class="eyebrow">AI BUILDER · 조규송 (CHO KYUSONG)</p>
+  <h1>AI로 필요한 것을<br>만들고, 팔고,<br><em>직접 운영</em>합니다.</h1>
+  <p class="lead">기획, 디자인, 개발, 배포, 운영까지 AI와 함께 혼자 끝내는 AI&nbsp;Builder입니다. 방송 자동화 제품 AutoLed를 만들어 팔고, 업무 자동화 프로그램, 홈페이지, 서버, 영상까지 직접 만들고 운영합니다. 코드는 AI 코딩 도구와 함께 쓰고, 무엇을 만들고 언제 내보낼지는 제가 정합니다.</p>
   <div class="stats">
     <div><b>2.1.0</b><span>AutoLed 현재 버전 · 판매 중</span></div>
     <div><b>2,600+</b><span>소개한 저장소의 커밋</span></div>

@@ -11,7 +11,7 @@ from playwright.sync_api import sync_playwright
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "assets" / "cho-kyusong-portfolio.pdf"
 FOOT = ('<div style="width:100%;font-size:7pt;color:#8a929b;padding:0 14mm;display:flex;justify-content:space-between;'
-        'font-family:sans-serif"><span>조규송 포트폴리오 · chokyusong.github.io</span>'
+        'font-family:sans-serif"><span>조규송 · AI Builder · chokyusong.github.io</span>'
         '<span><span class="pageNumber"></span> / <span class="totalPages"></span></span></div>')
 
 with sync_playwright() as p:

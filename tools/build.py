@@ -824,13 +824,13 @@ def home():
     body = f"""<section class="hero">
   <canvas class="hero-canvas" data-word="BUILD" aria-hidden="true"></canvas>
   <div class="wrap hero-in">
-    <p class="eyebrow" data-hero-fade>1인 개발자 · 오닉소프트 대표</p>
-    <h1 class="h-display hero-title" data-lines data-hero><span class="line-mask"><span>필요한 프로그램을</span></span><span class="line-mask"><span>만들고, 팔고,</span></span><span class="line-mask"><span><em>직접 운영</em>합니다.</span></span></h1>
+    <p class="eyebrow" data-hero-fade>AI BUILDER · 조규송</p>
+    <h1 class="h-display hero-title" data-lines data-hero><span class="line-mask"><span>AI로 필요한 것을</span></span><span class="line-mask"><span>만들고, 팔고,</span></span><span class="line-mask"><span><em>직접 운영</em>합니다.</span></span></h1>
     <div class="hero-foot">
-      <p class="lead" data-hero-fade>방송 자동화 제품 AutoLed를 만들어 팔고, 업무 자동화 프로그램, 홈페이지, 서버, 영상까지 기획부터 운영까지 혼자 맡습니다. 이 페이지에서 만든 것을 전부 직접 보고 눌러 볼 수 있습니다.</p>
+      <p class="lead" data-hero-fade>기획, 디자인, 개발, 배포, 운영까지 AI와 함께 혼자 끝내는 AI&nbsp;Builder입니다. 방송 자동화 제품 AutoLed를 만들어 팔고, 업무 자동화 프로그램, 홈페이지, 서버, 영상까지 직접 만들고 운영합니다. 이 페이지에서 만든 것을 전부 직접 보고 눌러 볼 수 있습니다.</p>
       <div class="btn-row" data-hero-fade><a class="btn btn-primary" href="#works" data-magnet>작업 보기<i class="ph ph-arrow-down" aria-hidden="true"></i></a><a class="btn btn-ghost" href="{GITHUB}" data-magnet><i class="ph ph-github-logo" aria-hidden="true"></i>GitHub</a></div>
     </div>
-    <div class="hero-meta" data-hero-fade><div>NOW<b>AutoLed 2.1.0 판매 중</b></div><div>FOCUS<b>앱 · 업무 자동화 · 웹 · 서버</b></div><div>WORKS<b>작업 {N}개</b></div></div>
+    <div class="hero-meta" data-hero-fade><div>ROLE<b>AI Builder · 프로덕트 엔지니어</b></div><div>NOW<b>AutoLed 2.1.0 판매 중</b></div><div>FOCUS<b>앱 · 업무 자동화 · 웹 · 서버</b></div></div>
   </div>
   <div class="scroll-hint" aria-hidden="true">SCROLL</div>
 </section>
@@ -934,8 +934,8 @@ def home():
     <a href="{PDF}">PDF로 받기<span>인쇄용 한 권</span></a>
   </div>
 </section>"""
-    desc = "방송 자동화 제품 AutoLed, 업무 자동화 프로그램, 홈페이지, 서버, 영상까지 직접 만들고 운영하는 1인 개발자 조규송의 작업 11가지. 화면, 영상, 움직이는 시안을 직접 볼 수 있습니다."
-    return shell("조규송 포트폴리오", desc, body, rel, home=True)
+    desc = "기획부터 디자인, 개발, 운영까지 AI와 함께 혼자 끝내는 AI Builder 조규송. 방송 자동화 제품 AutoLed, 업무 자동화 프로그램, 홈페이지, 서버, 영상까지 작업 11가지. 화면, 영상, 움직이는 시안을 직접 볼 수 있습니다."
+    return shell("조규송 · AI Builder 포트폴리오", desc, body, rel, home=True)
 
 
 def main():
