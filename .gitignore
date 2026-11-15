@@ -1,3 +1,5 @@
 .DS_Store
 Thumbs.db
 *.pdf
+!assets/cho-kyusong-portfolio.pdf
+__pycache__/

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>로그인 · 라이선스 서버 — 조규송 포트폴리오</title>
+<meta name="description" content="AutoLed와 다른 프로그램이 함께 쓰는 계정과 이용 기간을 확인하는 서버와 관리자 화면입니다. 입금 확인과 기간 연장, 홈페이지 블로그까지 이 서버가 맡습니다.">
+<meta name="theme-color" content="#07090b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%2307090b%27/%3E%3Cg fill=%27%2345c6d6%27%3E%3Crect x=%277%27 y=%277%27 width=%275%27 height=%275%27/%3E%3Crect x=%2720%27 y=%277%27 width=%275%27 height=%275%27/%3E%3Crect x=%2713.5%27 y=%2713.5%27 width=%275%27 height=%275%27/%3E%3Crect x=%277%27 y=%2720%27 width=%275%27 height=%275%27/%3E%3Crect x=%2720%27 y=%2720%27 width=%275%27 height=%275%27/%3E%3C/g%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="로그인 · 라이선스 서버 — 조규송 포트폴리오">
+<meta property="og:description" content="AutoLed와 다른 프로그램이 함께 쓰는 계정과 이용 기간을 확인하는 서버와 관리자 화면입니다. 입금 확인과 기간 연장, 홈페이지 블로그까지 이 서버가 맡습니다.">
+<meta property="og:image" content="https://chokyusong.github.io/assets/img/login-server/dashboard.webp">
+<script>(function(d){var r=d.documentElement;if(!window.matchMedia||!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add('anim');try{if(sessionStorage.getItem('pt')){r.classList.add('page-enter');sessionStorage.removeItem('pt')}}catch(e){}setTimeout(function(){if(!r.classList.contains('anim-ready'))r.classList.remove('anim','page-enter')},4000)}})(document)</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="../assets/css/site.css?v=13e3cd05">
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<div class="grain" aria-hidden="true"></div>
+<div class="curtain" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<header class="nav"><div class="wrap nav-in">
+  <a class="brand" href="../index.html" aria-label="조규송 포트폴리오 처음으로"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>조규송 <small>CHO KYUSONG</small></a>
+  <div class="nav-meta" aria-hidden="true"><span class="live-dot"></span>KST <span data-clock></span></div>
+  <nav class="nav-links" aria-label="주요 메뉴"><a href="../index.html#works">작업</a><a href="../index.html#about">소개</a><a class="nav-keep" href="../assets/cho-kyusong-portfolio.pdf">PDF</a><a class="nav-cta" href="../index.html#contact">연락</a></nav>
+</div></header>
+<main id="main">
+<section class="case-hero wrap">
+  <a class="back" href="../index.html#works"><i class="ph ph-arrow-left" aria-hidden="true"></i>모든 작업</a>
+  <div class="case-top" data-reveal="fade"><span class="eyebrow">서버 · 운영 · 비공개 저장소</span><span class="idx">06 / 11</span></div>
+  <h1 class="case-title" data-lines><span class="line-mask"><span>로그인 ·</span></span><span class="line-mask"><span>라이선스 서버</span></span></h1>
+  <p class="case-sum" data-reveal>AutoLed와 다른 프로그램이 함께 쓰는 계정과 이용 기간을 확인하는 서버와 관리자 화면입니다. 입금 확인과 기간 연장, 홈페이지 블로그까지 이 서버가 맡습니다.</p>
+  <dl class="meta" style="--cols:4" data-reveal><div><dt>맡은 일</dt><dd>기획 · 개발 · 운영 (1인)</dd></div><div><dt>시작</dt><dd>2026년 8월</dd></div><div><dt>기술</dt><dd>Python, FastAPI, SQLite, Nginx, systemd</dd></div><div><dt>기록</dt><dd>커밋 286</dd></div></dl>
+  <figure class="case-cover" data-clip><img src="../assets/img/login-server/dashboard.webp" width="1440" height="900" alt="관리자 첫 화면. 회원, 입금, 방문, 서버 상태를 한 화면에서 봄. 예시 자료" fetchpriority="high"></figure>
+</section>
+<section class="wrap" style="margin-top:clamp(80px,10vw,150px)">
+  <div class="block-head" data-reveal><span class="idx">이야기</span></div>
+  <dl class="story"><div class="story-item" data-reveal><dt><span class="idx">01</span><b>목적</b></dt><dd>AutoLed를 판매하려면 계정과 이용 기간을 관리하고, 앱이 켜질 때마다 확인할 서버가 필요했습니다.</dd></div><div class="story-item" data-reveal><dt><span class="idx">02</span><b>만든 것</b></dt><dd>앱 로그인과 이용권 검증을 하는 서버와 관리자 화면입니다. <strong>은행 입금 알림을 읽어 이용 기간을 자동으로 늘리고</strong>, 새 프로그램은 서버 코드를 고치지 않고 관리자 화면에서 등록해 같은 로그인을 씁니다.</dd></div><div class="story-item" data-reveal><dt><span class="idx">03</span><b>함께 맡는 일</b></dt><dd>홈페이지 블로그와 구축 사례를 올리는 작은 CMS, 방문 통계도 이 서버가 맡습니다.</dd></div></dl>
+  <section class="block"><div class="block-head" data-reveal><h2 class="h-2">무엇과 이어져 있나</h2></div><div class="hub"><div class="hub-core" data-reveal><b>로그인 서버</b><span>계정 · 이용권 · 관리자</span></div><div class="hub-node" data-reveal><b>데스크톱 앱</b><span>AutoLed 등 프로그램이 켜질 때 로그인과 이용권을 확인</span></div><div class="hub-node" data-reveal><b>입금 알림</b><span>입금이 확인되면 이용 기간을 자동으로 연장</span></div><div class="hub-node" data-reveal><b>관리자 화면</b><span>회원, 입금, 글, 서버 상태를 한곳에서 관리</span></div><div class="hub-node" data-reveal><b>홈페이지</b><span>블로그 글과 구축 사례 페이지, 방문 통계</span></div></div></section><section class="block"><div class="block-head" data-reveal><h2 class="h-2">운영하며 챙기는 것</h2></div><ul class="points"><li data-reveal><i class="ph ph-users-three" aria-hidden="true"></i><span>관리자 여러 명과 역할, OTP, 모든 쓰기에 감사 기록을 남깁니다.</span></li><li data-reveal><i class="ph ph-signature" aria-hidden="true"></i><span>앱이 받는 토큰은 서버 키로 서명합니다.</span></li><li data-reveal><i class="ph ph-git-branch" aria-hidden="true"></i><span>커밋마다 별도 폴더로 배포하고 버전 태그를 달아, 문제가 생기면 이전 버전으로 바로 돌아갑니다.</span></li><li data-reveal><i class="ph ph-shield-check" aria-hidden="true"></i><span>지나치게 잦은 접속은 자동으로 막고, 서버가 멈추면 다시 켜지게 둡니다.</span></li></ul></section><section class="block"><div class="block-head" data-reveal><h2 class="h-2">관리자 화면</h2><p>실제 운영 자료가 아니라 예시 자료로 띄워 찍었습니다. 계정, 이름, 금액, 방문 수는 모두 예시입니다.</p></div><div class="gallery"><figure class="g-item w6" data-reveal><button class="g-btn" type="button" data-lb="admin" data-full="../assets/img/login-server/posts.webp" data-cap="블로그 글 목록. 블로그 글과 구축 사례를 여기서 올리고 고칩니다." data-cursor="크게"><img src="../assets/img/login-server/posts.webp" width="1440" height="900" alt="블로그 글 목록. 블로그 글과 구축 사례를 여기서 올리고 고칩니다." loading="lazy" decoding="async"></button><figcaption>블로그 글 목록. 블로그 글과 구축 사례를 여기서 올리고 고칩니다.</figcaption></figure><figure class="g-item w6" data-reveal><button class="g-btn" type="button" data-lb="admin" data-full="../assets/img/login-server/case-edit.webp" data-cap="구축 사례 편집. 문제, 만든 것, 결과 칸을 채우면 사이트에 그대로 나옵니다." data-cursor="크게"><img src="../assets/img/login-server/case-edit.webp" width="1440" height="900" alt="구축 사례 편집. 문제, 만든 것, 결과 칸을 채우면 사이트에 그대로 나옵니다." loading="lazy" decoding="async"></button><figcaption>구축 사례 편집. 문제, 만든 것, 결과 칸을 채우면 사이트에 그대로 나옵니다.</figcaption></figure><figure class="g-item w6" data-reveal><button class="g-btn" type="button" data-lb="admin" data-full="../assets/img/login-server/dashboard.webp" data-cap="관리자 첫 화면. 회원, 입금, 방문, 서버 상태 요약." data-cursor="크게"><img src="../assets/img/login-server/dashboard.webp" width="1440" height="900" alt="관리자 첫 화면. 회원, 입금, 방문, 서버 상태 요약." loading="lazy" decoding="async"></button><figcaption>관리자 첫 화면. 회원, 입금, 방문, 서버 상태 요약.</figcaption></figure></div></section>
+  
+  <p class="notice" data-reveal><i class="ph ph-eye-slash" aria-hidden="true"></i><span><b>공개 범위</b> · 서버 주소, 키, 검증 절차의 세부는 공개하지 않습니다. 화면은 예시 자료로 띄워 찍었습니다.</span></p>
+</section>
+<a class="next wrap" href="bighand.html" data-cursor="다음">
+  <span class="mono">다음 작업 · 07</span>
+  <span class="next-title">큰손탐지기 수집 서버<i class="ph ph-arrow-right" aria-hidden="true"></i></span>
+</a>
+</main>
+<footer class="foot wrap"><p>© 2026 조규송 (Cho Kyusong)</p><p>비공개 저장소의 소스 코드와 핵심 로직은 공개하지 않습니다. 화면 속 이름, 금액, 계정은 예시입니다.</p></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js" defer></script>
+<script src="../assets/js/site.js?v=0c00d83d" defer></script>
+</body>
+</html>
