@@ -32,11 +32,12 @@ RESUME_EN = {
         "working services, then sells and operates them.",
         "For over four years as Content Planning Team Lead at an MCN, I led a team of 5, managed 20 creators, planned content, built "
         "broadcast systems, and ran studio operations and technical support. There I began automating company work "
-        "myself with GPT and Python, including settlements, invoice checks and automatic broadcast scene switching. "
+        "myself with GPT and Python, including settlements, invoice checks and automatic broadcast scene switching. Settlement work went from 5 hours "
+        "to 3 minutes, with no more calculation mistakes. "
         "In September 2025 I founded ONICSOFT, where I sell and operate the broadcast automation product AutoLed "
         "for about 15 paying customers.",
     ],
-    "numbers": [("6 yrs 2 mos", "Experience"), ("~15", "Paying AutoLed customers"), ("78,844", "Donation records processed in one day"),
+    "numbers": [("6 yrs 2 mos", "Experience"), ("~15", "Paying AutoLed customers"), ("5 h → 3 min", "MCN settlement automation"),
                 ("22 s → 0.25 s", "Dashboard first load"), ("47 / 48 wks", "Matched the legacy payroll sheet")],
     "way": "I write code together with AI coding agents. What to build, what is wrong, and when to ship are my "
            "decisions, and I verify them myself.",
@@ -119,7 +120,7 @@ RESUME_EN = {
             "period": "2021.07 – 2025.11 (4 yrs 5 mos)",
             "desc": "Held concurrently with the broadcast technology company (2021.07–10) and ONICSOFT (2025.09–11).",
             "bullets": ["Led a team of 5 and managed 20 affiliated creators and streamers, including care and revenue-share consultations",
-                        "Built in-house automation tools in Python with GPT: automatic settlement, invoice checks, automatic OBS · Resolume switching for “Excel broadcast” shows",
+                        "Built in-house automation tools in Python with GPT: automatic settlement (5 hours → 3 minutes, no more calculation mistakes), invoice checks, automatic OBS · Resolume switching for “Excel broadcast” shows",
                         "Installed and set up broadcast equipment (PCs, lighting, cameras, audio) and trained creators to use it",
                         "Created broadcast design assets (signature emotes, LIVE standby screens, banner GIFs) in Photoshop and After Effects"],
         },
