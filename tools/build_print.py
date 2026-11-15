@@ -224,8 +224,8 @@ h3 {{ font-size:10.5pt; margin-bottom:2.5mm; padding-bottom:1.5mm; border-bottom
   <div class="cols">
     <div><h3>연혁</h3><ol class="hist">
       <li><time>2020.10</time>방송 기술 회사 입사. 장비 세팅과 방송 디자인</li>
-      <li><time>2021.07</time>MCN 회사 콘텐츠기획팀 팀장. 정산·자동 전환 프로그램을 회사 안에서 만듦</li>
-      <li><time>2025.09</time>오닉소프트 시작, AutoLed 개발</li>
+      <li><time>2021.07</time>MCN 회사 팀장(방송 기술 회사와 겸직). 사내 자동화 프로그램</li>
+      <li><time>2025.09</time>오닉소프트 시작(MCN과 겸직), AutoLed</li>
       <li><time>2026.06</time>PDF2Obsidian 공개</li>
       <li><time>2026.08</time>로그인 서버 운영, AutoLed 정식 배포, 회사 홈페이지</li>
       <li><time>2026.09</time>모션그래픽 작업실, 유튜브 채널, 납품 업체 엑셀 장부 자동화</li>
@@ -250,7 +250,7 @@ h3 {{ font-size:10.5pt; margin-bottom:2.5mm; padding-bottom:1.5mm; border-bottom
     <div><span>웹 포트폴리오 · 이력서</span>chokyusong.github.io</div>
     <div><span>이메일</span>{e(B.EMAIL)}</div>
     <div><span>GitHub</span>github.com/Chokyusong</div>
-    <div><span>카카오톡</span>pf.kakao.com/_exgErX</div>
+    <div><span>근무 형태 (모두 가능)</span>정규직·계약직·프리랜서 / 출근·원격</div>
   </div>
 </div></section>
 <section class="toc"><div class="wrap"><h2>하는 일</h2><div class="fields">{fields}</div><h2>작업 {B.N}가지</h2><ol>{idx}</ol>

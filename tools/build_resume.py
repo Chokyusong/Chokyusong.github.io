@@ -16,6 +16,7 @@ RESUME = {
     "name": "조규송",
     "name_en": "Cho Kyusong",
     "title": "AI Builder · 서비스 기획 · 업무 자동화",
+    "availability": "정규직 · 계약직 · 프리랜서 모두 가능 · 출근과 원격 모두 가능",
     "contacts": [("이메일", "joung2156@gmail.com", "mailto:joung2156@gmail.com"),
                  ("포트폴리오", "chokyusong.github.io", "https://chokyusong.github.io/"),
                  ("GitHub", "github.com/Chokyusong", "https://github.com/Chokyusong"),
@@ -110,7 +111,7 @@ RESUME = {
             "company": "MCN 회사",
             "role": "콘텐츠기획팀 팀장 · 총괄",
             "period": "2021.07 – 2025.11 (4년 5개월)",
-            "desc": "",
+            "desc": "2021.07~10은 방송 기술 회사, 2025.09~11은 오닉소프트와 겸직했습니다.",
             "bullets": ["회사 운영에 필요한 프로그램 직접 제작: 자동 정산, 계산서 발행 확인, 엑셀방송 OBS·레졸룸 자동 전환",
                         "방송 장비(PC·조명·카메라·오디오) 설치와 세팅, 크리에이터 장비 교육",
                         "방송 디자인 요소(시그니처 이모티콘, LIVE 대기 화면, 방송 배너 GIF) 제작: Photoshop, After Effects",
@@ -120,7 +121,7 @@ RESUME = {
             "company": "방송 기술 회사",
             "role": "장비 세팅 · 방송 디자인",
             "period": "2020.10 – 2021.10 (1년 1개월)",
-            "desc": "",
+            "desc": "2021.07부터 MCN 회사와 겸직했습니다.",
             "bullets": ["PC 장비 설치와 조명·카메라·오디오 세팅",
                         "방송 디자인 요소(시그니처 이모티콘, LIVE 대기 화면, 방송 배너 GIF) 제작: Photoshop"],
         },
@@ -138,7 +139,7 @@ LABELS = {
     "lang": "ko", "doc": "이력서", "more": "자세히", "code": "코드 보기", "got": "성과", "edu": "학력",
     "back": "← 포트폴리오", "pdf": "PDF로 받기", "pdf_href": "assets/cho-kyusong-resume.pdf",
     "other": "English", "other_href": "resume-en.html",
-    "decisions": "직접 판단하고 확인한 것", "skills": "핵심 역량", "career": "경력", "career_total": "총 6년 2개월",
+    "decisions": "직접 판단하고 확인한 것", "skills": "핵심 역량", "career": "경력", "career_total": "총 6년 2개월 · 겹치는 기간은 겸직",
     "extra": "그 밖의 작업", "tools": "쓰는 도구", "language": "언어",
     "foot": "비공개 저장소의 소스 코드와 핵심 로직은 공개하지 않습니다. 작업별 화면과 영상은 chokyusong.github.io에서 볼 수 있습니다.",
 }
@@ -175,6 +176,7 @@ def render(r, base="", private=False):
     if r.get("education"):
         edu = f'<h2>{L["edu"]}</h2><ul class="plain">{li(r["education"])}</ul>'
     tools = "".join(f"<span>{e(t)}</span>" for t in r["tools"])
+    avail = f'<p class="avail">{e(r["availability"])}</p>' if r.get("availability") else ""
     robots = '<meta name="robots" content="noindex">'
     bar = "" if private else (f'<div class="bar"><a href="{base}index.html">{L["back"]}</a><span>'
                               f'<a class="alt" href="{base}{L["other_href"]}">{L["other"]}</a>'
@@ -199,6 +201,7 @@ h1,h2,h3,h4 {{ margin:0; letter-spacing:-0.02em; }}
 .top h1 {{ font-size:26pt; font-weight:800; line-height:1.1; }}
 .top h1 small {{ font-size:11pt; color:var(--mute); font-weight:500; margin-left:2.5mm; letter-spacing:0; }}
 .top .role {{ color:var(--acc); font-weight:700; font-size:11pt; margin:2mm 0 0; }}
+.avail {{ margin:1.2mm 0 0; font-size:8.6pt; color:var(--sub); }}
 .contacts {{ display:grid; gap:.8mm; text-align:right; font-size:8.6pt; color:var(--mute); }}
 .contacts b {{ color:var(--ink); font-weight:600; }}
 .summary {{ margin:4mm 0 3.5mm; font-size:10pt; color:var(--sub); }}
@@ -256,7 +259,7 @@ ul {{ margin:1.2mm 0 0; padding-left:4.2mm; }} li {{ margin-bottom:.5mm; }}
 {bar}
 <main class="page">
   <header class="top">
-    <div><h1>{e(r["name"])}<small>{e(r["name_en"])}</small></h1><p class="role">{e(r["title"])}</p></div>
+    <div><h1>{e(r["name"])}<small>{e(r["name_en"])}</small></h1><p class="role">{e(r["title"])}</p>{avail}</div>
     <div class="contacts">{contacts}</div>
   </header>
   <div class="summary">{"".join(f"<p>{e(x)}</p>" for x in r["summary"])}</div>

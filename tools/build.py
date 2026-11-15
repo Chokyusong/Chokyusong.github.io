@@ -785,8 +785,8 @@ def home():
     mq = "".join(f"<span>{e(w)}</span>" for w in marquee_words) * 2
 
     history = [("2020.10", "방송 기술 회사 입사. 방송 장비 세팅과 방송 화면 디자인"),
-               ("2021.07", "MCN 회사 콘텐츠기획팀 팀장. 크리에이터 관리와 함께 정산, 계산서 확인, OBS·레졸룸 자동 전환 프로그램을 회사 안에서 만듦"),
-               ("2025.09", "오닉소프트 시작"), ("2025.10", "AutoLed 개발 시작"), ("2026.06", "PDF2Obsidian 공개"), ("2026.08", "로그인 서버 운영, AutoLed 정식 배포, 회사 홈페이지"),
+               ("2021.07", "MCN 회사 콘텐츠기획팀 팀장. 크리에이터 관리와 함께 정산, 계산서 확인, OBS·레졸룸 자동 전환 프로그램을 회사 안에서 만듦. 2021.10까지 방송 기술 회사와 겸직"),
+               ("2025.09", "오닉소프트 시작. 2025.11까지 MCN 회사와 겸직"), ("2025.10", "AutoLed 개발 시작"), ("2026.06", "PDF2Obsidian 공개"), ("2026.08", "로그인 서버 운영, AutoLed 정식 배포, 회사 홈페이지"),
                ("2026.09", "모션그래픽 작업실, 유튜브 채널 시작, 납품 업체 엑셀 장부 자동화"), ("2026.10", "후원 데이터 집계 서버, 엔터 정산, CCTV 관제, 거래장부 프로그램"),
                ("2026.11", "AutoLed 2.1.0, 엔터 회사 홈페이지 ASTRA 제작")]
     by = {p["slug"]: p for p in PROJECTS}
@@ -912,7 +912,7 @@ def home():
   <p class="idx" data-reveal>09 — 연락</p>
   <h2 class="contact-title" data-lines><span class="line-mask"><span>함께 일할 자리가</span></span><span class="line-mask"><span>있다면<span class="accent">.</span></span></span></h2>
   <div class="contact-grid">
-    <p class="lead" data-reveal>Python 데스크톱 앱, 업무 자동화, 서버 개발과 운영, 웹과 영상 경험을 살릴 수 있는 일에 관심이 있습니다. 비공개 저장소의 자세한 내용은 면담에서 화면으로 보여 드릴 수 있습니다.</p>
+    <p class="lead" data-reveal>Python 데스크톱 앱, 업무 자동화, 서버 개발과 운영, 웹과 영상 경험을 살릴 수 있는 일에 관심이 있습니다. 정규직, 계약직, 프리랜서 모두 가능하고 출근과 원격 모두 괜찮습니다. 비공개 저장소의 자세한 내용은 면담에서 화면으로 보여 드릴 수 있습니다.</p>
     <div class="btn-row" data-reveal><a class="btn btn-primary" href="{KAKAO}" data-magnet><i class="ph ph-chat-circle-dots" aria-hidden="true"></i>카카오톡으로 연락</a><a class="btn btn-ghost" href="mailto:{EMAIL}" data-magnet><i class="ph ph-envelope-simple" aria-hidden="true"></i>{EMAIL}</a></div>
   </div>
   <div class="big-links" data-reveal style="margin-top:clamp(48px,6vw,80px)">
