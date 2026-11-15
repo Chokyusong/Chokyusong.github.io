@@ -249,7 +249,6 @@ h3 {{ font-size:10.5pt; margin-bottom:2.5mm; padding-bottom:1.5mm; border-bottom
   <div class="contact">
     <div><span>웹 포트폴리오 · 이력서</span>chokyusong.github.io</div>
     <div><span>이메일</span>{e(B.EMAIL)}</div>
-    <div><span>GitHub</span>github.com/Chokyusong</div>
     <div><span>근무 형태 · 모두 가능 · 오닉소프트는 부업</span>정규직·계약직·프리랜서 / 출근·원격</div>
   </div>
 </div></section>

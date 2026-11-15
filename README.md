@@ -44,6 +44,7 @@ py -3 -m http.server 8792 --directory .
 - 이력서(`resume.html`·`resume-en.html`, `tools/build_resume.py`·`tools/resume_en.py`) 공개판에는 전화번호, 학력, 전 회사 이름을 넣지 않는다. 그 셋이 든 지원용 판은 저장소 밖에서만 만든다.
 - 직무 이름은 `build_resume.py`의 `RESUME["title"]` 한 곳에서 정하고 첫 화면·인쇄판이 따라 쓴다. 한글판 숫자·사실을 바꾸면 `resume_en.py`도 같이 고친다.
 - 검색엔진에 나오지 않게 한다(대표 2026-11-16). 모든 페이지에 `noindex, nofollow`(build.py `shell`, 인쇄판·이력서도 noindex), PDF는 `robots.txt`로 수집을 막는다. 사이트맵·검색 등록은 하지 않는다.
+- GitHub 링크(프로필·저장소)는 사이트·이력서·인쇄판 어디에도 넣지 않는다(대표 2026-11-16 "깃허브 링크는 빼"). 기술 이름으로 GitHub Actions 등을 적는 것은 괜찮다.
 - 그만둔 작업은 "개발 중"으로 두지 않고 뺀다.
 
 © 2026 조규송. 그림과 글의 무단 재사용을 허용하지 않습니다.

@@ -25,7 +25,6 @@ RESUME_EN = {
     "availability": "Open to full-time, contract or freelance work · on-site or remote · ONICSOFT continues as a side business",
     "contacts": [("Email", R.RESUME["contacts"][0][1], R.RESUME["contacts"][0][2]),
                  ("Portfolio", "chokyusong.github.io", "https://chokyusong.github.io/"),
-                 ("GitHub", "github.com/Chokyusong", "https://github.com/Chokyusong"),
                  ("Company", "onicsoft.co.kr", "https://onicsoft.co.kr/")],
     "summary": [
         "An AI service planning and workflow automation specialist who uses AI coding agents to turn ideas into "
@@ -126,7 +125,7 @@ RESUME_EN = {
         },
     ],
     "extra_projects": [("PDF2Obsidian", "Open-source tool that turns PDFs and lecture transcripts into Obsidian notes (2026.06, MIT). "
-                        "Code and automated tests are public.", "work/pdf2obsidian.html", "https://github.com/Chokyusong/pdf2obsidian"),
+                        "Code and automated tests are public.", "work/pdf2obsidian.html"),
                        ("AI content planning", "A one-source multi-use system that adapts one piece of content to blog, YouTube, Naver and social formats; SEO; thumbnails and ad creatives with AI image tools (2026.09 –)", None),
                        ("Websites", "Planned, built and run the ONICSOFT website; 22 industry samples; an 8-page animated draft for the ASTRA entertainment company (2026.08 –)", "work/onicsoft-homepage.html"),
                        ("Motion graphics", "271 effects made with code and Blender; AutoLed promo videos and broadcast alerts (2026.09 –)", "work/motion.html")],

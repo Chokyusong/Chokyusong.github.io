@@ -18,7 +18,6 @@ IMG = os.path.join(ROOT, "assets", "img")
 CLIPS = "https://chokyusong.github.io/motion-parts/clips/"
 KAKAO = "https://pf.kakao.com/_exgErX/chat"
 EMAIL = "joung2156@gmail.com"
-GITHUB = "https://github.com/Chokyusong"
 YOUTUBE = "https://www.youtube.com/@onicsoft-ai"
 PDF = "assets/cho-kyusong-portfolio.pdf"
 ASOF = "2026년 11월 15일"
@@ -113,7 +112,7 @@ PROJECTS = [
                 ("OynwWtQM3Lg", "BJ 방송 자동화 프로그램, 1년 손님 한 곳에서 BJ 10명까지")]}),
         ],
         "notice": "소스 코드와 후원 감지 방식은 공개하지 않습니다. 공개 저장소에는 설치 파일만 둡니다. 화면은 예시 데이터로 띄워 찍었습니다.",
-        "links": [("제품 페이지", "https://onicsoft.co.kr/autoled.html"), ("설치 파일 저장소", "https://github.com/Chokyusong/AutoLed-Releases")],
+        "links": [("제품 페이지", "https://onicsoft.co.kr/autoled.html")],
     },
     {
         "slug": "astra",
@@ -430,7 +429,7 @@ PROJECTS = [
             ]}),
         ],
         "notice": "누구나 쓰고 고칠 수 있는 MIT 라이선스로 공개했습니다. 화면 속 PDF와 자막은 예시 자료입니다.",
-        "links": [("저장소 보기", "https://github.com/Chokyusong/pdf2obsidian")],
+        "links": [],
     },
 ]
 
@@ -851,7 +850,7 @@ def home():
 <section class="section wrap" id="works">
   <div class="section-head">
     <div><p class="idx" data-reveal>03 — 모든 작업</p>{lines_html(["만든 것", f"{N}가지"], "h2", "h-1")}</div>
-    <p class="lead" data-reveal>프로그램, 업무 자동화, 홈페이지, 서버, 모션그래픽으로 나눠 정리했습니다. 줄을 누르면 화면, 영상, 직접 눌러 보는 데모를 모은 상세 페이지가 열립니다. 비공개 저장소는 핵심 로직 없이 무엇을 만들고 어떤 결과가 났는지만 소개합니다. 공개 코드는 <a class="text-link" href="https://github.com/Chokyusong/pdf2obsidian">PDF2Obsidian 저장소</a>에서 볼 수 있습니다.</p>
+    <p class="lead" data-reveal>프로그램, 업무 자동화, 홈페이지, 서버, 모션그래픽으로 나눠 정리했습니다. 줄을 누르면 화면, 영상, 직접 눌러 보는 데모를 모은 상세 페이지가 열립니다. 비공개 저장소는 핵심 로직 없이 무엇을 만들고 어떤 결과가 났는지만 소개합니다.</p>
   </div>
   <div class="work-tabs" role="group" aria-label="분류 고르기" data-reveal>{work_tabs}</div>
   <div class="works" data-works>{"".join(rows)}</div>
@@ -914,11 +913,10 @@ def home():
   <p class="idx" data-reveal>09 — 연락</p>
   <h2 class="contact-title" data-lines><span class="line-mask"><span>함께 일할 자리가</span></span><span class="line-mask"><span>있다면<span class="accent">.</span></span></span></h2>
   <div class="contact-grid">
-    <p class="lead" data-reveal>Python 데스크톱 앱, 업무 자동화, 서버 개발과 운영, 웹과 영상 경험을 살릴 수 있는 일에 관심이 있습니다. 정규직, 계약직, 프리랜서 모두 가능하고 출근과 원격 모두 괜찮습니다. 입사하면 오닉소프트는 부업으로 운영합니다. 비공개 저장소의 자세한 내용은 면담에서 화면으로 보여 드릴 수 있습니다.</p>
+    <p class="lead" data-reveal>AI 서비스 기획, 업무 자동화(AX), PM·PO 자리에 관심이 있습니다. 기획한 것을 직접 만들어 확인해 볼 수 있다는 점이 제 강점입니다. 정규직, 계약직, 프리랜서 모두 가능하고 출근과 원격 모두 괜찮습니다. 입사하면 오닉소프트는 부업으로 운영합니다. 비공개 저장소의 자세한 내용은 면담에서 화면으로 보여 드릴 수 있습니다.</p>
     <div class="btn-row" data-reveal><a class="btn btn-primary" href="{KAKAO}" data-magnet><i class="ph ph-chat-circle-dots" aria-hidden="true"></i>카카오톡으로 연락</a><a class="btn btn-ghost" href="mailto:{EMAIL}" data-magnet><i class="ph ph-envelope-simple" aria-hidden="true"></i>{EMAIL}</a></div>
   </div>
   <div class="big-links" data-reveal style="margin-top:clamp(48px,6vw,80px)">
-    <a href="{GITHUB}">GitHub<span>Chokyusong</span></a>
     <a href="https://onicsoft.co.kr/">회사 홈페이지<span>onicsoft.co.kr</span></a>
     <a href="{YOUTUBE}">유튜브 채널<span>AI로 회사키우기</span></a>
     <a href="resume.html">이력서<span>경력 · 역량 · PDF</span></a>

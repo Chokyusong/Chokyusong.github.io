@@ -19,7 +19,6 @@ RESUME = {
     "availability": "정규직 · 계약직 · 프리랜서 모두 가능 · 출근과 원격 모두 가능 · 입사하면 오닉소프트는 부업으로 운영",
     "contacts": [("이메일", "joung2156@gmail.com", "mailto:joung2156@gmail.com"),
                  ("포트폴리오", "chokyusong.github.io", "https://chokyusong.github.io/"),
-                 ("GitHub", "github.com/Chokyusong", "https://github.com/Chokyusong"),
                  ("회사", "onicsoft.co.kr", "https://onicsoft.co.kr/")],
     "summary": [
         "AI 코딩 에이전트로 아이디어를 실제로 작동하는 서비스로 만들고, 판매하고, 운영하는 AI 서비스 기획·업무 자동화 전문가입니다.",
@@ -109,7 +108,7 @@ RESUME = {
         },
     ],
     "extra_projects": [("PDF2Obsidian", "PDF와 강의 자막을 옵시디언 노트로 바꾸는 오픈소스 도구 (2026.06, MIT). 코드와 자동 테스트를 공개했습니다.",
-                        "work/pdf2obsidian.html", "https://github.com/Chokyusong/pdf2obsidian"),
+                        "work/pdf2obsidian.html"),
                        ("AI 콘텐츠 기획", "원본 하나를 블로그·유튜브·네이버·SNS 형식으로 나눠 쓰는 OSMU 체계, 검색 최적화(SEO), AI 이미지로 썸네일·광고 소재 제작 (2026.09 –)", None),
                        ("홈페이지", "오닉소프트 공식 홈페이지 기획·제작·운영, 업종별 견본 22종, 엔터 회사 ASTRA 움직이는 시안 8쪽 (2026.08 –)", "work/onicsoft-homepage.html"),
                        ("모션그래픽", "코드와 Blender로 만든 효과 271종, AutoLed 홍보영상과 방송 알림 (2026.09 –)", "work/motion.html")],
