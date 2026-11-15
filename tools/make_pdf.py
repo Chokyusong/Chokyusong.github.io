@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""print.html(포트폴리오)과 resume.html(이력서)을 A4 PDF로 찍는다. 창 없이(headless) 돌린다.
+"""print.html(포트폴리오)과 resume.html·resume-en.html(이력서)을 A4 PDF로 찍는다. 창 없이(headless) 돌린다.
 
     py -3 tools/make_pdf.py
 """
@@ -11,7 +11,8 @@ from playwright.sync_api import sync_playwright
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 JOBS = [("print.html", ROOT / "assets" / "cho-kyusong-portfolio.pdf", "조규송 · AI Builder · chokyusong.github.io"),
-        ("resume.html", ROOT / "assets" / "cho-kyusong-resume.pdf", "조규송 이력서 · chokyusong.github.io")]
+        ("resume.html", ROOT / "assets" / "cho-kyusong-resume.pdf", "조규송 이력서 · chokyusong.github.io"),
+        ("resume-en.html", ROOT / "assets" / "cho-kyusong-resume-en.pdf", "Cho Kyusong · Resume · chokyusong.github.io")]
 
 
 def foot(label):

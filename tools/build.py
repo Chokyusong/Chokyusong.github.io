@@ -838,21 +838,9 @@ def home():
   <p class="stats-note">{ASOF} 기준. 테스트 수는 각 저장소 기록, 경력은 이력서 기준입니다.</p>
 </section>
 
-<section class="show" data-show id="autoled">
-  <div class="show-sticky"><div class="wrap show-grid">
-    <div>
-      <div class="show-head"><p class="idx">02 — 대표 작업</p><h2 class="h-1">AutoLed</h2></div>
-      <div class="show-steps">{steps_html}</div>
-      <div class="show-progress" aria-hidden="true">{bars}</div>
-      <div class="show-cta"><a class="btn btn-primary" href="work/autoled.html" data-magnet>AutoLed 자세히 보기<i class="ph ph-arrow-right" aria-hidden="true"></i></a><a class="btn btn-ghost" href="https://onicsoft.co.kr/autoled.html" data-magnet>제품 페이지</a></div>
-    </div>
-    <div class="show-stage" aria-hidden="true"><div class="device"><div class="device-bar"><i></i><i></i><i></i><span data-show-label>AutoLed</span></div><div class="device-screen">{stage_imgs}</div></div></div>
-  </div></div>
-</section>
-
 <section class="section wrap" id="fields">
   <div class="section-head">
-    <div><p class="idx" data-reveal>03 — 하는 일</p>{lines_html(["한 분야만", "하지 않습니다."], "h2", "h-1")}</div>
+    <div><p class="idx" data-reveal>02 — 하는 일</p>{lines_html(["한 분야만", "하지 않습니다."], "h2", "h-1")}</div>
     <p class="lead" data-reveal>방송 자동화 제품을 팔면서, 회사 업무를 줄이는 프로그램, 홈페이지, 서버, 영상까지 직접 만들고 운영합니다. 그림을 누르면 아래 작업 목록이 그 분류로 정리되고, 이름표를 누르면 상세 페이지가 열립니다.</p>
   </div>
   <div class="fields">{fields_html}</div>
@@ -860,13 +848,25 @@ def home():
 
 <section class="section wrap" id="works">
   <div class="section-head">
-    <div><p class="idx" data-reveal>04 — 모든 작업</p>{lines_html(["만든 것", f"{N}가지"], "h2", "h-1")}</div>
-    <p class="lead" data-reveal>프로그램, 업무 자동화, 홈페이지, 서버, 모션그래픽으로 나눠 정리했습니다. 줄을 누르면 화면, 영상, 직접 눌러 보는 데모를 모은 상세 페이지가 열립니다. 비공개 저장소는 핵심 로직 없이 무엇을 만들고 어떤 결과가 났는지만 소개합니다.</p>
+    <div><p class="idx" data-reveal>03 — 모든 작업</p>{lines_html(["만든 것", f"{N}가지"], "h2", "h-1")}</div>
+    <p class="lead" data-reveal>프로그램, 업무 자동화, 홈페이지, 서버, 모션그래픽으로 나눠 정리했습니다. 줄을 누르면 화면, 영상, 직접 눌러 보는 데모를 모은 상세 페이지가 열립니다. 비공개 저장소는 핵심 로직 없이 무엇을 만들고 어떤 결과가 났는지만 소개합니다. 공개 코드는 <a class="text-link" href="https://github.com/Chokyusong/pdf2obsidian">PDF2Obsidian 저장소</a>에서 볼 수 있습니다.</p>
   </div>
   <div class="work-tabs" role="group" aria-label="분류 고르기" data-reveal>{work_tabs}</div>
   <div class="works" data-works>{"".join(rows)}</div>
 </section>
 <div class="hover-preview" aria-hidden="true">{"".join(pvs)}</div>
+
+<section class="show" data-show id="autoled">
+  <div class="show-sticky"><div class="wrap show-grid">
+    <div>
+      <div class="show-head"><p class="idx">04 — 대표 작업</p><h2 class="h-1">AutoLed</h2></div>
+      <div class="show-steps">{steps_html}</div>
+      <div class="show-progress" aria-hidden="true">{bars}</div>
+      <div class="show-cta"><a class="btn btn-primary" href="work/autoled.html" data-magnet>AutoLed 자세히 보기<i class="ph ph-arrow-right" aria-hidden="true"></i></a><a class="btn btn-ghost" href="https://onicsoft.co.kr/autoled.html" data-magnet>제품 페이지</a></div>
+    </div>
+    <div class="show-stage" aria-hidden="true"><div class="device"><div class="device-bar"><i></i><i></i><i></i><span data-show-label>AutoLed</span></div><div class="device-screen">{stage_imgs}</div></div></div>
+  </div></div>
+</section>
 
 <section class="section reel" data-reel id="motion">
   <div class="wrap section-head">
@@ -920,6 +920,7 @@ def home():
     <a href="https://onicsoft.co.kr/">회사 홈페이지<span>onicsoft.co.kr</span></a>
     <a href="{YOUTUBE}">유튜브 채널<span>AI로 회사키우기</span></a>
     <a href="resume.html">이력서<span>경력 · 역량 · PDF</span></a>
+    <a href="resume-en.html" lang="en">Resume (English)<span>Experience · Skills · PDF</span></a>
     <a href="{PDF}">포트폴리오 PDF<span>인쇄용 한 권</span></a>
   </div>
 </section>"""

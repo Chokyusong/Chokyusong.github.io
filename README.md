@@ -9,7 +9,7 @@ GitHub Pages로 올린 개인 포트폴리오 사이트. 방문자에게는 빌�
 - `assets/img/<slug>/` 작업별 실제 화면(webp), `assets/print/` 인쇄판용 작은 그림
 - `assets/cho-kyusong-portfolio.pdf` 인쇄판을 찍은 PDF
 - `works/astra/` ASTRA 움직이는 시안(상세 페이지 안에서 직접 조작)
-- `tools/build.py` 글과 그림 목록(PROJECTS) → 페이지, `tools/build_print.py` 인쇄판, `tools/build_resume.py` 이력서, `tools/make_pdf.py` PDF 두 개
+- `tools/build.py` 글과 그림 목록(PROJECTS) → 페이지, `tools/build_print.py` 인쇄판, `tools/build_resume.py` 이력서(한글), `tools/resume_en.py` 영문 이력서 자료(같은 틀), `tools/make_pdf.py` PDF 세 개(포트폴리오·이력서·영문 이력서)
 
 ## 고치는 법
 
@@ -41,7 +41,8 @@ py -3 -m http.server 8792 --directory .
 - 숫자는 저장소 기록과 README에 있는 것만 쓴다(2026-11-15 기준).
 - PANDAWA는 이름도 쓰지 않는다. 관리자 화면처럼 여러 서비스가 한 화면에 나오는 그림은 올리기 전에 그 이름이 없는지 본다(로그인 서버 그림은 그 메뉴와 카드를 지운 판).
 - CCTV는 관제(지켜보기)만, bighand는 "후원 데이터 집계 서버"로만 소개한다. 수집 방식과 후원자 정보, 대시보드 화면은 쓰지 않는다.
-- 이력서(`resume.html`, `tools/build_resume.py`) 공개판에는 전화번호, 학력, 전 회사 이름을 넣지 않는다. 그 셋이 든 지원용 판은 저장소 밖에서만 만든다.
+- 이력서(`resume.html`·`resume-en.html`, `tools/build_resume.py`·`tools/resume_en.py`) 공개판에는 전화번호, 학력, 전 회사 이름을 넣지 않는다. 그 셋이 든 지원용 판은 저장소 밖에서만 만든다.
+- 직무 이름은 `build_resume.py`의 `RESUME["title"]` 한 곳에서 정하고 첫 화면·인쇄판이 따라 쓴다. 한글판 숫자·사실을 바꾸면 `resume_en.py`도 같이 고친다.
 - 그만둔 작업은 "개발 중"으로 두지 않고 뺀다.
 
 © 2026 조규송. 그림과 글의 무단 재사용을 허용하지 않습니다.
