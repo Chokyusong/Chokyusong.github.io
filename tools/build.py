@@ -22,6 +22,8 @@ GITHUB = "https://github.com/Chokyusong"
 YOUTUBE = "https://www.youtube.com/@onicsoft-ai"
 PDF = "assets/cho-kyusong-portfolio.pdf"
 ASOF = "2026년 11월 15일"
+from build_resume import RESUME  # 직무 이름은 이력서와 한 곳에서 같이 쓴다
+ROLE = RESUME["title"]
 
 e = html.escape
 
@@ -815,7 +817,7 @@ def home():
       <p class="lead" data-hero-fade>기획, 디자인, 개발, 배포, 운영까지 AI와 함께 혼자 끝내는 AI&nbsp;Builder입니다. 방송 자동화 제품 AutoLed를 만들어 팔고, 업무 자동화 프로그램, 홈페이지, 서버, 영상까지 직접 만들고 운영합니다. 이 페이지에서 만든 것을 전부 직접 보고 눌러 볼 수 있습니다.</p>
       <div class="btn-row" data-hero-fade><a class="btn btn-primary" href="#works" data-magnet>작업 보기<i class="ph ph-arrow-down" aria-hidden="true"></i></a><a class="btn btn-ghost" href="resume.html" data-magnet><i class="ph ph-identification-card" aria-hidden="true"></i>이력서</a></div>
     </div>
-    <div class="hero-meta" data-hero-fade><div>ROLE<b>AI Builder · 프로덕트 엔지니어</b></div><div>NOW<b>AutoLed 2.1.0 판매 중</b></div><div>FOCUS<b>앱 · 업무 자동화 · 웹 · 서버</b></div></div>
+    <div class="hero-meta" data-hero-fade><div>ROLE<b>{e(ROLE)}</b></div><div>NOW<b>AutoLed 2.1.0 판매 중</b></div><div>FOCUS<b>앱 · 업무 자동화 · 웹 · 서버</b></div></div>
   </div>
   <div class="scroll-hint" aria-hidden="true">SCROLL</div>
 </section>
