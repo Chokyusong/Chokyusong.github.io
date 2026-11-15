@@ -33,7 +33,8 @@ RESUME_EN = {
         "For over four years as Content Planning Team Lead at an MCN, I led a team of 5, managed 20 creators, planned content, built "
         "broadcast systems, and ran studio operations and technical support. There I began automating company work "
         "myself with GPT and Python, including settlements, invoice checks and automatic broadcast scene switching. Settlement work went from 5 hours "
-        "to 3 minutes, with no more calculation mistakes. "
+        "to 3 minutes with no more calculation mistakes, and invoice checks and creator ranking and trend checks each "
+        "went from 1 hour to 30 seconds. "
         "In September 2025 I founded ONICSOFT, where I sell and operate the broadcast automation product AutoLed "
         "for about 15 paying customers.",
     ],
@@ -120,7 +121,8 @@ RESUME_EN = {
             "period": "2021.07 – 2025.11 (4 yrs 5 mos)",
             "desc": "Held concurrently with the broadcast technology company (2021.07–10) and ONICSOFT (2025.09–11).",
             "bullets": ["Led a team of 5 and managed 20 affiliated creators and streamers, including care and revenue-share consultations",
-                        "Built in-house automation tools in Python with GPT: automatic settlement (5 hours → 3 minutes, no more calculation mistakes), invoice checks, automatic OBS · Resolume switching for “Excel broadcast” shows",
+                        "Built in-house automation tools in Python with GPT: settlement 5 hours → 3 minutes (no more calculation mistakes), invoice checks 1 hour → 30 seconds, creator ranking and trend checks 1 hour → 30 seconds",
+                        "Built automatic OBS · Resolume scene switching for “Excel broadcast” shows",
                         "Installed and set up broadcast equipment (PCs, lighting, cameras, audio) and trained creators to use it",
                         "Created broadcast design assets (signature emotes, LIVE standby screens, banner GIFs) in Photoshop and After Effects"],
         },
