@@ -58,7 +58,7 @@ PROJECTS = [
         "tags": "Windows 앱 · 판매 중",
         "year": "2025.10 —",
         "short": "후원이 들어오면 방송 연출을 자동으로 실행하는 Windows 앱",
-        "summary": "후원 알림이 뜨는 순간 방송 연출을 자동으로 실행하고, 끝나면 원래 장면으로 돌려놓는 Windows 앱입니다. 혼자 기획하고 만들어 정식 판매하며, 업데이트와 운영까지 맡고 있습니다.",
+        "summary": "후원 알림이 뜨는 순간 방송 연출을 자동으로 실행하고, 끝나면 원래 장면으로 돌려놓는 Windows 앱입니다. 직접 기획하고 만들어 정식 판매하며, 업데이트와 운영까지 맡고 있습니다.",
         "preview": ("autoled", "ui-overview"),
         "meta": [("맡은 일", "기획 · 개발 · 배포 · 운영 (1인)"), ("시작", "2025년 10월"), ("현재", "2.1.0 판매 중 (2026.11)"),
                  ("기술", "Python, Tkinter, OBS WebSocket, Resolume OSC, Companion, Nuitka, Inno Setup"),
