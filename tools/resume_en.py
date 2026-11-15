@@ -30,7 +30,7 @@ RESUME_EN = {
     "summary": [
         "An AI service planning and workflow automation specialist who uses AI coding agents to turn ideas into "
         "working services, then sells and operates them.",
-        "For over four years as Content Planning Team Lead at an MCN, I managed creators, planned content, built "
+        "For over four years as Content Planning Team Lead at an MCN, I led a team of 5, managed 20 creators, planned content, built "
         "broadcast systems, and ran studio operations and technical support. There I began automating company work "
         "myself with GPT and Python, including settlements, invoice checks and automatic broadcast scene switching. "
         "In September 2025 I founded ONICSOFT, where I sell and operate the broadcast automation product AutoLed "
@@ -118,10 +118,10 @@ RESUME_EN = {
             "role": "Content Planning Team Lead",
             "period": "2021.07 – 2025.11 (4 yrs 5 mos)",
             "desc": "Held concurrently with the broadcast technology company (2021.07–10) and ONICSOFT (2025.09–11).",
-            "bullets": ["Built in-house automation tools in Python with GPT: automatic settlement, invoice checks, automatic OBS · Resolume switching for “Excel broadcast” shows",
+            "bullets": ["Led a team of 5 and managed 20 affiliated creators and streamers, including care and revenue-share consultations",
+                        "Built in-house automation tools in Python with GPT: automatic settlement, invoice checks, automatic OBS · Resolume switching for “Excel broadcast” shows",
                         "Installed and set up broadcast equipment (PCs, lighting, cameras, audio) and trained creators to use it",
-                        "Created broadcast design assets (signature emotes, LIVE standby screens, banner GIFs) in Photoshop and After Effects",
-                        "Managed affiliated creators and streamers, including care and revenue-share consultations"],
+                        "Created broadcast design assets (signature emotes, LIVE standby screens, banner GIFs) in Photoshop and After Effects"],
         },
         {
             "company": "Broadcast technology company",

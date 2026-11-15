@@ -224,7 +224,7 @@ h3 {{ font-size:10.5pt; margin-bottom:2.5mm; padding-bottom:1.5mm; border-bottom
   <div class="cols">
     <div><h3>연혁</h3><ol class="hist">
       <li><time>2020.10</time>방송 기술 회사 입사. 장비 세팅과 방송 디자인</li>
-      <li><time>2021.07</time>MCN 회사 팀장(방송 기술 회사와 겸직). GPT·Python 사내 자동화</li>
+      <li><time>2021.07</time>MCN 팀장, 팀원 5명(방송 기술 회사와 겸직). GPT·Python 사내 자동화</li>
       <li><time>2025.09</time>오닉소프트 시작(MCN과 겸직), AutoLed</li>
       <li><time>2026.06</time>PDF2Obsidian 공개</li>
       <li><time>2026.08</time>로그인 서버 운영, AutoLed 정식 배포, 회사 홈페이지</li>
