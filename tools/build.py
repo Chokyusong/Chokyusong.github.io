@@ -60,7 +60,7 @@ PROJECTS = [
         "summary": "후원 알림이 뜨는 순간 방송 연출을 자동으로 실행하고, 끝나면 원래 장면으로 돌려놓는 Windows 앱입니다. 직접 기획하고 만들어 정식 판매하며, 업데이트와 운영까지 맡고 있습니다.",
         "preview": ("autoled", "ui-overview"),
         "meta": [("맡은 일", "기획 · 개발 · 배포 · 운영 (1인)"), ("시작", "2025년 10월"), ("현재", "2.1.0 판매 중 (2026.11)"),
-                 ("기술", "Python, Tkinter, OBS WebSocket, Resolume OSC, Companion, Nuitka, Inno Setup"),
+                 ("들어간 기술", "Python, Tkinter, OBS WebSocket, Resolume OSC, Companion, Nuitka, Inno Setup"),
                  ("기록", "커밋 861 · 자동 테스트 2,051"), ("공개", "소스 비공개 · 설치 파일 공개")],
         "cover": ("autoled", "ui-timeline", "Timeline 편집기. 음원 파형 아래 OBS 장면, 와이와이캠, Companion, 레졸룸, 소리 트랙과 자동으로 놓인 장면 블록. 예시 음원"),
         "story": [
@@ -125,7 +125,7 @@ PROJECTS = [
         "summary": "크리에이터 매니지먼트, 개인방송, 브랜드·미디어 제작을 하는 엔터테인먼트 회사의 홈페이지 8쪽을 움직이는 시안으로 만들었습니다. 아래 창은 그림이 아니라 실제 시안이라 직접 스크롤하고 눌러 볼 수 있습니다.",
         "preview": ("astra", "home-pc"),
         "meta": [("맡은 일", "기획 · 디자인 · 프런트엔드 · 모션 (1인)"), ("시작", "2026년 11월"), ("상태", "움직이는 시안 확인 단계"),
-                 ("기술", "HTML, CSS, JavaScript · 실제 사이트는 Next.js와 PHP 백엔드"), ("기록", "커밋 280"), ("손님", "엔터테인먼트 회사")],
+                 ("들어간 기술", "HTML, CSS, JavaScript · 실제 사이트는 Next.js와 PHP 백엔드"), ("기록", "커밋 280"), ("손님", "엔터테인먼트 회사")],
         "cover": None,
         "first": ("live", {}),
         "story": [
@@ -159,7 +159,7 @@ PROJECTS = [
         "short": "BJ 최대 60명의 방송을 한 화면에서 지켜보는 관제 프로그램",
         "summary": "소속 BJ 최대 60명의 방송을 한 화면에서 지켜보고, 챙겨야 할 일은 텔레그램으로 알려 주는 관제 프로그램입니다.",
         "preview": ("cctv", "cover"),
-        "meta": [("맡은 일", "기획 · 개발 · 배포 (1인)"), ("시작", "2026년 10월"), ("형태", "PC 설치형 · 서버형"), ("기술", "Python, Windows, Telegram, SQLite")],
+        "meta": [("맡은 일", "기획 · 개발 · 배포 (1인)"), ("시작", "2026년 10월"), ("형태", "PC 설치형 · 서버형"), ("들어간 기술", "Python, Windows, Telegram, SQLite")],
         "cover": ("cctv", "cover", "CCTV 관제 화면. 방송 중인 BJ 영상 타일과 오른쪽 이벤트 기록. 예시 데이터"),
         "story": [
             ("문제", "매니저가 BJ 방을 하나씩 돌며 방송을 확인했습니다. 언제 켜고 몇 시간 했는지는 BJ 말에 기대야 했고, 큰 후원이나 채팅 끊김은 다음 날에야 알았습니다."),
@@ -196,7 +196,7 @@ PROJECTS = [
         "summary": "MCN 콘텐츠기획팀 팀장으로 일하면서, 사람이 손으로 하던 정산, 계산서 발행 확인, 크리에이터 랭킹·동향 확인을 GPT와 Python으로 직접 자동화했습니다. 정산은 5시간에서 3분으로 줄고 계산 실수가 없어졌습니다.",
         "preview": None,
         "pv_stat": ("5시간 → 3분", "MCN 정산 · GPT와 Python으로 자동화"),
-        "meta": [("맡은 일", "팀장 · 자동화 기획과 제작"), ("기간", "2021년 7월 – 2025년 11월 재직"), ("기술", "Python, ChatGPT, Excel"), ("팀", "팀원 5명 · 크리에이터 20명")],
+        "meta": [("맡은 일", "팀장 · 자동화 기획과 제작"), ("기간", "2021년 7월 – 2025년 11월 재직"), ("들어간 기술", "Python, ChatGPT, Excel"), ("팀", "팀원 5명 · 크리에이터 20명")],
         "cover": None,
         "first": ("perf", {"title": "자동화 전과 뒤", "text": "같은 일을 사람이 할 때와 프로그램이 할 때 걸린 시간입니다. 막대 길이는 걸린 시간입니다.", "rows": [
             ("정산", [("전", "100%", "5시간"), ("후", "1%", "3분")]),
@@ -223,7 +223,7 @@ PROJECTS = [
         "short": "엑셀 여러 장으로 하던 주간 정산을 프로그램으로",
         "summary": "엑셀 시트 여러 장으로 하던 주간 정산을, 자료 수집부터 계산까지 프로그램이 맡고 담당자는 예외만 확인해 확정하도록 바꿨습니다. 기존 정산 엑셀 48주 치와 맞춰 보니 47주의 계산 결과가 같았습니다.",
         "preview": ("enter-payroll", "cover"),
-        "meta": [("맡은 일", "기획 · 개발 · 배포 (1인)"), ("시작", "2026년 10월"), ("기술", "Python, PySide6, SQLite, Nuitka"), ("기록", "커밋 28 · 자동 테스트 141")],
+        "meta": [("맡은 일", "기획 · 개발 · 배포 (1인)"), ("시작", "2026년 10월"), ("들어간 기술", "Python, PySide6, SQLite, Nuitka"), ("기록", "커밋 28 · 자동 테스트 141")],
         "cover": ("enter-payroll", "cover", "이번 주 받을 돈, 줄 돈, 회사 몫 카드와 확인이 필요한 항목 목록. 예시 데이터"),
         "story": [
             ("문제", "매주 BJ 정산을 엑셀 시트 여러 장과 수식으로 했습니다. 개인방송과 경쟁방마다 나누는 방식이 달랐고, 수식이 틀리거나 자료가 빠져도 확정 전에 알아채기 어려웠습니다."),
@@ -265,7 +265,7 @@ PROJECTS = [
         "short": "두 번씩 적던 엑셀 장부를, 한 번 적으면 끝나는 프로그램으로",
         "summary": "엑셀 장부에 두 번씩 적던 납품과 입금을, 한 번 적으면 받을 돈까지 계산되는 Windows 프로그램으로 바꿨습니다. 엑셀을 먼저 고치고, 그래도 남는 문제 때문에 프로그램으로 옮겼습니다.",
         "preview": ("ledger", "cover"),
-        "meta": [("맡은 일", "분석 · 엑셀 자동화 · 프로그램 개발 (1인)"), ("시작", "2026년 9월"), ("기술", "Python, SQLite, Excel 연동, Windows"), ("확인", "자동 테스트 14 · 화면 테스트 15 · 엑셀 왕복 4")],
+        "meta": [("맡은 일", "분석 · 엑셀 자동화 · 프로그램 개발 (1인)"), ("시작", "2026년 9월"), ("들어간 기술", "Python, SQLite, Excel 연동, Windows"), ("확인", "자동 테스트 14 · 화면 테스트 15 · 엑셀 왕복 4")],
         "cover": ("ledger", "cover", "엑셀 장부와 거래장부 프로그램을 나란히 놓은 비교 화면. 예시 데이터"),
         "story": [
             ("자동화 전", "마트 전단, POP, 현수막을 납품하는 업체가 같은 거래를 엑셀 총원장과 거래처 시트에 두 번씩 적고, 월말에는 두 합계의 차액을 손으로 맞췄습니다. 입금내역을 붙여넣을 때마다 수식이 깨지곤 했습니다."),
@@ -307,7 +307,7 @@ PROJECTS = [
         "short": "프로그램 계정과 이용 기간을 확인하는 서버와 관리자 화면",
         "summary": "AutoLed와 다른 프로그램이 함께 쓰는 계정과 이용 기간을 확인하는 서버와 관리자 화면입니다. 입금 확인과 기간 연장, 홈페이지 블로그까지 이 서버가 맡습니다.",
         "preview": ("login-server", "dashboard"),
-        "meta": [("맡은 일", "기획 · 개발 · 운영 (1인)"), ("시작", "2026년 8월"), ("기술", "Python, FastAPI, SQLite, Nginx, systemd"), ("기록", "커밋 286")],
+        "meta": [("맡은 일", "기획 · 개발 · 운영 (1인)"), ("시작", "2026년 8월"), ("들어간 기술", "Python, FastAPI, SQLite, Nginx, systemd"), ("기록", "커밋 286")],
         "cover": ("login-server", "dashboard", "관리자 첫 화면. 회원, 입금, 방문, 서버 상태를 한 화면에서 봄. 예시 자료"),
         "story": [
             ("목적", "AutoLed를 판매하려면 계정과 이용 기간을 관리하고, 앱이 켜질 때마다 확인할 서버가 필요했습니다."),
@@ -346,7 +346,7 @@ PROJECTS = [
         "summary": "라이브 방송 수백 곳의 후원 데이터를 실시간으로 모아 집계하는 24시간 서버입니다. 1,350만 건으로 부하 시험을 해 병목을 고쳐 대시보드 응답을 수십 배 줄였습니다.",
         "preview": None,
         "pv_stat": ("22초 → 0.25초", "1,350만 건 부하 시험에서 대시보드 첫 화면"),
-        "meta": [("맡은 일", "기획 · 개발 · 운영 (1인)"), ("시작", "2026년 10월"), ("기술", "Python, Linux, systemd, GitHub Actions"), ("기록", "커밋 67 · 자동 테스트 84")],
+        "meta": [("맡은 일", "기획 · 개발 · 운영 (1인)"), ("시작", "2026년 10월"), ("들어간 기술", "Python, Linux, systemd, GitHub Actions"), ("기록", "커밋 67 · 자동 테스트 84")],
         "cover": None,
         "first": ("perf", {}),
         "story": [
@@ -376,7 +376,7 @@ PROJECTS = [
         "short": "제품 데모와 블로그까지 직접 만들고 운영하는 회사 사이트",
         "summary": "회사 소개, 제품, 모션그래픽, 구축 사례, 블로그를 담은 회사 홈페이지를 빌드 도구 없이 만들고, 올라가는 서버까지 직접 운영합니다.",
         "preview": ("onicsoft-homepage", "cover-pc"),
-        "meta": [("맡은 일", "기획 · 디자인 · 개발 · 운영 (1인)"), ("시작", "2026년 8월"), ("기술", "HTML, CSS, JavaScript · 서버는 Python"), ("기록", "커밋 235")],
+        "meta": [("맡은 일", "기획 · 디자인 · 개발 · 운영 (1인)"), ("시작", "2026년 8월"), ("들어간 기술", "HTML, CSS, JavaScript · 서버는 Python"), ("기록", "커밋 235")],
         "cover": None,
         "first": ("scroller", {}),
         "story": [
@@ -403,14 +403,14 @@ PROJECTS = [
         "tags": "three.js · Blender · 영상",
         "year": "2026.09 —",
         "short": "편집 프로그램 없이 코드로 만드는 영상과 효과 271종",
-        "summary": "영상 편집 프로그램 없이 HTML, three.js, Blender로 화면을 그리고 프레임마다 찍어 영상을 만듭니다. 효과 271종을 도감으로 쌓아 두고 홍보영상과 방송 효과에 씁니다.",
+        "summary": "영상 편집 프로그램 없이, AI 코딩 도구가 HTML·three.js·Blender로 화면을 그리고 프레임마다 찍어 영상을 만듭니다. 효과 271종을 도감으로 쌓아 두고 홍보영상과 방송 효과에 씁니다.",
         "preview": None,
         "pv_video": "chromeText",
-        "meta": [("맡은 일", "기획 · 개발 · 영상 (1인)"), ("시작", "2026년 9월"), ("기술", "JavaScript, three.js, Blender, ffmpeg"), ("기록", "커밋 257 · 효과 271종 (공개 95)")],
+        "meta": [("맡은 일", "기획 · 개발 · 영상 (1인)"), ("시작", "2026년 9월"), ("들어간 기술", "JavaScript, three.js, Blender, ffmpeg"), ("기록", "커밋 257 · 효과 271종 (공개 95)")],
         "cover": None,
         "first": ("video", {"clip": "fireBurst", "alt": "Blender로 만든 불꽃 폭발 효과"}),
         "story": [
-            ("만든 것", "영상 편집 프로그램 없이 화면을 HTML, three.js, Blender로 그리고 프레임마다 찍어 MP4로 만듭니다. 배경음악도 코드로 합성해 사용 권리가 분명합니다."),
+            ("만든 것", "영상 편집 프로그램 없이, AI 코딩 도구에게 HTML·three.js·Blender로 화면을 그리게 하고 프레임마다 찍어 MP4로 만듭니다. 저는 장면과 문구를 정하고 결과를 보며 고칩니다. 배경음악도 코드로 합성해 사용 권리가 분명합니다."),
             ("쌓아 둔 것", "글자, 장면 전환, 3D, 방송 화면 등 <strong>12갈래로 나눈 모션 효과 도감 271종</strong>(그중 95가지는 공개)과, 미리보기와 타임라인으로 문구와 효과를 고치는 편집기가 있습니다."),
             ("쓰는 곳", "AutoLed 홍보영상, 유튜브 영상, 방송 후원 알림 효과를 여기서 만듭니다."),
         ],
@@ -441,7 +441,7 @@ PROJECTS = [
         "short": "PDF와 강의 자막을 옵시디언 노트로 바꾸는 도구",
         "summary": "PDF, 이미지, 강의 자막 파일을 옵시디언에서 바로 쓰는 마크다운 노트로 바꾸는 데스크톱 도구입니다. 파일을 내 PC 밖으로 보내지 않습니다.",
         "preview": ("pdf2obsidian", "gui"),
-        "meta": [("맡은 일", "기획 · 개발 · 배포 (1인)"), ("시작", "2026년 6월"), ("기술", "Python, PySide6, Ollama(로컬), PyInstaller"), ("기록", "커밋 43 · 공개 저장소")],
+        "meta": [("맡은 일", "기획 · 개발 · 배포 (1인)"), ("시작", "2026년 6월"), ("들어간 기술", "Python, PySide6, Ollama(로컬), PyInstaller"), ("기록", "커밋 43 · 공개 저장소")],
         "cover": ("pdf2obsidian", "gui", "PDF2Obsidian 프로그램 화면. 예시 PDF와 강의 자막 파일을 불러온 모습"),
         "story": [
             ("만든 것", "PDF, 이미지, 강의 자막 파일을 옵시디언에서 바로 쓰는 마크다운 노트와 가벼운 그림 파일로 바꿉니다. 끌어다 놓으면 됩니다."),
@@ -811,7 +811,7 @@ def home():
         f'<figure class="reel-item"><video data-autoplay data-src="{CLIPS}{c}.mp4" poster="{CLIPS}{c}.jpg" muted loop playsinline preload="none" aria-label="{e(n)} 효과"></video>'
         f'<figcaption>{e(n)}<span>{e(k)}</span></figcaption></figure>' for c, n, k in reel_ids)
 
-    marquee_words = ["Python", "Windows 앱", "업무 자동화", "FastAPI", "홈페이지", "방송 자동화", "라이선스 서버", "PySide6", "SQLite", "서버 운영", "모션그래픽", "three.js", "자동 테스트", "OBS WebSocket"]
+    marquee_words = ["AI 코딩 에이전트", "Windows 앱", "업무 자동화", "Claude Code", "홈페이지", "방송 자동화", "라이선스 서버", "Python", "After Effects", "서버 운영", "모션그래픽", "Photoshop", "자동 테스트", "OBS 연동"]
     mq = "".join(f"<span>{e(w)}</span>" for w in marquee_words) * 2
 
     history = [("2020.10", "방송 기술 회사 입사. 방송 장비 세팅과 방송 화면 디자인"),
@@ -920,20 +920,21 @@ def home():
 </section>
 
 <section class="section wrap" id="stack" style="padding-top:0">
-  <div class="section-head"><div><p class="idx" data-reveal>07 — 기술</p>{lines_html(["주로 쓰는 기술"], "h2", "h-2")}</div></div>
+  <div class="section-head"><div><p class="idx" data-reveal>07 — 기술</p>{lines_html(["직접 다루는 도구,", "제품에 들어간 기술"], "h2", "h-2")}</div>
+    <p class="lead" data-reveal>손으로 다루는 건 첫 칸입니다. 나머지는 AI 코딩 도구가 제안한 기술 가운데 제가 골라 제품에 넣고, 직접 시험하고 배포해 운영하는 것들입니다.</p></div>
   <div class="stack-grid">
-    <div data-reveal><h3>언어</h3><ul><li>Python</li><li>JavaScript</li><li>HTML / CSS</li><li>PHP</li></ul></div>
-    <div data-reveal><h3>데스크톱 앱</h3><ul><li>Tkinter</li><li>PySide6</li><li>Nuitka</li><li>PyInstaller</li><li>Inno Setup</li></ul></div>
-    <div data-reveal><h3>서버</h3><ul><li>FastAPI</li><li>Nginx · Caddy</li><li>systemd</li><li>SQLite</li><li>Ubuntu</li></ul></div>
-    <div data-reveal><h3>방송 · 영상</h3><ul><li>OBS WebSocket</li><li>Resolume OSC</li><li>Companion</li><li>three.js · Blender</li><li>ffmpeg</li></ul></div>
-    <div data-reveal><h3>운영</h3><ul><li>GitHub Actions</li><li>Telegram 봇 알림</li><li>fail2ban</li><li>암호화 백업</li></ul></div>
+    <div class="own" data-reveal><h3>직접 다루는 도구</h3><ul><li>ChatGPT · Claude Code · Codex</li><li>Python (기초)</li><li>Photoshop</li><li>After Effects</li><li>Excel</li></ul></div>
+    <div data-reveal><h3>제품 · 데스크톱 앱</h3><ul><li>Python 앱</li><li>Tkinter · PySide6</li><li>Nuitka · Inno Setup</li></ul></div>
+    <div data-reveal><h3>제품 · 서버</h3><ul><li>FastAPI</li><li>Nginx</li><li>SQLite</li><li>Linux (Ubuntu)</li></ul></div>
+    <div data-reveal><h3>제품 · 방송 · 영상</h3><ul><li>OBS WebSocket</li><li>Resolume OSC</li><li>three.js · Blender</li><li>ffmpeg</li></ul></div>
+    <div data-reveal><h3>제품 · 운영</h3><ul><li>GitHub Actions</li><li>텔레그램 알림</li><li>암호화 백업</li></ul></div>
   </div>
 </section>
 
 <section class="section reel" data-reel id="motion">
   <div class="wrap section-head">
     <div><p class="idx" data-reveal>08 — 모션그래픽</p>{lines_html(["편집 프로그램 없이,", "코드로 만든 영상"], "h2", "h-1")}</div>
-    <p class="lead" data-reveal>HTML, three.js, Blender로 그리고 프레임마다 찍어 만든 효과입니다. 271종 가운데 일부를 옮겼습니다.</p>
+    <p class="lead" data-reveal>AI 코딩 도구로 HTML, three.js, Blender를 다뤄 그리고 프레임마다 찍어 만든 효과입니다. 271종 가운데 일부를 옮겼습니다.</p>
   </div>
   <div class="reel-track">{reel}</div>
   <div class="wrap reel-foot"><a class="text-link" href="work/motion.html">홍보영상과 효과 더 보기<i class="ph ph-arrow-right" aria-hidden="true"></i></a></div>

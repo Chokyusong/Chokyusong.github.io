@@ -169,6 +169,7 @@ h3 {{ font-size:10.5pt; margin-bottom:2.5mm; padding-bottom:1.5mm; border-bottom
 .hist li {{ display:grid; grid-template-columns:16mm 1fr; padding:1.2mm 0; border-bottom:.5pt solid var(--line); }}
 .hist time {{ color:var(--acc); font-weight:600; }}
 .stack div {{ display:grid; grid-template-columns:22mm 1fr; margin-bottom:1.6mm; }}
+.stack-note {{ margin:1.4mm 0 0; font-size:8pt; color:#6b7480; }}
 .how {{ display:grid; grid-template-columns:1fr 1fr; gap:3mm 6mm; margin-top:8mm; }}
 .how div b {{ display:block; margin-bottom:.5mm; }} .how p {{ margin:0; color:var(--sub); }}
 .contact {{ margin-top:auto; padding-top:8mm; display:grid; grid-template-columns:repeat(4,auto); gap:2mm 8mm; justify-content:start; font-size:9pt; }}
@@ -234,12 +235,13 @@ h3 {{ font-size:10.5pt; margin-bottom:2.5mm; padding-bottom:1.5mm; border-bottom
       <li><time>2026.10</time>후원 데이터 집계 서버, 엔터 정산, CCTV 관제, 거래장부</li>
       <li><time>2026.11</time>AutoLed 2.1.0, 엔터 회사 홈페이지 ASTRA 제작</li>
     </ol></div>
-    <div class="stack"><h3>주로 쓰는 기술</h3>
-      <div><b>언어</b>Python, JavaScript, HTML/CSS, PHP</div>
-      <div><b>데스크톱 앱</b>Tkinter, PySide6, Nuitka, PyInstaller, Inno Setup</div>
-      <div><b>서버</b>FastAPI, Nginx, Caddy, systemd, SQLite, Ubuntu</div>
-      <div><b>방송 · 영상</b>OBS WebSocket, Resolume OSC, Companion, three.js, Blender, ffmpeg</div>
-      <div><b>운영</b>GitHub Actions, Telegram 봇 알림, fail2ban, 암호화 백업</div>
+    <div class="stack"><h3>직접 다루는 도구 · 제품에 들어간 기술</h3>
+      <div><b>직접 다룸</b>ChatGPT · Claude Code · Codex, Python(기초), Photoshop, After Effects, Excel</div>
+      <div><b>제품 · 앱</b>Python 앱(Tkinter, PySide6), Nuitka, Inno Setup</div>
+      <div><b>제품 · 서버</b>FastAPI, Nginx, SQLite, Linux</div>
+      <div><b>제품 · 방송</b>OBS WebSocket, Resolume OSC, three.js, Blender, ffmpeg</div>
+      <div><b>제품 · 운영</b>GitHub Actions, 텔레그램 알림, 암호화 백업</div>
+      <p class="stack-note">제품 기술은 AI 코딩 도구가 제안한 것 가운데 골라 넣고, 직접 시험하고 배포해 운영합니다.</p>
     </div>
   </div>
   <div class="how">

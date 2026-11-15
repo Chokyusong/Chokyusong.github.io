@@ -54,7 +54,7 @@ RESUME = {
                          "팬더TV, SOOP, 투네이션, 위플랩, 펀네이션 후원 알림을 한 가지 처리 구조로 묶어 OBS·Resolume 연출부터 원래 장면 복귀까지 자동화",
                          "방송 중 화면 멈춤 문제를 재현 조건부터 찾아 해결: 고치기 전 3번 모두 멈춤 → 고친 뒤 5번 모두 정상",
                          "자동 테스트 2,051개, 버전 관리, 배포 승인, 업데이트 무결성(서명·체크섬) 검증 절차 운영"],
-                 "tech": "Python, Tkinter, OBS WebSocket, Resolume OSC, Nuitka, Inno Setup, GitHub"},
+                 "tech": "Python, Tkinter, OBS WebSocket, Resolume OSC, Nuitka, Inno Setup"},
                 {"title": "통합 인증 · 라이선스 · 고객 관리 서버", "period": "2026.08 –", "link": "work/login-server.html",
                  "did": ["여러 소프트웨어 제품의 사용자 인증, 권한, 이용 기간을 한 서버에서 관리하도록 설계",
                          "로그인 → 토큰 검증 → 기능 권한 확인 → 주기적 접속 확인 흐름과 접속 기기 제한 구성",
@@ -62,7 +62,7 @@ RESUME = {
                          "관리자 역할 분리, OTP 인증, 감사 기록, Nginx·HTTPS·systemd 배포"],
                  "got": ["AutoLed 등 여러 제품을 한 서버로 운영하고, 새 서비스를 등록해 같은 인증을 쓰는 구조 마련",
                          "자동 백업, 서버 감시, 장애 알림, 예비 서버 복구 절차까지 갖춘 운영 체계"],
-                 "tech": "Python, FastAPI, SQLite, REST API, JWT, Linux, Nginx, GitHub"},
+                 "tech": "Python, FastAPI, SQLite, Linux, Nginx"},
                 {"title": "후원 데이터 집계 서버 · 성능 개선", "period": "2026.10", "link": "work/bighand.html",
                  "did": ["여러 방송의 후원 기록을 모아 중복을 걸러 저장하고 기간별 통계를 보는 서버 기획",
                          "데이터 보관 기준, 암호화 백업, 자동 복원 확인, 서버 장애 감시 체계 구축"],
@@ -75,7 +75,7 @@ RESUME = {
                          "계산 결과 확인, 예외 보류, 정산 확정과 지급 목록, 개인정보 암호화와 자동 백업"],
                  "got": ["기존 정산 엑셀 48주 치와 비교해 47주의 계산 결과 일치",
                          "계산 오류와 미확정 항목을 나눠 잘못된 지급 확정을 막는 구조, 사무실 PC에서 실제 환경 검증"],
-                 "tech": "Python, PySide6, SQLite, Pandas, OpenPyXL, Nuitka"},
+                 "tech": "Python, PySide6, SQLite, Excel 연동, Nuitka"},
                 {"title": "실시간 방송 모니터링 프로그램 (CCTV)", "period": "2026.10", "link": "work/cctv.html",
                  "did": ["BJ 최대 60명의 방송 시작·종료를 감지하고 영상·채팅·후원 정보를 한 화면에 모은 관제 프로그램",
                          "방송별 목록, 정렬, 검색, 텔레그램 알림과 SQLite 설정 저장, PC용과 Linux 서버용 기능 분리"],
@@ -111,10 +111,11 @@ RESUME = {
                         "work/pdf2obsidian.html"),
                        ("AI 콘텐츠 기획", "원본 하나를 블로그·유튜브·네이버·SNS 형식으로 나눠 쓰는 OSMU 체계, 검색 최적화(SEO), AI 이미지로 썸네일·광고 소재 제작 (2026.09 –)", None),
                        ("홈페이지", "오닉소프트 공식 홈페이지 기획·제작·운영, 업종별 견본 22종, 엔터 회사 ASTRA 움직이는 시안 8쪽 (2026.08 –)", "work/onicsoft-homepage.html"),
-                       ("모션그래픽", "코드와 Blender로 만든 효과 271종, AutoLed 홍보영상과 방송 알림 (2026.09 –)", "work/motion.html")],
+                       ("모션그래픽", "AI 코딩 도구로 코드와 Blender를 다뤄 만든 효과 271종, AutoLed 홍보영상과 방송 알림 (2026.09 –)", "work/motion.html")],
     "education": None,
-    "tools": ["Python", "FastAPI", "PySide6 · Tkinter", "SQLite", "Linux · Nginx · systemd", "HTML · CSS · JavaScript", "three.js · Blender", "FFmpeg",
-              "OBS WebSocket · Resolume OSC", "GitHub · GitHub Actions", "Excel · Pandas", "Photoshop · After Effects", "ChatGPT · Claude Code · AI 코딩 에이전트"],
+    "tools": ["ChatGPT · Claude Code · Codex", "Python (기초)", "Photoshop", "After Effects", "Excel"],
+    "built": ["Python 앱 (Tkinter · PySide6)", "FastAPI", "SQLite", "Linux · Nginx", "HTML · CSS · JavaScript", "OBS WebSocket · Resolume OSC",
+              "three.js · Blender · FFmpeg", "GitHub Actions"],
     "language": "영어 · 일상 회화",
 }
 
@@ -124,7 +125,8 @@ LABELS = {
     "back": "← 포트폴리오", "pdf": "PDF로 받기", "pdf_href": "assets/cho-kyusong-resume.pdf",
     "other": "English", "other_href": "resume-en.html",
     "decisions": "직접 판단하고 확인한 것", "skills": "핵심 역량", "career": "경력", "career_total": "총 6년 2개월 · 겹치는 기간은 겸직",
-    "extra": "그 밖의 작업", "tools": "쓰는 도구", "language": "언어",
+    "extra": "그 밖의 작업", "tools": "직접 다루는 도구", "language": "언어", "tech": "들어간 기술",
+    "built": "제품에 들어간 기술", "built_note": "AI 코딩 도구가 제안한 기술 가운데 골라 넣고, 직접 시험하고 배포해 운영합니다.",
     "kw": "키워드", "foot": "비공개 저장소의 소스 코드와 핵심 로직은 공개하지 않습니다. 작업별 화면과 영상은 chokyusong.github.io에서 볼 수 있습니다.",
 }
 
@@ -147,7 +149,7 @@ def render(r, base="", private=False):
                 link = f' <a class="more" href="{base}{p["link"]}">{L["more"]}</a>' if p.get("link") else ""
                 got = f'<p class="lab">{L["got"]}</p><ul class="got">{li(p["got"])}</ul>' if p["got"] else ""
                 ps.append(f'<article class="proj"><header><h4>{e(p["title"])}{link}</h4><span>{e(p["period"])}</span></header>'
-                          f'<ul>{li(p["did"])}</ul>{got}<p class="tech">{e(p["tech"])}</p></article>')
+                          f'<ul>{li(p["did"])}</ul>{got}<p class="tech"><b>{L["tech"]}</b> {e(p["tech"])}</p></article>')
             body = "".join(ps)
         else:
             body = f'<ul>{li(j["bullets"])}</ul>'
@@ -161,6 +163,7 @@ def render(r, base="", private=False):
     if r.get("education"):
         edu = f'<h2>{L["edu"]}</h2><ul class="plain">{li(r["education"])}</ul>'
     tools = "".join(f"<span>{e(t)}</span>" for t in r["tools"])
+    built = "".join(f"<span>{e(t)}</span>" for t in r.get("built", []))
     avail = f'<p class="avail">{e(r["availability"])}</p>' if r.get("availability") else ""
     robots = '<meta name="robots" content="noindex">'
     bar = "" if private else (f'<div class="bar"><a href="{base}index.html">{L["back"]}</a><span>'
@@ -220,6 +223,10 @@ ul {{ margin:1.2mm 0 0; padding-left:4.2mm; }} li {{ margin-bottom:.5mm; }}
 .plain {{ list-style:none; padding:0; }}
 .tools {{ display:flex; flex-wrap:wrap; gap:1.6mm; }}
 .tools span {{ border:.6pt solid var(--line); border-radius:10mm; padding:.8mm 2.8mm; font-size:8.4pt; }}
+.tools.own span {{ border-color:var(--acc); font-weight:600; }}
+h3.built {{ font-size:9pt; margin:3mm 0 1.6mm; font-weight:600; }}
+h3.built small {{ font-weight:400; color:var(--mute); margin-left:2mm; font-size:8pt; }}
+.tech b {{ font-weight:600; margin-right:1mm; }}
 .two {{ display:grid; grid-template-columns:1fr 1fr; gap:7mm; }}
 .foot {{ margin-top:6mm; color:var(--mute); font-size:7.8pt; }}
 .bar {{ display:none; }}
@@ -256,7 +263,8 @@ ul {{ margin:1.2mm 0 0; padding-left:4.2mm; }} li {{ margin-bottom:.5mm; }}
   {"".join(jobs)}
   <h2>{L["extra"]}</h2><ul class="plain">{extra}</ul>
   {edu}
-  <h2>{L["tools"]}<small>{L["language"]}: {e(r["language"])}</small></h2><div class="tools">{tools}</div>
+  <h2>{L["tools"]}<small>{L["language"]}: {e(r["language"])}</small></h2><div class="tools own">{tools}</div>
+  <h3 class="built">{L["built"]}<small>{L["built_note"]}</small></h3><div class="tools">{built}</div>
   <p class="foot">{L["foot"]}</p>
 </main>
 </body></html>
