@@ -462,6 +462,15 @@ PROJECTS = [
 
 N = len(PROJECTS)
 
+# 하는 일 분야. 첫 화면 '하는 일'과 인쇄판 목차에 쓴다. 업무 자동화는 엑셀·정산으로 좁혀 쓰지 않는다.
+FIELDS = [
+    ("ph-broadcast", "방송 자동화", "후원이 들어오면 연출을 실행하고, 여러 방송을 한 화면에서 지켜보고, 후원 데이터를 모아 집계합니다.", ["autoled", "cctv", "bighand"], ("cctv", "cover")),
+    ("ph-briefcase", "업무 자동화", "사람이 손으로 반복하던 일을 프로그램으로 바꿉니다. 지금까지 주간 정산, 거래장부, 문서 정리를 만들었습니다.", ["enter-payroll", "ledger", "pdf2obsidian"], ("ledger", "cover")),
+    ("ph-browser", "홈페이지 · 웹", "회사 사이트와 손님 홈페이지를 기획, 디자인, 개발하고 블로그와 구축 사례까지 운영합니다.", ["onicsoft-homepage", "astra"], ("astra", "home-pc")),
+    ("ph-hard-drives", "서버 · 운영", "로그인과 이용 기간을 확인하는 서버, 24시간 수집 서버를 세우고 감시와 백업까지 맡습니다.", ["login-server", "bighand"], ("login-server", "dashboard")),
+    ("ph-film-strip", "영상 · 개발 도구", "코드로 만드는 홍보영상과 효과, 사람이 승인한 범위 안에서 AI가 개발을 이어 가는 도구를 만듭니다.", ["motion", "aios"], None),
+]
+
 # ---------------------------------------------------------------- 공통 틀
 
 HEAD_SCRIPT = ("<script>(function(d){var r=d.documentElement;if(!window.matchMedia||!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add('anim');"
@@ -789,24 +798,39 @@ def home():
         f'<figure class="reel-item"><video data-autoplay data-src="{CLIPS}{c}.mp4" poster="{CLIPS}{c}.jpg" muted loop playsinline preload="none" aria-label="{e(n)} 효과"></video>'
         f'<figcaption>{e(n)}<span>{e(k)}</span></figcaption></figure>' for c, n, k in reel_ids)
 
-    marquee_words = ["Python", "Windows 앱", "OBS WebSocket", "FastAPI", "라이선스 서버", "방송 자동화", "three.js", "Blender", "PySide6", "SQLite", "서버 운영", "자동 테스트", "Nuitka", "Resolume OSC"]
+    marquee_words = ["Python", "Windows 앱", "업무 자동화", "FastAPI", "홈페이지", "방송 자동화", "라이선스 서버", "PySide6", "SQLite", "서버 운영", "모션그래픽", "three.js", "자동 테스트", "OBS WebSocket"]
     mq = "".join(f"<span>{e(w)}</span>" for w in marquee_words) * 2
 
     history = [("2025.10", "AutoLed 개발 시작"), ("2026.06", "PDF2Obsidian 공개, AIOS 시작"), ("2026.08", "로그인 서버 운영, AutoLed 정식 배포, 회사 홈페이지"),
                ("2026.09", "모션그래픽 작업실, 유튜브 채널 시작, 납품 업체 엑셀 장부 자동화"), ("2026.10", "큰손탐지기 서버, 엔터 정산, CCTV 관제, 거래장부 프로그램"),
                ("2026.11", "AutoLed 2.1.0, 엔터 회사 홈페이지 ASTRA 제작")]
+    by = {p["slug"]: p for p in PROJECTS}
+    short = {"autoled": "AutoLed", "cctv": "CCTV 관제", "bighand": "큰손탐지기 서버", "enter-payroll": "엔터 주간 정산", "ledger": "납품 거래장부",
+             "pdf2obsidian": "PDF2Obsidian", "onicsoft-homepage": "회사 홈페이지", "astra": "ASTRA 손님 홈페이지", "login-server": "로그인 서버",
+             "motion": "모션그래픽", "aios": "AIOS"}
+    cards = []
+    for k, (ic, name, txt, sls, pic) in enumerate(FIELDS):
+        if pic:
+            media = img(pic[0], pic[1], "", rel)
+        else:
+            media = f'<img src="{CLIPS}chromeText.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async">'
+        chips = "".join(f'<a href="work/{sl}.html">{e(short[sl])}</a>' for sl in sls)
+        cards.append(f'<article class="field" data-reveal><a class="field-media" href="work/{sls[0]}.html" data-cursor="보기" aria-label="{e(name)} 대표 작업 보기">{media}</a>'
+                     f'<div class="field-body"><span class="idx">{k + 1:02d}</span><h3 class="h-3"><i class="ph {ic}" aria-hidden="true"></i>{e(name)}</h3><p>{e(txt)}</p>'
+                     f'<div class="field-links">{chips}</div></div></article>')
+    fields_html = "".join(cards)
     tl = "".join(f'<li data-reveal><time datetime="{d.replace(".", "-")}">{d}</time><p>{e(t)}</p></li>' for d, t in history)
 
     body = f"""<section class="hero">
-  <canvas class="hero-canvas" data-word="ON AIR" aria-hidden="true"></canvas>
+  <canvas class="hero-canvas" data-word="BUILD" aria-hidden="true"></canvas>
   <div class="wrap hero-in">
     <p class="eyebrow" data-hero-fade>1인 개발자 · 오닉소프트 대표</p>
-    <h1 class="h-display hero-title" data-lines data-hero><span class="line-mask"><span>방송 자동화를</span></span><span class="line-mask"><span>만들고, 팔고,</span></span><span class="line-mask"><span><em>직접 운영</em>합니다.</span></span></h1>
+    <h1 class="h-display hero-title" data-lines data-hero><span class="line-mask"><span>필요한 프로그램을</span></span><span class="line-mask"><span>만들고, 팔고,</span></span><span class="line-mask"><span><em>직접 운영</em>합니다.</span></span></h1>
     <div class="hero-foot">
-      <p class="lead" data-hero-fade>기획부터 Windows 앱, 라이선스 서버, 배포와 운영까지 혼자 맡아 실제로 판매하는 제품을 만듭니다. 이 페이지에서 만든 것을 전부 직접 보고 눌러 볼 수 있습니다.</p>
+      <p class="lead" data-hero-fade>방송 자동화 제품 AutoLed를 만들어 팔고, 업무 자동화 프로그램, 홈페이지, 서버, 영상까지 기획부터 운영까지 혼자 맡습니다. 이 페이지에서 만든 것을 전부 직접 보고 눌러 볼 수 있습니다.</p>
       <div class="btn-row" data-hero-fade><a class="btn btn-primary" href="#works" data-magnet>작업 보기<i class="ph ph-arrow-down" aria-hidden="true"></i></a><a class="btn btn-ghost" href="{GITHUB}" data-magnet><i class="ph ph-github-logo" aria-hidden="true"></i>GitHub</a></div>
     </div>
-    <div class="hero-meta" data-hero-fade><div>NOW<b>AutoLed 2.1.0 판매 중</b></div><div>FOCUS<b>Python · 서버 · 방송 자동화</b></div><div>WORKS<b>작업 {N}개</b></div></div>
+    <div class="hero-meta" data-hero-fade><div>NOW<b>AutoLed 2.1.0 판매 중</b></div><div>FOCUS<b>앱 · 업무 자동화 · 웹 · 서버</b></div><div>WORKS<b>작업 {N}개</b></div></div>
   </div>
   <div class="scroll-hint" aria-hidden="true">SCROLL</div>
 </section>
@@ -816,7 +840,7 @@ def home():
 <section class="section wrap" id="about">
   <div class="section-head">
     <div><p class="idx" data-reveal>01 — 요약</p>{lines_html(["혼자 만들고,", "끝까지 책임집니다."], "h2", "h-1")}</div>
-    <p class="lead" data-reveal>제품 기획, 데스크톱 앱, 서버 운영, 영상 제작까지 한 사람이 맡습니다. 코드는 AI 코딩 도구와 함께 쓰고, 무엇을 만들고 언제 내보낼지는 제가 정합니다.</p>
+    <p class="lead" data-reveal>방송 자동화 제품, 업무 자동화 프로그램, 홈페이지, 서버 운영, 영상 제작까지 한 사람이 맡습니다. 코드는 AI 코딩 도구와 함께 쓰고, 무엇을 만들고 언제 내보낼지는 제가 정합니다.</p>
   </div>
   <div class="stats">
     <div class="stat" data-reveal><span class="stat-num" data-scramble="2.1.0">2.1.0</span><span class="stat-label">AutoLed 현재 버전 · 판매 중</span></div>
@@ -839,13 +863,12 @@ def home():
   </div></div>
 </section>
 
-<section class="section wrap" id="astra">
+<section class="section wrap" id="fields">
   <div class="section-head">
-    <div><p class="idx" data-reveal>03 — 손님 홈페이지</p>{lines_html(["ASTRA", "엔터테인먼트 홈페이지"], "h2", "h-1")}</div>
-    <p class="lead" data-reveal>손님이 보낸 PPT 초안 8장에서 출발해 움직이는 시안 8쪽을 만들었습니다. 아래 창은 그림이 아니라 실제 시안입니다. 눌러서 직접 스크롤하고 메뉴를 옮겨 다녀 보세요.</p>
+    <div><p class="idx" data-reveal>03 — 하는 일</p>{lines_html(["한 분야만", "하지 않습니다."], "h2", "h-1")}</div>
+    <p class="lead" data-reveal>방송 자동화 제품을 팔면서, 회사 업무를 줄이는 프로그램, 홈페이지, 서버, 영상까지 직접 만들고 운영합니다. 카드를 누르면 그 분야의 대표 작업이 열립니다.</p>
   </div>
-  {live_browser(rel)}
-  <p class="live-note" data-reveal>2026년 11월 11일 시안 판입니다. 양식은 실제로 접수되지 않습니다. <a class="text-link" href="work/astra.html">제작 과정 보기<i class="ph ph-arrow-right" aria-hidden="true"></i></a></p>
+  <div class="fields">{fields_html}</div>
 </section>
 
 <section class="section wrap" id="works">
@@ -901,7 +924,7 @@ def home():
   <p class="idx" data-reveal>09 — 연락</p>
   <h2 class="contact-title" data-lines><span class="line-mask"><span>함께 일할 자리가</span></span><span class="line-mask"><span>있다면<span class="accent">.</span></span></span></h2>
   <div class="contact-grid">
-    <p class="lead" data-reveal>Python 데스크톱 앱, 서버 개발과 운영, 방송·영상 자동화 경험을 살릴 수 있는 일에 관심이 있습니다. 비공개 저장소의 자세한 내용은 면담에서 화면으로 보여 드릴 수 있습니다.</p>
+    <p class="lead" data-reveal>Python 데스크톱 앱, 업무 자동화, 서버 개발과 운영, 웹과 영상 경험을 살릴 수 있는 일에 관심이 있습니다. 비공개 저장소의 자세한 내용은 면담에서 화면으로 보여 드릴 수 있습니다.</p>
     <div class="btn-row" data-reveal><a class="btn btn-primary" href="{KAKAO}" data-magnet><i class="ph ph-chat-circle-dots" aria-hidden="true"></i>카카오톡으로 연락</a><a class="btn btn-ghost" href="mailto:{EMAIL}" data-magnet><i class="ph ph-envelope-simple" aria-hidden="true"></i>{EMAIL}</a></div>
   </div>
   <div class="big-links" data-reveal style="margin-top:clamp(48px,6vw,80px)">
@@ -911,7 +934,7 @@ def home():
     <a href="{PDF}">PDF로 받기<span>인쇄용 한 권</span></a>
   </div>
 </section>"""
-    desc = "방송 자동화 제품 AutoLed를 만들어 판매하고, 라이선스 서버와 홈페이지까지 직접 운영하는 1인 개발자 조규송의 작업 11가지. 화면, 영상, 움직이는 시안을 직접 볼 수 있습니다."
+    desc = "방송 자동화 제품 AutoLed, 업무 자동화 프로그램, 홈페이지, 서버, 영상까지 직접 만들고 운영하는 1인 개발자 조규송의 작업 11가지. 화면, 영상, 움직이는 시안을 직접 볼 수 있습니다."
     return shell("조규송 포트폴리오", desc, body, rel, home=True)
 
 

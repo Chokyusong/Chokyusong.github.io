@@ -550,3 +550,21 @@ html.anim.page-enter .curtain i { transform: scaleY(1); transform-origin: bottom
 .yt { display: block; width: 100%; padding: 0; }
 @media (max-width: 899px) { .stack-grid { grid-template-columns: repeat(2, 1fr); gap: 28px 20px; } }
 .live-shield { place-items: start end; padding: 14px; }
+
+/* 하는 일 분야 */
+.fields { display: grid; gap: clamp(14px, 1.6vw, 22px); grid-template-columns: 1fr; }
+@media (min-width: 700px) { .fields { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1100px) { .fields { grid-template-columns: repeat(6, 1fr); } .field { grid-column: span 2; } .field:nth-child(n+4) { grid-column: span 3; } }
+.field { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: rgba(255, 255, 255, 0.015); display: flex; flex-direction: column; transition: border-color .35s; }
+.field:hover { border-color: rgba(69, 198, 214, 0.35); }
+.field-media { display: block; aspect-ratio: 16 / 9; overflow: hidden; background: #0d1114; border-bottom: 1px solid var(--line); }
+.field:nth-child(n+4) .field-media { aspect-ratio: 16 / 7; }
+.field-media img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.9s var(--ease), filter .5s; filter: saturate(.9); }
+.field:hover .field-media img { transform: scale(1.045); filter: saturate(1.05); }
+.field-body { padding: clamp(20px, 2vw, 28px); display: grid; gap: 10px; align-content: start; flex: 1; }
+.field-body h3 { display: flex; align-items: center; gap: 10px; margin: 0; }
+.field-body h3 i { color: var(--accent); font-size: 1.1em; }
+.field-body p { color: var(--text-2); margin: 0; font-size: 15px; }
+.field-links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.field-links a { font-size: 13px; padding: 5px 11px; border: 1px solid var(--line); border-radius: 999px; color: var(--text-2); text-decoration: none; transition: border-color .25s, color .25s, background .25s; }
+.field-links a:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }

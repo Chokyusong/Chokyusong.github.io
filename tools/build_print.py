@@ -130,6 +130,8 @@ def project(i, p):
 def main(projects):
     idx = "".join(f'<li><span>{i + 1:02d}</span><b>{e(p["title"])}</b><em>{e(p["short"])}</em></li>' for i, p in enumerate(projects))
     body = "".join(project(i, p) for i, p in enumerate(projects))
+    by = {p["slug"]: p for p in projects}
+    fields = "".join(f'<div><b>{e(n)}</b><p>{e(t)}</p><span>{e(", ".join(by[x]["title"] for x in sl))}</span></div>' for _, n, t, sl, _pic in B.FIELDS)
     page = f"""<!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
@@ -165,9 +167,12 @@ h3 {{ font-size:10.5pt; margin-bottom:2.5mm; padding-bottom:1.5mm; border-bottom
 .contact {{ margin-top:auto; padding-top:8mm; display:grid; grid-template-columns:repeat(4,auto); gap:2mm 8mm; justify-content:start; font-size:9pt; }}
 .contact span {{ color:var(--mute); display:block; font-size:7.5pt; }}
 .toc {{ break-before:page; }}
-.toc h2 {{ font-size:22pt; margin-bottom:6mm; }}
+.toc h2 {{ font-size:20pt; margin-bottom:5mm; }}
+.toc .fields {{ display:grid; grid-template-columns:1fr 1fr; gap:4mm 8mm; margin-bottom:10mm; }}
+.toc .fields div {{ border-top:1.5pt solid var(--ink); padding-top:2mm; }}
+.toc .fields b {{ font-size:11pt; }} .toc .fields p {{ margin:1mm 0; color:var(--sub); }} .toc .fields span {{ font-size:8pt; color:var(--acc); }}
 .toc ol {{ list-style:none; padding:0; margin:0; border-top:1.5pt solid var(--ink); }}
-.toc li {{ display:grid; grid-template-columns:12mm 62mm 1fr; padding:3.4mm 0; border-bottom:.5pt solid var(--line); align-items:baseline; }}
+.toc li {{ display:grid; grid-template-columns:12mm 62mm 1fr; padding:2.2mm 0; border-bottom:.5pt solid var(--line); align-items:baseline; }}
 .toc li span {{ color:var(--acc); font-weight:700; }} .toc li b {{ font-size:11pt; }} .toc li em {{ font-style:normal; color:var(--sub); }}
 .toc .note {{ color:var(--mute); font-size:8.5pt; margin-top:5mm; }}
 .proj {{ break-before:page; }}
@@ -201,8 +206,8 @@ h3 {{ font-size:10.5pt; margin-bottom:2.5mm; padding-bottom:1.5mm; border-bottom
 <body>
 <section class="cover"><div class="wrap">
   <p class="eyebrow">PORTFOLIO · 조규송 (CHO KYUSONG)</p>
-  <h1>방송 자동화를<br>만들고, 팔고,<br><em>직접 운영</em>합니다.</h1>
-  <p class="lead">1인 개발자이자 오닉소프트 대표입니다. 기획부터 Windows 앱, 라이선스 서버, 배포와 운영까지 혼자 맡아 실제로 판매하는 제품을 만듭니다. 코드는 AI 코딩 도구와 함께 쓰고, 무엇을 만들고 언제 내보낼지는 제가 정합니다.</p>
+  <h1>필요한 프로그램을<br>만들고, 팔고,<br><em>직접 운영</em>합니다.</h1>
+  <p class="lead">1인 개발자이자 오닉소프트 대표입니다. 방송 자동화 제품 AutoLed를 만들어 팔고, 업무 자동화 프로그램, 홈페이지, 서버, 영상까지 기획부터 운영까지 혼자 맡습니다. 코드는 AI 코딩 도구와 함께 쓰고, 무엇을 만들고 언제 내보낼지는 제가 정합니다.</p>
   <div class="stats">
     <div><b>2.1.0</b><span>AutoLed 현재 버전 · 판매 중</span></div>
     <div><b>2,600+</b><span>소개한 저장소의 커밋</span></div>
@@ -240,7 +245,7 @@ h3 {{ font-size:10.5pt; margin-bottom:2.5mm; padding-bottom:1.5mm; border-bottom
     <div><span>카카오톡</span>pf.kakao.com/_exgErX</div>
   </div>
 </div></section>
-<section class="toc"><div class="wrap"><h2>작업 {B.N}가지</h2><ol>{idx}</ol>
+<section class="toc"><div class="wrap"><h2>하는 일</h2><div class="fields">{fields}</div><h2>작업 {B.N}가지</h2><ol>{idx}</ol>
 <p class="note">웹 포트폴리오(chokyusong.github.io)에서는 같은 작업을 영상, 움직이는 시안, 전체 화면으로 직접 볼 수 있습니다. 비공개 저장소는 핵심 로직 없이 무엇을 만들고 어떤 결과가 났는지만 소개합니다.</p></div></section>
 <div class="wrap">{body}</div>
 </body></html>
