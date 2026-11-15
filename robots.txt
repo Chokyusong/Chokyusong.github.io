@@ -1,0 +1,4 @@
+User-agent: *
+# Pages carry a noindex meta tag, so they stay crawlable for that tag to be read.
+# PDFs cannot carry the tag, so crawling them is blocked.
+Disallow: /assets/*.pdf$

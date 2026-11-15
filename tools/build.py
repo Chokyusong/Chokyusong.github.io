@@ -459,6 +459,7 @@ HEAD_SCRIPT = ("<script>(function(d){var r=d.documentElement;if(!window.matchMed
 
 
 def shell(title, desc, body, rel, og="assets/img/autoled/ui-overview.webp", home=False, robots=""):
+    # 검색엔진에 나오지 않게 한다(대표 2026-11-16 "노출X"). 링크를 받은 사람만 본다.
     to = "" if home else f"{rel}index.html"
     nav = f"""<header class="nav"><div class="wrap nav-in">
   <a class="brand" href="{rel}index.html" aria-label="조규송 포트폴리오 처음으로"><span class="brand-mark" aria-hidden="true">{'<i></i>' * 9}</span>조규송 <small>CHO KYUSONG</small></a>
@@ -473,7 +474,7 @@ def shell(title, desc, body, rel, og="assets/img/autoled/ui-overview.webp", home
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(title)}</title>
 <meta name="description" content="{e(desc)}">
-{robots}<meta name="theme-color" content="#07090b">
+<meta name="robots" content="noindex, nofollow">{robots}<meta name="theme-color" content="#07090b">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%2307090b%27/%3E%3Cg fill=%27%2345c6d6%27%3E%3Crect x=%277%27 y=%277%27 width=%275%27 height=%275%27/%3E%3Crect x=%2720%27 y=%277%27 width=%275%27 height=%275%27/%3E%3Crect x=%2713.5%27 y=%2713.5%27 width=%275%27 height=%275%27/%3E%3Crect x=%277%27 y=%2720%27 width=%275%27 height=%275%27/%3E%3Crect x=%2720%27 y=%2720%27 width=%275%27 height=%275%27/%3E%3C/g%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:title" content="{e(title)}">
