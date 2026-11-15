@@ -23,16 +23,15 @@ RESUME = {
                  ("회사", "onicsoft.co.kr", "https://onicsoft.co.kr/")],
     "summary": [
         "AI 코딩 에이전트로 아이디어를 실제로 작동하는 서비스로 만들고, 판매하고, 운영하는 AI 서비스 기획·업무 자동화 전문가입니다.",
-        "MCN 콘텐츠기획팀 팀장으로 4년 넘게 팀원 5명을 이끌며 크리에이터 20명 관리, 콘텐츠 기획, 방송 시스템 구축, 스튜디오 운영과 기술 지원을 맡았고, 그때부터 GPT와 Python으로 정산, 계산서 확인, 방송 화면 자동 전환 같은 회사 업무를 직접 자동화했습니다. 정산은 5시간에서 3분으로 줄고 계산 실수가 없어졌으며, 계산서 발행 확인과 소속 크리에이터 랭킹·동향 확인은 각각 1시간에서 30초로 줄었습니다. 2025년 9월 오닉소프트를 세워 방송 자동화 제품 AutoLed를 유료 고객 약 15명에게 팔고 운영하고 있습니다.",
+        "MCN 콘텐츠기획팀 팀장으로 4년 넘게 팀원 5명과 크리에이터 20명을 관리하면서, GPT와 Python으로 정산·계산서 확인 같은 회사 업무를 직접 자동화했습니다. 2025년 9월 오닉소프트를 세워 방송 자동화 제품 AutoLed를 유료 고객 약 15명에게 팔고 운영하고 있습니다.",
     ],
-    "numbers": [("6년 2개월", "경력"), ("약 15명", "AutoLed 유료 고객"), ("5시간 → 3분", "MCN 정산 자동화"), ("22초 → 0.25초", "대시보드 첫 화면 개선"), ("47 / 48주", "정산 엑셀과 계산 일치")],
+    "numbers": [("6년 2개월", "경력"), ("약 15명", "AutoLed 유료 고객"), ("5시간 → 3분", "MCN 정산 자동화"), ("22초 → 0.25초", "대시보드 첫 화면 개선"), ("47 / 48주", "엔터 정산 프로그램 검증")],
+    "keywords": "AX(AI 전환) · AI 업무 자동화 · 서비스 기획 · PM/PO · 생성형 AI 활용 · AI 코딩 에이전트 · Python",
     "skills": [
         ("AI 활용 개발 관리", "요구사항 정의, 기능 설계, AI 에이전트 작업 지시, 구현 결과 검증과 오류 개선"),
         ("서비스 기획 · 제품화", "사용자 문제 분석, 기능 우선순위 결정, UI/UX 기획, 제품 출시와 유료 서비스 운영"),
         ("시스템 구조 설계", "업무 처리 흐름, 외부 서비스 연동, 사용자 인증·권한, 데이터 처리 구조 기획"),
         ("품질 · 운영 관리", "자동 테스트 검토, 실제 환경 검증, 버전 관리, 배포 승인과 유지보수"),
-        ("프로젝트 · 협업", "팀장 경험을 바탕으로 한 업무 조율, 고객 요구사항 분석, 문제 해결과 개선 방향 수립"),
-        ("콘텐츠 · 디자인", "방송 시스템 운영, 그래픽 디자인, 영상 편집, 모션그래픽, 웹사이트·콘텐츠 기획"),
     ],
     "way": "코드는 AI 코딩 에이전트와 함께 씁니다. 무엇을 만들지, 어디가 틀렸는지, 언제 내보낼지는 제가 정하고 직접 확인합니다.",
     "decisions": [
@@ -87,12 +86,6 @@ RESUME = {
                  "did": ["인쇄 광고물 납품 업체가 두 번씩 적던 엑셀 장부를 한 번 입력으로 끝나게 바꾼 프로그램"],
                  "got": ["옮기는 과정에서 원본 장부끼리 맞지 않는 줄을 찾아 목록으로 정리, 엑셀 내보내기 왕복 확인"],
                  "tech": "Python, SQLite, Excel 연동"},
-                {"title": "AI 활용 콘텐츠 기획 · 마케팅", "period": "2026.09 –", "link": None,
-                 "did": ["원본 콘텐츠 하나를 블로그·유튜브·네이버·SNS 형식으로 나눠 쓰는 OSMU 체계 설계",
-                         "검색 키워드 분석, SEO 제목·메타데이터·글 구조 최적화, 게시 전 사실 확인과 게시 기록 관리",
-                         "AI 이미지 도구로 썸네일·광고 소재 제작, 크몽·숨고 판매 자료 구성"],
-                 "got": [],
-                 "tech": "생성형 AI, SEO, HTML, Photoshop, 영상 편집"},
             ],
         },
         {
@@ -117,11 +110,12 @@ RESUME = {
     ],
     "extra_projects": [("PDF2Obsidian", "PDF와 강의 자막을 옵시디언 노트로 바꾸는 오픈소스 도구 (2026.06, MIT). 코드와 자동 테스트를 공개했습니다.",
                         "work/pdf2obsidian.html", "https://github.com/Chokyusong/pdf2obsidian"),
+                       ("AI 콘텐츠 기획", "원본 하나를 블로그·유튜브·네이버·SNS 형식으로 나눠 쓰는 OSMU 체계, 검색 최적화(SEO), AI 이미지로 썸네일·광고 소재 제작 (2026.09 –)", None),
                        ("홈페이지", "오닉소프트 공식 홈페이지 기획·제작·운영, 업종별 견본 22종, 엔터 회사 ASTRA 움직이는 시안 8쪽 (2026.08 –)", "work/onicsoft-homepage.html"),
                        ("모션그래픽", "코드와 Blender로 만든 효과 271종, AutoLed 홍보영상과 방송 알림 (2026.09 –)", "work/motion.html")],
     "education": None,
     "tools": ["Python", "FastAPI", "PySide6 · Tkinter", "SQLite", "Linux · Nginx · systemd", "HTML · CSS · JavaScript", "three.js · Blender", "FFmpeg",
-              "OBS WebSocket · Resolume OSC", "GitHub · GitHub Actions", "Excel · Pandas", "Photoshop · After Effects", "Claude Code · AI 코딩 에이전트"],
+              "OBS WebSocket · Resolume OSC", "GitHub · GitHub Actions", "Excel · Pandas", "Photoshop · After Effects", "ChatGPT · Claude Code · AI 코딩 에이전트"],
     "language": "영어 · 일상 회화",
 }
 
@@ -132,7 +126,7 @@ LABELS = {
     "other": "English", "other_href": "resume-en.html",
     "decisions": "직접 판단하고 확인한 것", "skills": "핵심 역량", "career": "경력", "career_total": "총 6년 2개월 · 겹치는 기간은 겸직",
     "extra": "그 밖의 작업", "tools": "쓰는 도구", "language": "언어",
-    "foot": "비공개 저장소의 소스 코드와 핵심 로직은 공개하지 않습니다. 작업별 화면과 영상은 chokyusong.github.io에서 볼 수 있습니다.",
+    "kw": "키워드", "foot": "비공개 저장소의 소스 코드와 핵심 로직은 공개하지 않습니다. 작업별 화면과 영상은 chokyusong.github.io에서 볼 수 있습니다.",
 }
 
 
@@ -160,8 +154,9 @@ def render(r, base="", private=False):
             body = f'<ul>{li(j["bullets"])}</ul>'
         desc = f'<p class="jdesc">{e(j["desc"])}</p>' if j.get("desc") else ""
         jobs.append(f'<section class="job"><header><div><h3>{e(j["company"])}</h3><p>{e(j["role"])}</p></div><span>{e(j["period"])}</span></header>{desc}{body}</section>')
-    extra = "".join(f'<li><b>{e(x[0])}</b> {e(x[1])} <a class="more" href="{base}{x[2]}">{L["more"]}</a>'
+    extra = "".join(f'<li><b>{e(x[0])}</b> {e(x[1])}' + (f' <a class="more" href="{base}{x[2]}">{L["more"]}</a>' if x[2] else "")
                     + (f' <a class="more" href="{x[3]}">{L["code"]}</a>' if len(x) > 3 else "") + '</li>' for x in r["extra_projects"])
+    kw = f'<p class="kw"><b>{L["kw"]}</b>{e(r["keywords"])}</p>' if r.get("keywords") else ""
     decisions = "".join(f"<div><b>{e(a)}</b><p>{e(b)}</p></div>" for a, b in r["decisions"])
     edu = ""
     if r.get("education"):
@@ -197,6 +192,7 @@ h1,h2,h3,h4 {{ margin:0; letter-spacing:-0.02em; }}
 .contacts b {{ color:var(--ink); font-weight:600; }}
 .summary {{ margin:4mm 0 3.5mm; font-size:10pt; color:var(--sub); }}
 .summary p {{ margin:0 0 1.6mm; }}
+.kw {{ margin:-1.5mm 0 3.5mm; font-size:8.4pt; color:var(--sub); }} .kw b {{ color:var(--acc); margin-right:2mm; }}
 .nums {{ display:grid; grid-template-columns:repeat(5,1fr); gap:2.5mm; margin-bottom:4mm; }}
 .nums div {{ background:var(--soft); border-radius:2mm; padding:3mm 3mm 2.5mm; }}
 .nums b {{ display:block; font-size:12.5pt; font-weight:800; letter-spacing:-0.02em; }}
@@ -253,7 +249,7 @@ ul {{ margin:1.2mm 0 0; padding-left:4.2mm; }} li {{ margin-bottom:.5mm; }}
     <div><h1>{e(r["name"])}<small>{e(r["name_en"])}</small></h1><p class="role">{e(r["title"])}</p>{avail}</div>
     <div class="contacts">{contacts}</div>
   </header>
-  <div class="summary">{"".join(f"<p>{e(x)}</p>" for x in r["summary"])}</div>
+  <div class="summary">{"".join(f"<p>{e(x)}</p>" for x in r["summary"])}</div>{kw}
   <div class="nums">{nums}</div>
   <h2>{L["decisions"]}</h2><p class="way">{e(r["way"])}</p><div class="skills decisions">{decisions}</div>
   <h2>{L["skills"]}</h2><div class="skills">{skills}</div>

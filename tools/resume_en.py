@@ -13,7 +13,7 @@ RESUME_EN = {
         "other": "한국어", "other_href": "resume.html",
         "decisions": "Decisions I made and verified", "skills": "Core skills", "career": "Experience",
         "career_total": "6 yrs 2 mos in total · overlapping periods were held concurrently",
-        "extra": "Other work", "tools": "Tools", "language": "Languages",
+        "extra": "Other work", "kw": "Keywords", "tools": "Tools", "language": "Languages",
         "foot": "Source code and core logic of private repositories are not disclosed. "
                 "Screens and videos for each project are at chokyusong.github.io (pages in Korean).",
     },
@@ -30,16 +30,13 @@ RESUME_EN = {
     "summary": [
         "An AI service planning and workflow automation specialist who uses AI coding agents to turn ideas into "
         "working services, then sells and operates them.",
-        "For over four years as Content Planning Team Lead at an MCN, I led a team of 5, managed 20 creators, planned content, built "
-        "broadcast systems, and ran studio operations and technical support. There I began automating company work "
-        "myself with GPT and Python, including settlements, invoice checks and automatic broadcast scene switching. Settlement work went from 5 hours "
-        "to 3 minutes with no more calculation mistakes, and invoice checks and creator ranking and trend checks each "
-        "went from 1 hour to 30 seconds. "
+        "As Content Planning Team Lead at an MCN for over four years, I led a team of 5 and managed 20 creators, "
+        "and automated company work such as settlements and invoice checks myself with GPT and Python. "
         "In September 2025 I founded ONICSOFT, where I sell and operate the broadcast automation product AutoLed "
         "for about 15 paying customers.",
     ],
     "numbers": [("6 yrs 2 mos", "Experience"), ("~15", "Paying AutoLed customers"), ("5 h → 3 min", "MCN settlement automation"),
-                ("22 s → 0.25 s", "Dashboard first load"), ("47 / 48 wks", "Matched the legacy payroll sheet")],
+                ("22 s → 0.25 s", "Dashboard first load"), ("47 / 48 wks", "Payroll program verified")],
     "way": "I write code together with AI coding agents. What to build, what is wrong, and when to ship are my "
            "decisions, and I verify them myself.",
     "decisions": [
@@ -53,13 +50,12 @@ RESUME_EN = {
         ("I decide when to ship", "AutoLed ships only after passing 2,051 automated tests and a second check in a real "
          "OBS setup. Update files are verified with signatures and checksums."),
     ],
+    "keywords": "AX (AI transformation) · AI workflow automation · Service planning · PM/PO · Generative AI · AI coding agents · Python",
     "skills": [
         ("AI-assisted development management", "Requirements definition, feature design, directing AI agents, verifying output and fixing defects"),
         ("Service planning · productization", "User problem analysis, feature prioritization, UI/UX planning, product launch and paid service operation"),
         ("System architecture design", "Business process flows, external service integration, user authentication and permissions, data processing design"),
         ("Quality · operations", "Reviewing automated tests, real-environment verification, version control, release approval and maintenance"),
-        ("Project management · collaboration", "Coordination drawn from team-lead experience, client requirement analysis, problem solving and improvement planning"),
-        ("Content · design", "Broadcast system operation, graphic design, video editing, motion graphics, website and content planning"),
     ],
     "jobs": [
         {
@@ -107,12 +103,6 @@ RESUME_EN = {
                  "did": ["Replaced the duplicate Excel ledgers of a printed-advertising supplier with a program where each entry is typed once"],
                  "got": ["Found and listed the rows where the original ledgers disagreed during migration; verified Excel export round trips"],
                  "tech": "Python, SQLite, Excel integration"},
-                {"title": "AI-assisted content planning · marketing", "period": "2026.09 –", "link": None,
-                 "did": ["Designed a one-source multi-use system that adapts one piece of content to blog, YouTube, Naver and social formats",
-                         "Keyword research, SEO titles, metadata and structure; fact-checking before publishing and keeping publishing records",
-                         "Thumbnails and ad creatives with AI image tools; sales materials for Kmong and Soomgo (Korean freelance marketplaces)"],
-                 "got": [],
-                 "tech": "Generative AI, SEO, HTML, Photoshop, video editing"},
             ],
         },
         {
@@ -137,10 +127,11 @@ RESUME_EN = {
     ],
     "extra_projects": [("PDF2Obsidian", "Open-source tool that turns PDFs and lecture transcripts into Obsidian notes (2026.06, MIT). "
                         "Code and automated tests are public.", "work/pdf2obsidian.html", "https://github.com/Chokyusong/pdf2obsidian"),
+                       ("AI content planning", "A one-source multi-use system that adapts one piece of content to blog, YouTube, Naver and social formats; SEO; thumbnails and ad creatives with AI image tools (2026.09 –)", None),
                        ("Websites", "Planned, built and run the ONICSOFT website; 22 industry samples; an 8-page animated draft for the ASTRA entertainment company (2026.08 –)", "work/onicsoft-homepage.html"),
                        ("Motion graphics", "271 effects made with code and Blender; AutoLed promo videos and broadcast alerts (2026.09 –)", "work/motion.html")],
     "education": None,
-    "tools": R.RESUME["tools"][:-1] + ["Claude Code · AI coding agents"],
+    "tools": R.RESUME["tools"][:-1] + ["ChatGPT · Claude Code · AI coding agents"],
     "language": "Korean (native) · English (conversational)",
 }
 
