@@ -3,3 +3,4 @@ Thumbs.db
 *.pdf
 !assets/cho-kyusong-portfolio.pdf
 __pycache__/
+!assets/cho-kyusong-resume.pdf
