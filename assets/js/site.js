@@ -135,7 +135,9 @@
       o.fillText(word, x, y);
       var d = o.getImageData(0, 0, cols, rows).data;
       mask = new Float32Array(cols * rows);
-      for (var i = 0; i < mask.length; i++) mask[i] = d[i * 4 + 3] / 255;
+      // 휴대폰에서는 글자 위에 겹치므로 점 글자를 흐리게 둔다
+      var k0 = narrow ? 0.35 : 1;
+      for (var i = 0; i < mask.length; i++) mask[i] = d[i * 4 + 3] / 255 * k0;
       if (!running) draw(performance.now());
     }
 

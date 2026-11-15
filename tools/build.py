@@ -813,9 +813,10 @@ def home():
   <canvas class="hero-canvas" data-word="BUILD" aria-hidden="true"></canvas>
   <div class="wrap hero-in">
     <p class="eyebrow" data-hero-fade>AI BUILDER · 조규송</p>
+    <p class="hero-open" data-hero-fade><span class="live-dot" aria-hidden="true"></span>지원 가능 · 정규직 · 계약직 · 프리랜서 · 출근 · 원격</p>
     <h1 class="h-display hero-title" data-lines data-hero><span class="line-mask"><span>AI로 필요한 것을</span></span><span class="line-mask"><span>만들고, 팔고,</span></span><span class="line-mask"><span><em>직접 운영</em>합니다.</span></span></h1>
     <div class="hero-foot">
-      <p class="lead" data-hero-fade>기획, 디자인, 개발, 배포, 운영까지 AI와 함께 혼자 끝내는 AI&nbsp;Builder입니다. 방송 자동화 제품 AutoLed를 만들어 유료 고객 약 15명에게 팔고, 회사 업무를 줄이는 자동화 프로그램과 서버를 직접 만들고 운영합니다. 이 페이지에서 만든 것을 전부 직접 보고 눌러 볼 수 있습니다.</p>
+      <p class="lead" data-hero-fade>기획, 디자인, 개발, 배포, 운영까지 AI와 함께 맡는 AI&nbsp;Builder입니다. 방송 자동화 제품 AutoLed를 만들어 유료 고객 약 15명에게 팔고, 회사 업무를 줄이는 자동화 프로그램과 서버를 직접 만들고 운영합니다. 이 페이지에서 만든 것을 전부 직접 보고 눌러 볼 수 있습니다.</p>
       <div class="btn-row" data-hero-fade><a class="btn btn-primary" href="#works" data-magnet>작업 보기<i class="ph ph-arrow-down" aria-hidden="true"></i></a><a class="btn btn-ghost" href="resume.html" data-magnet><i class="ph ph-identification-card" aria-hidden="true"></i>이력서</a></div>
     </div>
     <div class="hero-meta" data-hero-fade><div>ROLE<b>{e(ROLE)}</b></div><div>NOW<b>AutoLed 2.1.0 · 유료 고객 약 15명</b></div><div>FOCUS<b>AI 서비스 기획 · 업무 자동화 · 서버</b></div></div>
@@ -827,14 +828,14 @@ def home():
 
 <section class="section wrap" id="about">
   <div class="section-head">
-    <div><p class="idx" data-reveal>01 — 요약</p>{lines_html(["혼자 만들고,", "끝까지 책임집니다."], "h2", "h-1")}</div>
+    <div><p class="idx" data-reveal>01 — 요약</p>{lines_html(["직접 만들고,", "끝까지 책임집니다."], "h2", "h-1")}</div>
     <p class="lead" data-reveal>방송 자동화 제품, 업무 자동화 프로그램, 서버를 기획부터 운영까지 한 사람이 맡습니다. 홈페이지와 영상도 직접 만듭니다. 코드는 AI 코딩 도구와 함께 쓰고, 무엇을 만들고 언제 내보낼지는 제가 정합니다.</p>
   </div>
   <div class="stats">
     <div class="stat" data-reveal><span class="stat-num"><span data-count="15">15</span><small>명</small></span><span class="stat-label">AutoLed 유료 고객(약) · 2.1.0 판매 중</span></div>
     <div class="stat" data-reveal><span class="stat-num"><span data-count="6">6</span><small>년</small></span><span class="stat-label">방송·MCN 현장부터 제품 개발까지 경력</span></div>
     <div class="stat" data-reveal><span class="stat-num"><span data-count="2200">2,200</span><small>+</small></span><span class="stat-label">소개한 작업의 자동 테스트</span></div>
-    <div class="stat" data-reveal><span class="stat-num"><span data-count="{N}">{N}</span></span><span class="stat-label">상세 페이지로 소개한 작업</span></div>
+    <div class="stat" data-reveal><span class="stat-num"><span data-count="3">3</span><small>분</small></span><span class="stat-label">5시간 걸리던 MCN 정산 · GPT와 Python으로 자동화</span></div>
   </div>
   <p class="stats-note">{ASOF} 기준. 테스트 수는 각 저장소 기록, 경력은 이력서 기준입니다.</p>
 </section>
@@ -925,7 +926,7 @@ def home():
     <a href="{PDF}">포트폴리오 PDF<span>인쇄용 한 권</span></a>
   </div>
 </section>"""
-    desc = f"기획부터 디자인, 개발, 운영까지 AI와 함께 혼자 끝내는 AI Builder 조규송. 방송 자동화 제품 AutoLed, 업무 자동화 프로그램, 홈페이지, 서버, 영상까지 작업 {N}가지. 화면, 영상, 움직이는 시안을 직접 볼 수 있습니다."
+    desc = f"기획부터 디자인, 개발, 운영까지 AI와 함께 맡는 AI Builder 조규송. 방송 자동화 제품 AutoLed, 업무 자동화 프로그램, 홈페이지, 서버, 영상까지 작업 {N}가지. 화면, 영상, 움직이는 시안을 직접 볼 수 있습니다."
     return shell("조규송 · AI Builder 포트폴리오", desc, body, rel, home=True)
 
 
