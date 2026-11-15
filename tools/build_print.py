@@ -117,7 +117,7 @@ def project(i, p):
     links = f'<li>상세 페이지 — {SITE.replace("https://", "")}work/{p["slug"]}.html</li>' + links
     notice = f'<p class="notice">{e(p["notice"])}</p>' if p.get("notice") else ""
     return f"""<section class="proj">
-  <header><span class="n">{i + 1:02d} / {B.N:02d}</span><span class="kind">{e(p["kind"])}</span></header>
+  <header><span class="n">{i + 1:02d} / {B.N:02d} · {e(B.CAT_NAME[B.CAT_OF[p["slug"]]])}</span><span class="kind">{e(p["kind"])}</span></header>
   <h2>{e(p["title"])}</h2>
   <p class="sum">{e(p["summary"])}</p>
   <dl class="meta">{meta}</dl>
@@ -128,7 +128,12 @@ def project(i, p):
 
 
 def main(projects):
-    idx = "".join(f'<li><span>{i + 1:02d}</span><b>{e(p["title"])}</b><em>{e(p["short"])}</em></li>' for i, p in enumerate(projects))
+    idx = ""
+    for i, p in enumerate(projects):
+        c = B.CAT_OF[p["slug"]]
+        if i == 0 or B.CAT_OF[projects[i - 1]["slug"]] != c:
+            idx += f'<li class="cat">{e(B.CAT_NAME[c])}</li>'
+        idx += f'<li><span>{i + 1:02d}</span><b>{e(p["title"])}</b><em>{e(p["short"])}</em></li>'
     body = "".join(project(i, p) for i, p in enumerate(projects))
     by = {p["slug"]: p for p in projects}
     fields = "".join(f'<div><b>{e(n)}</b><p>{e(t)}</p><span>{e(", ".join(by[x]["title"] for x in sl))}</span></div>' for _, n, t, sl, _pic in B.FIELDS)
@@ -167,14 +172,15 @@ h3 {{ font-size:10.5pt; margin-bottom:2.5mm; padding-bottom:1.5mm; border-bottom
 .contact {{ margin-top:auto; padding-top:8mm; display:grid; grid-template-columns:repeat(4,auto); gap:2mm 8mm; justify-content:start; font-size:9pt; }}
 .contact span {{ color:var(--mute); display:block; font-size:7.5pt; }}
 .toc {{ break-before:page; }}
-.toc h2 {{ font-size:20pt; margin-bottom:5mm; }}
-.toc .fields {{ display:grid; grid-template-columns:1fr 1fr; gap:4mm 8mm; margin-bottom:10mm; }}
+.toc h2 {{ font-size:18pt; margin-bottom:3.5mm; }}
+.toc .fields {{ display:grid; grid-template-columns:1fr 1fr; gap:3mm 8mm; margin-bottom:7mm; }}
 .toc .fields div {{ border-top:1.5pt solid var(--ink); padding-top:2mm; }}
-.toc .fields b {{ font-size:11pt; }} .toc .fields p {{ margin:1mm 0; color:var(--sub); }} .toc .fields span {{ font-size:8pt; color:var(--acc); }}
+.toc .fields b {{ font-size:10.5pt; }} .toc .fields p {{ margin:.6mm 0; color:var(--sub); font-size:8.5pt; line-height:1.45; }} .toc .fields span {{ font-size:8pt; color:var(--acc); }}
 .toc ol {{ list-style:none; padding:0; margin:0; border-top:1.5pt solid var(--ink); }}
-.toc li {{ display:grid; grid-template-columns:12mm 62mm 1fr; padding:2.2mm 0; border-bottom:.5pt solid var(--line); align-items:baseline; }}
+.toc li {{ display:grid; grid-template-columns:12mm 62mm 1fr; padding:1.2mm 0; border-bottom:.5pt solid var(--line); align-items:baseline; }}
+.toc li.cat {{ display:block; padding:2.6mm 0 .8mm; color:var(--acc); font-weight:700; font-size:8.5pt; letter-spacing:.06em; border-bottom:.75pt solid var(--ink); }}
 .toc li span {{ color:var(--acc); font-weight:700; }} .toc li b {{ font-size:11pt; }} .toc li em {{ font-style:normal; color:var(--sub); }}
-.toc .note {{ color:var(--mute); font-size:8.5pt; margin-top:5mm; }}
+.toc .note {{ color:var(--mute); font-size:8pt; margin-top:3mm; }}
 .proj {{ break-before:page; }}
 .proj header {{ display:flex; justify-content:space-between; color:var(--mute); font-size:8pt; border-bottom:.5pt solid var(--line); padding-bottom:2mm; }}
 .proj header .n {{ color:var(--acc); font-weight:700; }}

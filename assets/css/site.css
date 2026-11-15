@@ -568,3 +568,18 @@ html.anim.page-enter .curtain i { transform: scaleY(1); transform-origin: bottom
 .field-links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
 .field-links a { font-size: 13px; padding: 5px 11px; border: 1px solid var(--line); border-radius: 999px; color: var(--text-2); text-decoration: none; transition: border-color .25s, color .25s, background .25s; }
 .field-links a:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+
+/* 작업 분류 탭과 묶음 */
+.field-body h3 small { font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--muted); margin-left: auto; }
+.work-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 clamp(20px, 2.4vw, 32px); }
+.work-tabs button { font: inherit; font-size: 14px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px; border: 1px solid var(--line-2, var(--line)); background: transparent; color: var(--text-2); transition: background .25s, color .25s, border-color .25s; }
+.work-tabs button span { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+.work-tabs button:hover { border-color: var(--accent); color: var(--text); }
+.work-tabs button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #031013; }
+.work-tabs button[aria-pressed="true"] span { color: rgba(3, 16, 19, 0.6); }
+.work-group { display: flex; align-items: baseline; gap: 10px; padding: clamp(28px, 3.2vw, 44px) 0 12px; border-bottom: 1px solid var(--line); }
+.work-group:first-child { padding-top: 8px; }
+.work-group b { font-size: 13px; font-family: var(--mono); letter-spacing: 0.12em; color: var(--accent); font-weight: 500; }
+.work-group span { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.works [hidden] { display: none !important; }
+.works.is-filtering .work-group { display: none; }

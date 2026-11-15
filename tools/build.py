@@ -460,16 +460,22 @@ PROJECTS = [
     },
 ]
 
-N = len(PROJECTS)
-
-# 하는 일 분야. 첫 화면 '하는 일'과 인쇄판 목차에 쓴다. 업무 자동화는 엑셀·정산으로 좁혀 쓰지 않는다.
-FIELDS = [
-    ("ph-broadcast", "방송 자동화", "후원이 들어오면 연출을 실행하고, 여러 방송을 한 화면에서 지켜보고, 후원 데이터를 모아 집계합니다.", ["autoled", "cctv", "bighand"], ("cctv", "cover")),
-    ("ph-briefcase", "업무 자동화", "사람이 손으로 반복하던 일을 프로그램으로 바꿉니다. 지금까지 주간 정산, 거래장부, 문서 정리를 만들었습니다.", ["enter-payroll", "ledger", "pdf2obsidian"], ("ledger", "cover")),
-    ("ph-browser", "홈페이지 · 웹", "회사 사이트와 손님 홈페이지를 기획, 디자인, 개발하고 블로그와 구축 사례까지 운영합니다.", ["onicsoft-homepage", "astra"], ("astra", "home-pc")),
-    ("ph-hard-drives", "서버 · 운영", "로그인과 이용 기간을 확인하는 서버, 24시간 수집 서버를 세우고 감시와 백업까지 맡습니다.", ["login-server", "bighand"], ("login-server", "dashboard")),
-    ("ph-film-strip", "영상 · 개발 도구", "코드로 만드는 홍보영상과 효과, 사람이 승인한 범위 안에서 AI가 개발을 이어 가는 도구를 만듭니다.", ["motion", "aios"], None),
+# 작업 분류. 첫 화면 03 카드, 04 작업 목록 탭, 인쇄판 목차가 모두 이 분류를 쓴다.
+# (키, 이름, 아이콘, 설명, 대표 그림(폴더, 이름) 또는 None, 속한 작업 순서)
+CATS = [
+    ("program", "프로그램", "ph-app-window", "설치해서 쓰는 Windows 프로그램과 도구입니다. 방송 자동화 제품 AutoLed는 직접 판매하고 업데이트까지 운영합니다.", ("autoled", "ui-timeline"), ["autoled", "cctv", "aios", "pdf2obsidian"]),
+    ("automation", "업무 자동화", "ph-briefcase", "회사에서 사람이 손으로 반복하던 일을 그 회사에 맞춘 프로그램으로 바꿉니다. 지금까지 주간 정산과 거래장부를 만들었습니다.", ("ledger", "cover"), ["enter-payroll", "ledger"]),
+    ("web", "홈페이지", "ph-browser", "회사 사이트와 손님 홈페이지를 기획, 디자인, 개발하고 블로그와 구축 사례까지 운영합니다.", ("astra", "home-pc"), ["onicsoft-homepage", "astra"]),
+    ("server", "서버", "ph-hard-drives", "로그인과 이용 기간을 확인하는 서버, 24시간 수집 서버를 세우고 감시와 백업까지 맡습니다.", ("login-server", "dashboard"), ["login-server", "bighand"]),
+    ("motion", "모션그래픽", "ph-film-strip", "편집 프로그램 없이 코드로 홍보영상과 효과를 만듭니다. 효과 271종을 만들었습니다.", None, ["motion"]),
 ]
+CAT_OF = {sl: c[0] for c in CATS for sl in c[5]}
+CAT_NAME = {c[0]: c[1] for c in CATS}
+_order = [sl for c in CATS for sl in c[5]]
+assert sorted(_order) == sorted(p["slug"] for p in PROJECTS), "분류에 빠지거나 겹친 작업이 있다"
+PROJECTS.sort(key=lambda p: _order.index(p["slug"]))
+N = len(PROJECTS)
+FIELDS = [(ic, name, txt, sls, pic) for _, name, ic, txt, pic, sls in CATS]
 
 # ---------------------------------------------------------------- 공통 틀
 
@@ -771,10 +777,14 @@ def home():
         elif p.get("pv_stat"):
             a, b = p["pv_stat"]
             pvs.append(f'<div class="pv-stat" data-pv-item="{p["slug"]}"><b>{e(a)}</b><span>{e(b)}</span></div>')
+        cat = CAT_OF[p["slug"]]
+        if i == 0 or CAT_OF[PROJECTS[i - 1]["slug"]] != cat:
+            cnt = sum(1 for q in PROJECTS if CAT_OF[q["slug"]] == cat)
+            rows.append(f'<div class="work-group" data-cat="{cat}" data-reveal><b>{e(CAT_NAME[cat])}</b><span>{cnt}</span></div>')
         rows.append(
-            f'<a class="work-row" href="work/{p["slug"]}.html" data-pv="{p["slug"]}" data-reveal data-cursor="보기">'
+            f'<a class="work-row" href="work/{p["slug"]}.html" data-pv="{p["slug"]}" data-cat="{cat}" data-reveal data-cursor="보기">'
             f'<span class="work-n">{i + 1:02d}</span><span class="work-title">{e(p["title"])}</span>'
-            f'<span class="work-sub">{e(p["short"])}</span><span class="work-tags">{e(p["tags"])}<br>{e(p["year"])}</span>'
+            f'<span class="work-sub">{e(p["short"])}</span><span class="work-tags">{e(CAT_NAME[cat])} · {e(p["tags"])}<br>{e(p["year"])}</span>'
             f'<span class="work-arrow" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span>{thumb}</a>')
 
     show_steps = [
@@ -809,16 +819,18 @@ def home():
              "pdf2obsidian": "PDF2Obsidian", "onicsoft-homepage": "회사 홈페이지", "astra": "ASTRA 손님 홈페이지", "login-server": "로그인 서버",
              "motion": "모션그래픽", "aios": "AIOS"}
     cards = []
-    for k, (ic, name, txt, sls, pic) in enumerate(FIELDS):
+    for k, (key, name, ic, txt, pic, sls) in enumerate(CATS):
         if pic:
             media = img(pic[0], pic[1], "", rel)
         else:
             media = f'<img src="{CLIPS}chromeText.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async">'
         chips = "".join(f'<a href="work/{sl}.html">{e(short[sl])}</a>' for sl in sls)
-        cards.append(f'<article class="field" data-reveal><a class="field-media" href="work/{sls[0]}.html" data-cursor="보기" aria-label="{e(name)} 대표 작업 보기">{media}</a>'
-                     f'<div class="field-body"><span class="idx">{k + 1:02d}</span><h3 class="h-3"><i class="ph {ic}" aria-hidden="true"></i>{e(name)}</h3><p>{e(txt)}</p>'
+        cards.append(f'<article class="field" data-reveal><a class="field-media" href="#works" data-filter-go="{key}" data-cursor="보기" aria-label="{e(name)} 작업 모아 보기">{media}</a>'
+                     f'<div class="field-body"><span class="idx">{k + 1:02d}</span><h3 class="h-3"><i class="ph {ic}" aria-hidden="true"></i>{e(name)}<small>{len(sls)}</small></h3><p>{e(txt)}</p>'
                      f'<div class="field-links">{chips}</div></div></article>')
     fields_html = "".join(cards)
+    work_tabs = f'<button type="button" data-filter="all" aria-pressed="true">전체<span>{N}</span></button>' + "".join(
+        f'<button type="button" data-filter="{c[0]}" aria-pressed="false">{e(c[1])}<span>{len(c[5])}</span></button>' for c in CATS)
     tl = "".join(f'<li data-reveal><time datetime="{d.replace(".", "-")}">{d}</time><p>{e(t)}</p></li>' for d, t in history)
 
     body = f"""<section class="hero">
@@ -866,7 +878,7 @@ def home():
 <section class="section wrap" id="fields">
   <div class="section-head">
     <div><p class="idx" data-reveal>03 — 하는 일</p>{lines_html(["한 분야만", "하지 않습니다."], "h2", "h-1")}</div>
-    <p class="lead" data-reveal>방송 자동화 제품을 팔면서, 회사 업무를 줄이는 프로그램, 홈페이지, 서버, 영상까지 직접 만들고 운영합니다. 카드를 누르면 그 분야의 대표 작업이 열립니다.</p>
+    <p class="lead" data-reveal>방송 자동화 제품을 팔면서, 회사 업무를 줄이는 프로그램, 홈페이지, 서버, 영상까지 직접 만들고 운영합니다. 그림을 누르면 아래 작업 목록이 그 분류로 정리되고, 이름표를 누르면 상세 페이지가 열립니다.</p>
   </div>
   <div class="fields">{fields_html}</div>
 </section>
@@ -874,9 +886,10 @@ def home():
 <section class="section wrap" id="works">
   <div class="section-head">
     <div><p class="idx" data-reveal>04 — 모든 작업</p>{lines_html(["만든 것", f"{N}가지"], "h2", "h-1")}</div>
-    <p class="lead" data-reveal>줄을 누르면 화면, 영상, 직접 눌러 보는 데모를 모은 상세 페이지가 열립니다. 비공개 저장소는 핵심 로직 없이 무엇을 만들고 어떤 결과가 났는지만 소개합니다.</p>
+    <p class="lead" data-reveal>프로그램, 업무 자동화, 홈페이지, 서버, 모션그래픽으로 나눠 정리했습니다. 줄을 누르면 화면, 영상, 직접 눌러 보는 데모를 모은 상세 페이지가 열립니다. 비공개 저장소는 핵심 로직 없이 무엇을 만들고 어떤 결과가 났는지만 소개합니다.</p>
   </div>
-  <div class="works">{"".join(rows)}</div>
+  <div class="work-tabs" role="group" aria-label="분류 고르기" data-reveal>{work_tabs}</div>
+  <div class="works" data-works>{"".join(rows)}</div>
 </section>
 <div class="hover-preview" aria-hidden="true">{"".join(pvs)}</div>
 

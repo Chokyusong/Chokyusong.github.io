@@ -34,7 +34,7 @@
   $$('a[href^="#"]').forEach(function (a) {
     a.addEventListener("click", function (e) {
       var id = a.getAttribute("href");
-      if (id.length < 2) return;
+      if (id.length < 2 || a.hasAttribute("data-filter-go")) return;
       var t = document.querySelector(id);
       if (!t) return;
       e.preventDefault();
@@ -394,6 +394,34 @@
       requestAnimationFrame(loop);
     })();
   }
+
+  /* ---------- 작업 목록: 분류 탭 ---------- */
+  var works = $("[data-works]");
+  function filterWorks(cat) {
+    if (!works) return;
+    $$(".work-tabs button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-filter") === cat)); });
+    works.classList.toggle("is-filtering", cat !== "all");
+    $$(".work-row, .work-group", works).forEach(function (r) {
+      r.hidden = cat !== "all" && r.getAttribute("data-cat") !== cat;
+      if (!r.hidden) { r.style.opacity = ""; r.style.transform = ""; r.style.visibility = ""; }
+    });
+    if (ST) requestAnimationFrame(function () { ST.refresh(); });
+  }
+  $$(".work-tabs button").forEach(function (b) {
+    b.addEventListener("click", function () { filterWorks(b.getAttribute("data-filter")); });
+  });
+  $$("[data-filter-go]").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      filterWorks(a.getAttribute("data-filter-go"));
+      var t = document.getElementById("works");
+      // 거른 뒤 자리 계산(ScrollTrigger)이 끝난 다음에 내려간다
+      requestAnimationFrame(function () { requestAnimationFrame(function () {
+        if (lenis) { lenis.resize(); lenis.scrollTo(t, { offset: -20, duration: 1.2 }); }
+        else t.scrollIntoView({ behavior: reduce ? "auto" : "smooth" });
+      }); });
+    });
+  });
 
   /* ---------- 모션 영상 띠: 가로로 흐름 ---------- */
   var reel = $("[data-reel]");

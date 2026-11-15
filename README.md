@@ -21,7 +21,7 @@ py -3 tools/build.py
 py -3 tools/make_pdf.py
 ```
 
-글은 `tools/build.py`의 PROJECTS를 고치고 다시 만든다. 만든 HTML을 직접 고치지 않는다.
+글은 `tools/build.py`의 PROJECTS를 고치고 다시 만든다. 만든 HTML을 직접 고치지 않는다. 작업 분류(프로그램·업무 자동화·홈페이지·서버·모션그래픽)와 순서는 같은 파일의 CATS 한 곳에서 정한다(첫 화면 카드, 작업 목록 탭, PDF 목차가 같이 바뀐다).
 
 ## 지금 상태
 
