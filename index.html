@@ -119,6 +119,17 @@
 
     <div class="bento">
 
+      <article class="cell c-full reveal" id="work-astra">
+        <button class="cell-btn" data-open="d-astra" aria-haspopup="dialog">
+          <span class="cell-media"><img src="assets/img/astra-home.jpg" width="1280" height="720" alt="ASTRA 홈페이지 시안 첫 화면. 흑백 소나무와 기와 그림 위에 큰 ASTRA 글자와 WE MAKE NEXT" loading="lazy"></span>
+          <span class="cell-body">
+            <span class="cell-tag"><i class="ph ph-play-circle" aria-hidden="true"></i>손님 홈페이지 · 움직이는 시안 직접 보기</span>
+            <span class="cell-title">ASTRA · 엔터테인먼트 회사 홈페이지</span>
+            <span class="cell-text">엔터테인먼트·MCN 회사 홈페이지 8쪽을 움직이는 시안으로 만들었습니다. 칸을 누르면 시안을 이 안에서 실제로 스크롤하고 눌러 볼 수 있습니다.</span>
+          </span>
+        </button>
+      </article>
+
       <article class="cell c-wide reveal">
         <button class="cell-btn" data-open="d-cctv" aria-haspopup="dialog">
           <span class="cell-media"><img src="assets/img/cctv-cover.jpg" width="1600" height="900" alt="CCTV 관제 화면. 방송 중인 BJ 영상 타일과 오른쪽 이벤트 기록. 예시 데이터" loading="lazy"></span>
@@ -238,7 +249,7 @@
       <li class="reveal"><time datetime="2026-08">2026.08</time><p>로그인 서버 운영, AutoLed 정식 배포, 회사 홈페이지</p></li>
       <li class="reveal"><time datetime="2026-09">2026.09</time><p>모션그래픽 작업실, 유튜브 채널 시작, 납품 업체 엑셀 장부 자동화</p></li>
       <li class="reveal"><time datetime="2026-10">2026.10</time><p>큰손탐지기 서버, 엔터 정산, CCTV 관제, 거래장부 프로그램</p></li>
-      <li class="reveal"><time datetime="2026-11">2026.11</time><p>AutoLed 1.12.1</p></li>
+      <li class="reveal"><time datetime="2026-11">2026.11</time><p>AutoLed 1.12.1, 엔터 회사 홈페이지 ASTRA 제작</p></li>
     </ol>
     <p class="history-note">각 저장소를 만든 달 기준입니다.</p>
   </section>
@@ -274,7 +285,7 @@
   <section class="stack wrap" aria-labelledby="stack-title">
     <h2 id="stack-title">주로 쓰는 기술</h2>
     <div class="stack-groups">
-      <div class="reveal"><h3>언어</h3><ul class="chips"><li>Python</li><li>JavaScript</li><li>HTML/CSS</li></ul></div>
+      <div class="reveal"><h3>언어</h3><ul class="chips"><li>Python</li><li>JavaScript</li><li>HTML/CSS</li><li>PHP</li></ul></div>
       <div class="reveal"><h3>데스크톱 앱</h3><ul class="chips"><li>Tkinter</li><li>PySide6</li><li>Nuitka</li><li>PyInstaller</li><li>Inno Setup</li></ul></div>
       <div class="reveal"><h3>서버</h3><ul class="chips"><li>FastAPI</li><li>Nginx</li><li>Caddy</li><li>systemd</li><li>SQLite</li><li>Ubuntu</li></ul></div>
       <div class="reveal"><h3>방송 · 영상</h3><ul class="chips"><li>OBS WebSocket</li><li>Resolume OSC</li><li>Companion</li><li>three.js</li><li>Blender</li><li>ffmpeg</li></ul></div>
@@ -306,6 +317,35 @@
 </footer>
 
 <!-- 자세히 보기 -->
+<dialog id="d-astra" class="dlg-wide" aria-labelledby="d-astra-t">
+  <div class="dlg">
+    <button class="dlg-close" data-close aria-label="닫기"><i class="ph ph-x" aria-hidden="true"></i></button>
+    <p class="dlg-tag">손님 홈페이지 · 제작 중 · HTML · CSS · JavaScript</p>
+    <h2 id="d-astra-t">ASTRA · 엔터테인먼트 회사 홈페이지</h2>
+    <div class="live-frame" data-live="works/astra/motion/home.html">
+      <iframe title="ASTRA 움직이는 시안 홈 화면" loading="lazy" tabindex="0"></iframe>
+    </div>
+    <img class="live-poster" src="assets/img/astra-home.jpg" width="1280" height="720" alt="ASTRA 홈페이지 시안 첫 화면" loading="lazy">
+    <p class="live-help">위 화면은 실제 시안입니다. 안에서 스크롤하고 메뉴를 눌러 다른 쪽으로 옮겨 갈 수 있습니다. 크게 보려면 아래 쪽 이름을 누르세요(새 창).</p>
+    <div class="links live-pages">
+      <a class="text-link" href="works/astra/motion/home.html" target="_blank" rel="noopener">홈<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+      <a class="text-link" href="works/astra/motion/about.html" target="_blank" rel="noopener">회사소개<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+      <a class="text-link" href="works/astra/motion/mcn.html" target="_blank" rel="noopener">MCN<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+      <a class="text-link" href="works/astra/brand/brand-v3.html" target="_blank" rel="noopener">브랜드<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+      <a class="text-link" href="works/astra/motion/entertainment.html" target="_blank" rel="noopener">엔터테인먼트<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+      <a class="text-link" href="works/astra/motion/media.html" target="_blank" rel="noopener">미디어<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+      <a class="text-link" href="works/astra/motion/partners.html" target="_blank" rel="noopener">협력사<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+      <a class="text-link" href="works/astra/motion/contact.html" target="_blank" rel="noopener">CONTACT<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+    </div>
+    <dl class="dlg-story">
+      <div><dt>의뢰</dt><dd>크리에이터 매니지먼트, 개인방송, 브랜드·미디어 제작을 하는 엔터테인먼트 회사의 홈페이지입니다. 손님이 보낸 PPT 초안 8장에서 출발했습니다.</dd></div>
+      <div><dt>만든 것</dt><dd>홈, 회사소개, MCN, 브랜드, 엔터테인먼트, 미디어, 협력사, CONTACT 8쪽입니다. 홈은 ASTRA 글자와 WE MAKE NEXT를 코드로 움직이는 그림 배경 위에 띄우고, MCN 첫 화면은 사무실 사진 한 장에 깊이를 넣어 카메라가 둘러보듯 움직입니다. 쪽마다 스크롤에 맞춰 장면이 바뀌고, 휴대폰 화면도 따로 맞췄습니다.</dd></div>
+      <div><dt>진행</dt><dd>와이어프레임, 디자인 시안, 움직이는 시안 순서로 확인받으며 만들고 있습니다. 실제 사이트는 Next.js로 만든 화면과 전용 PHP 백엔드(관리자, 블로그, 지원 양식, 메일, 통계)를 웹호스팅에 올리는 방식이고, 이 과정을 다음 손님에게도 쓸 수 있게 공통 부품과 검사 도구로 함께 정리하고 있습니다.</dd></div>
+    </dl>
+    <p class="dlg-note">2026년 11월 11일 시안 판입니다. 지원·문의 양식은 화면만 있고 실제로 접수되지 않습니다. 배경 그림 일부는 AI로 만들었습니다.</p>
+  </div>
+</dialog>
+
 <dialog id="d-cctv" aria-labelledby="d-cctv-t">
   <div class="dlg">
     <button class="dlg-close" data-close aria-label="닫기"><i class="ph ph-x" aria-hidden="true"></i></button>

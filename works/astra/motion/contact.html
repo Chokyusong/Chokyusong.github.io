@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>ASTRA CONTACT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Noto+Serif+KR:wght@300..600&family=Geist:wght@100..900&family=Cinzel:wght@600;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<script>if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('fx');</script>
+<style>
+@import url('../pages/pages.css') layer(site);
+
+/* CONTACT — 흰 바탕에 지원·문의 양식만(대표 11-14: 잡지 표지와 위쪽 제목·설명·안내 칸을 뺌)
+   공통 틀(pages.css)은 아래 층(layer site)으로 불러 이 쪽 규칙이 늘 이긴다. 머리말·메뉴·바닥글·떠 있는 버튼은 다른 쪽과 같다.
+   이 쪽 이름이 공통 틀과 겹치는 것(contact·field 등)은 k- 를 붙였다.
+   아무것도 보내거나 저장하지 않는다(fetch·브라우저 저장소 없음). */
+:root {
+  --c-paper: #ffffff; --paper-2: #f5f4f1; --warm: #dedcda; --c-ink: #141414; --ink-2: #6d6a65; --line: #e5e1da;
+  --gold: #a4865a; --gold-ink: #7a5f38; --line-2: #cfc9bf;
+  --serif-en: 'Bodoni Moda', 'Noto Serif KR', serif; --serif-kr: 'Noto Serif KR', serif;
+  --c-sans: 'Pretendard Variable', Pretendard, -apple-system, system-ui, sans-serif;
+  --cg: 56px; --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--header-h) + 24px); }
+/* 이 쪽 기본 글씨는 본문(.k-contact)에만. 머리말·메뉴·바닥글은 공통 틀 그대로 둔다 */
+body { margin: 0; background: var(--c-paper); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+.k-contact { color: var(--c-ink); font-family: var(--c-sans); font-size: 16px; line-height: 1.6; }
+:where(.k-contact) a { color: inherit; }
+:where(.k-contact) :where(button, input, textarea) { font: inherit; color: inherit; }
+.k-contact :focus-visible { outline: 2px solid var(--c-ink); outline-offset: 3px; }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.slot-box { border: 1px dashed #b9b2a6; color: var(--ink-2); font-size: 13px; padding: 12px 14px; line-height: 1.5; }
+
+/* ── 양식 한 칸(가운데) ── */
+
+.k-sheet { padding: 72px 40px 96px; max-width: 760px; margin: 0 auto; }
+/* 지원하기와 비즈니스 문의는 따로 된 두 화면이다(대표 11-15 "1/2 이렇게 나누지 말고 별개처럼, 비즈니스 문의는 검은 배경").
+   위쪽: 왼쪽 이 화면 이름, 오른쪽 다른 화면으로 가는 문(누르면 그 자리에서 원이 퍼지며 화면 색이 바뀐다) */
+.k-top { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.k-eyebrow { margin: 0; font-weight: 500; font-family: var(--serif-kr); font-size: 30px; line-height: 1.25; letter-spacing: -0.015em; color: var(--c-ink); }
+.k-eyebrow b { display: block; margin-bottom: 10px; font-family: 'Bodoni Moda', serif; font-weight: 500; font-size: 13px; line-height: 1; letter-spacing: 0.32em; color: var(--ink-2); }
+.k-door { position: relative; display: inline-flex; align-items: center; gap: 12px; flex: none; min-height: 44px; padding: 0 20px 0 22px; border: 1px solid var(--line-2); border-radius: 999px; color: var(--c-ink); text-decoration: none; font-size: 14px; font-weight: 600; letter-spacing: 0.01em; overflow: hidden; isolation: isolate; }
+.k-door small { font-family: 'Bodoni Moda', serif; font-size: 11px; font-weight: 500; letter-spacing: 0.22em; color: var(--ink-2); }
+.k-door i { font-style: normal; font-family: 'Bodoni Moda', serif; font-size: 18px; line-height: 1; }
+/* 문에 올리면 안쪽이 다음 화면 색(지원하기 → 검정, 비즈니스 → 흰색)으로 차오른다 */
+.k-door::before { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: var(--door-fill); transform: scaleX(0); transform-origin: 0 50%; }
+.k-door:hover, .k-door:focus-visible { color: var(--door-ink); border-color: var(--door-fill); }
+.k-door:hover small, .k-door:focus-visible small { color: inherit; opacity: 0.7; }
+.k-door:hover::before, .k-door:focus-visible::before { transform: scaleX(1); }
+html.fx .k-door::before { transition: transform 0.45s var(--ease); }
+html.fx .k-door { transition: color 0.3s, border-color 0.3s; }
+html.fx .k-door i { transition: transform 0.35s var(--ease); }
+.k-door:hover i { transform: translateX(4px); }
+.k-door[data-for="business"]:hover i { transform: translateX(-4px); }
+.k-top + .form .k-fields { padding-top: 6px; }
+.form[hidden], .done[hidden] { display: none; }
+.k-fields { display: grid; grid-template-columns: 1fr 1fr; column-gap: 36px; counter-reset: fld; }
+.k-field { counter-increment: fld; padding-top: 26px; min-width: 0; }
+.k-field.full { grid-column: 1 / -1; }
+.k-field label { display: flex; align-items: baseline; gap: 8px; font-size: 13px; color: var(--ink-2); letter-spacing: 0.01em; }
+.k-field label::before { content: counter(fld, decimal-leading-zero); font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 13px; color: #a29d94; font-variant-numeric: tabular-nums; min-width: 18px; }
+.k-field label .req { color: var(--gold-ink); font-size: 11.5px; font-weight: 600; }
+.k-field:focus-within label { color: var(--c-ink); }
+.k-field:focus-within label::before { color: var(--gold-ink); }
+.k-box { display: block; width: 100%; border: 0; border-bottom: 1px solid var(--line-2); background: transparent; padding: 8px 0 10px; font-size: 18px; line-height: 1.4; border-radius: 0; outline: none; }
+.k-box::placeholder { color: #a8a39a; }
+.k-box:focus { border-bottom-color: var(--c-ink); box-shadow: 0 1px 0 0 var(--c-ink); }
+.k-box:focus-visible { outline: none; }
+textarea.k-box { resize: vertical; min-height: 96px; }
+.err { display: none; margin: 7px 0 0; font-size: 12.5px; font-weight: 600; color: var(--gold-ink); }
+.err::before { content: "✦ "; }
+.k-field.bad .err, .agree-wrap.bad .err { display: block; }
+.k-field.bad .k-box { border-bottom-color: var(--gold-ink); box-shadow: 0 1px 0 0 var(--gold-ink); }
+.agree-wrap { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); }
+.agree-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.k-agree { display: inline-flex; align-items: center; gap: 12px; cursor: pointer; font-size: 15px; }
+.k-agree input { appearance: none; -webkit-appearance: none; width: 22px; height: 22px; margin: 0; border: 1.5px solid var(--c-ink); border-radius: 0; display: grid; place-items: center; cursor: pointer; flex: none; }
+.k-agree input::after { content: ""; width: 11px; height: 6px; border-left: 2px solid #fff; border-bottom: 2px solid #fff; transform: translateY(-1px) rotate(-45deg) scale(0); }
+.k-agree input:checked { background: var(--c-ink); }
+.k-agree input:checked::after { transform: translateY(-1px) rotate(-45deg) scale(1); }
+.k-agree input:focus-visible { outline: 2px solid var(--c-ink); outline-offset: 3px; }
+.more { background: none; border: 0; padding: 4px 0; cursor: pointer; font-size: 13px; color: var(--ink-2); text-decoration: underline; text-underline-offset: 4px; }
+.terms { margin-top: 14px; }
+.terms[hidden] { display: none; }
+.actions { display: flex; align-items: center; gap: 14px; margin-top: 36px; flex-wrap: wrap; }
+.send { display: inline-flex; align-items: center; gap: 18px; height: 60px; padding: 0 30px 0 32px; border: 0; background: var(--c-ink); color: #fff; font-size: 16.5px; font-weight: 600; cursor: pointer; letter-spacing: 0.01em; }
+.send span { font-family: 'Bodoni Moda', serif; font-size: 22px; line-height: 1; }
+html.fx .send span { transition: transform 0.3s var(--ease); }
+.send:hover span { transform: translateX(4px); }
+.kakao { display: inline-flex; align-items: center; height: 60px; padding: 0 26px; border: 1px solid var(--c-ink); color: var(--c-ink); text-decoration: none; font-size: 15px; font-weight: 600; }
+.kakao:hover { background: var(--paper-2); }
+/* 접수 화면 */
+.done { padding-top: 64px; }
+.done .kick { font-size: 11px; }
+.done h2 { margin: 10px 0 0; font-family: var(--serif-kr); font-weight: 500; font-size: 40px; line-height: 1.25; letter-spacing: -0.02em; word-break: keep-all; }
+.done p { margin: 14px 0 0; font-size: 17px; }
+.done .tiny { font-size: 12.5px; color: var(--ink-2); margin-top: 8px; }
+.done .send { margin-top: 40px; }
+
+/* ── 바닥글이 화면 아래에 붙게 ── */
+.col { min-width: 0; display: flex; flex-direction: column; min-height: calc(100vh - var(--header-h)); }
+.col main { flex: 1; }
+
+@media (max-width: 1180px) and (min-width: 901px) {
+  .k-sheet { padding: 56px 48px 80px; }
+}
+@media (max-width: 900px) {
+  :root { --cg: 16px; }
+  .k-sheet { padding: 36px var(--cg) 64px; max-width: none; }
+  .k-top { flex-direction: column; align-items: flex-start; gap: 18px; padding-bottom: 16px; }
+  .k-eyebrow { font-size: 26px; }
+  .k-door { min-height: 40px; padding: 0 16px 0 18px; font-size: 13.5px; }
+  .k-fields { grid-template-columns: 1fr; }
+  .k-field { padding-top: 22px; }
+  .k-box { font-size: 17px; }
+  .actions { flex-direction: column; align-items: stretch; }
+  .send, .kakao { justify-content: center; height: 56px; }
+  .send { justify-content: space-between; }
+  .col { min-height: 0; }
+  .done { padding-top: 36px; }
+  .done h2 { font-size: 30px; }
+}
+/* 화면이 바뀌면 그 화면의 글만 보인다 */
+body[data-mode="apply"] [data-for="business"], body[data-mode="business"] [data-for="apply"] { display: none !important; }
+/* 문 안쪽에 차오르는 색 = 다음 화면 바탕 */
+body[data-mode="apply"] { --door-fill: #0a0a0a; --door-ink: #fff; }
+body[data-mode="business"] { --door-fill: #fff; --door-ink: #0a0a0a; }
+
+/* ── 비즈니스 문의: 검은 화면 ── 칸·글·단추 색을 모두 뒤집는다(배치는 지원하기와 같다) */
+body[data-mode="business"] {
+  --c-paper: #0a0a0a; --paper-2: #171717; --c-ink: #f4f1eb; --ink-2: #9a958d; --line: rgba(255, 255, 255, 0.12); --line-2: rgba(255, 255, 255, 0.3);
+  --gold: #c9a66b; --gold-ink: #d6b57c;
+  background: var(--c-paper); color-scheme: dark;
+}
+body[data-mode="business"] .k-box::placeholder { color: #66625c; }
+body[data-mode="business"] .k-field label::before { color: #6f6a63; }
+body[data-mode="business"] .send { background: #f4f1eb; color: #0a0a0a; }
+body[data-mode="business"] .k-agree input::after { border-color: #0a0a0a; }
+body[data-mode="business"] .slot-box { border-color: rgba(255, 255, 255, 0.28); }
+/* 머리말도 검은 판(다른 쪽 머리말과 같은 흰 글자·흰 단추), 바닥글과 본문 사이에 가는 선 */
+body[data-mode="business"] .site-header.solid { background: rgba(10, 10, 10, 0.94); border-bottom-color: rgba(255, 255, 255, 0.1); }
+body[data-mode="business"] .site-header .wordmark-type { filter: none; }
+body[data-mode="business"] .site-header .nav a { color: rgba(255, 255, 255, 0.62); }
+body[data-mode="business"] .site-header .nav a[aria-current="page"] { color: #fff; box-shadow: 0 1px 0 #fff; }
+body[data-mode="business"] .site-header .nav .btn, body[data-mode="business"] .site-header .quick-apply { border-color: #fff; background: #fff; color: #0a0a0a; }
+body[data-mode="business"] .site-header .menu-button[aria-controls="menu-panel"] { color: #fff; }
+body[data-mode="business"] .site-footer { border-top: 1px solid rgba(255, 255, 255, 0.1); }
+/* 문 열림이 없는 브라우저(같은 쪽 화면 넘김을 못 하는 곳)는 바탕색만 0.5초에 바뀐다 */
+html.fx:not(.k-vt) body { transition: background-color 0.5s var(--ease); }
+/* 문을 누르면: 머리말까지 한 장으로 찍어 그 위에 새 화면이 원으로 퍼진다(아래 스크립트가 원을 그린다) */
+html.k-flip .site-header { view-transition-name: none; }
+html.k-flip::view-transition-old(root), html.k-flip::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+html.k-flip::view-transition-new(root) { z-index: 2; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+/* 공통 틀과 함께 쓸 때: 떠 있는 버튼은 화면에 고정(다른 움직이는 시안과 같다) */
+.fab-anchor { position: fixed; top: auto; bottom: 0; right: 0; width: 0; height: 0; z-index: 40; }
+.fab-button { cursor: pointer; }
+/* 이 쪽은 흰 바탕이라 머리말도 흰색(대표 11-14). 로고는 흰 글자 그림을 뒤집어 검게, 펼침 메뉴는 다른 쪽과 같은 검은 판 */
+.site-header.solid { background: rgba(255, 255, 255, 0.94); border-bottom: 1px solid var(--line); }
+.site-header .wordmark-type { filter: invert(1); }
+.site-header .nav a { color: var(--ink-2); }
+.site-header .nav a[aria-current="page"] { color: var(--c-ink); box-shadow: 0 1px 0 var(--c-ink); }
+.site-header .nav .btn, .site-header .quick-apply { border-color: var(--c-ink); background: var(--c-ink); color: #fff; }
+.site-header .menu-button[aria-controls="menu-panel"] { color: var(--c-ink); }
+/* 바닥글은 다른 쪽처럼 검은 바탕(이 쪽 바탕은 흰색이라 따로 깐다) */
+.site-footer { background: var(--ink); }
+</style>
+</head>
+<body data-mode="apply">
+<a href="../../../index.html#work-astra" target="_top" style="position:fixed;left:16px;bottom:16px;z-index:2147483000;background:rgba(10,10,10,.82);color:#fff;font:600 13px/1.4 system-ui,sans-serif;padding:9px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.25);text-decoration:none;backdrop-filter:blur(6px)">포트폴리오용 시안 · 양식은 실제로 접수되지 않습니다 · 포트폴리오로 돌아가기</a>
+
+<header class="site-header solid">
+  <a class="wordmark" href="home.html" aria-label="ASTRA 홈"><img class="wordmark-type" src="../pages/img/logo-astra-star.svg" alt=""></a>
+  <a class="quick-apply" href="contact.html#apply">빠른 지원하기</a>
+  <button class="menu-button" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="menu-panel"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5h18M3 12h18M3 17.5h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+  <nav class="nav" aria-label="주 메뉴"><a href="home.html">홈</a><a href="about.html">회사소개</a><a href="mcn.html">MCN</a><a href="../brand/brand-v3.html">브랜드</a><a href="entertainment.html">엔터테인먼트</a><a href="media.html">미디어</a><a href="partners.html">협력사</a><a href="contact.html" aria-current="page">CONTACT</a><a class="btn btn-solid" href="contact.html#apply">지원하기</a></nav>
+</header>
+<nav class="menu-panel" id="menu-panel" aria-label="주 메뉴 (펼침)" hidden>
+  <button class="menu-close" type="button" aria-label="메뉴 닫기"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+  <div class="menu-list">
+    <a href="home.html">홈</a>
+    <a href="about.html">회사소개</a>
+    <a href="mcn.html">MCN</a>
+    <a href="../brand/brand-v3.html">브랜드</a>
+    <a href="entertainment.html">엔터테인먼트</a>
+    <a href="media.html">미디어</a>
+    <a href="partners.html">협력사</a>
+    <a href="contact.html" aria-current="page">CONTACT</a>
+  </div>
+</nav>
+
+<div class="k-contact">
+
+  <div class="col">
+  <main>
+  <section class="k-sheet" aria-labelledby="pg-title">
+    <div class="k-top">
+      <h1 class="k-eyebrow" id="pg-title" tabindex="-1"><span data-for="apply"><b>CREATOR APPLY</b>크리에이터 지원하기</span><span data-for="business"><b>BUSINESS INQUIRY</b>비즈니스 문의</span></h1>
+      <a class="k-door" data-for="apply" data-go="business" href="contact.html#business"><small>BUSINESS</small>비즈니스 문의 <i aria-hidden="true">→</i></a>
+      <a class="k-door" data-for="business" data-go="apply" href="contact.html#apply"><i aria-hidden="true">←</i><small>CREATOR</small>크리에이터 지원하기</a>
+    </div>
+
+    <form class="form" id="form-apply" data-kind="apply" novalidate aria-label="지원하기">
+      <div class="k-fields">
+        <div class="k-field full" data-req><label for="a-field">지원분야 <span class="req">필수</span></label><input class="k-box" id="a-field" name="field_of_interest" type="text" required aria-required="true" aria-describedby="a-field-e" maxlength="40"><p class="err" id="a-field-e">이 칸을 채워 주세요</p></div>
+        <div class="k-field full" data-req><label for="a-name">이름 <span class="req">필수</span></label><input class="k-box" id="a-name" name="name" type="text" required aria-required="true" aria-describedby="a-name-e" autocomplete="name" maxlength="30"><p class="err" id="a-name-e">이 칸을 채워 주세요</p></div>
+        <div class="k-field" data-req><label for="a-phone">연락처 <span class="req">필수</span></label><input class="k-box" id="a-phone" name="phone" type="tel" required aria-required="true" aria-describedby="a-phone-e" autocomplete="tel" placeholder="010-0000-0000"><p class="err" id="a-phone-e">이 칸을 채워 주세요</p></div>
+        <div class="k-field" data-req><label for="a-birth">생년월일 <span class="req">필수</span></label><input class="k-box" id="a-birth" name="birth_date" type="text" required aria-required="true" aria-describedby="a-birth-e" autocomplete="bday" inputmode="numeric" placeholder="2000.01.01"><p class="err" id="a-birth-e">이 칸을 채워 주세요</p></div>
+        <div class="k-field" data-req><label for="a-gender">성별 <span class="req">필수</span></label><input class="k-box" id="a-gender" name="gender" type="text" required aria-required="true" aria-describedby="a-gender-e"><p class="err" id="a-gender-e">이 칸을 채워 주세요</p></div>
+        <div class="k-field"><label for="a-hw">신장 체중</label><input class="k-box" id="a-hw" name="height_weight" type="text" placeholder="170 / 52" maxlength="20"></div>
+        <div class="k-field"><label for="a-ref">지원경로</label><input class="k-box" id="a-ref" name="referral" type="text" maxlength="40"></div>
+        <div class="k-field"><label for="a-url">인스타 및 프로필 개인 URL</label><input class="k-box" id="a-url" name="profile_url" type="text" inputmode="url" autocomplete="url"></div>
+        <div class="k-field full"><label for="a-msg">하고싶은말</label><textarea class="k-box" id="a-msg" name="message" rows="3"></textarea></div>
+      </div>
+      <div class="agree-wrap">
+        <div class="agree-row"><label class="k-agree"><input type="checkbox" id="a-agree" name="agree" required aria-required="true" aria-describedby="a-agree-e">개인정보 수집·이용 동의 (필수)</label><button class="more" type="button" aria-expanded="false" aria-controls="a-terms">내용 보기</button></div>
+        <div class="terms slot-box" id="a-terms" hidden>수집 항목·이용 목적·보관 기간 안내 자리 (법률 확인 뒤 입력)</div>
+        <p class="err" id="a-agree-e">개인정보 수집·이용에 동의해 주세요</p>
+      </div>
+      <div class="actions"><button class="send" type="submit">지원서 보내기 <span aria-hidden="true">→</span></button><a class="kakao" href="#">카톡 상담</a></div>
+    </form>
+
+    <form class="form" id="form-business" data-kind="business" novalidate aria-label="비즈니스 문의" hidden>
+      <div class="k-fields">
+        <div class="k-field full" data-req><label for="b-name">담당자 이름 <span class="req">필수</span></label><input class="k-box" id="b-name" name="contact_name" type="text" required aria-required="true" aria-describedby="b-name-e" autocomplete="name" maxlength="30"><p class="err" id="b-name-e">이 칸을 채워 주세요</p></div>
+        <div class="k-field full" data-req><label for="b-phone">연락처 <span class="req">필수</span></label><input class="k-box" id="b-phone" name="phone" type="tel" required aria-required="true" aria-describedby="b-phone-e" autocomplete="tel" placeholder="010-0000-0000"><p class="err" id="b-phone-e">이 칸을 채워 주세요</p></div>
+        <div class="k-field full" data-req><label for="b-prop">제안 내용 <span class="req">필수</span></label><textarea class="k-box" id="b-prop" name="proposal" rows="5" required aria-required="true" aria-describedby="b-prop-e"></textarea><p class="err" id="b-prop-e">이 칸을 채워 주세요</p></div>
+      </div>
+      <div class="agree-wrap">
+        <div class="agree-row"><label class="k-agree"><input type="checkbox" id="b-agree" name="agree" required aria-required="true" aria-describedby="b-agree-e">개인정보 수집·이용 동의 (필수)</label><button class="more" type="button" aria-expanded="false" aria-controls="b-terms">내용 보기</button></div>
+        <div class="terms slot-box" id="b-terms" hidden>수집 항목·이용 목적·보관 기간 안내 자리 (법률 확인 뒤 입력)</div>
+        <p class="err" id="b-agree-e">개인정보 수집·이용에 동의해 주세요</p>
+      </div>
+      <div class="actions"><button class="send" type="submit">제안 보내기 <span aria-hidden="true">→</span></button><a class="kakao" href="#">카톡 상담</a></div>
+    </form>
+
+    <div class="done" hidden tabindex="-1" id="done">
+      <span class="kick">Received ✦</span>
+      <h2 id="done-title">지원서가 접수되었습니다.</h2>
+      <p>확인 후 연락드리겠습니다.</p>
+      <p class="tiny">시안이라 실제로 보내지 않습니다.</p>
+      <button class="send" type="button" id="again">처음으로 <span aria-hidden="true">↺</span></button>
+    </div>
+  </section>
+  </main>
+  </div>
+</div>
+<footer class="site-footer">
+  <div>
+    <img class="footer-logo footer-wordmark" src="../pages/img/logo-astra-star.svg" alt="ASTRA ENTERTAINMENT">
+    <p class="slot">사업자 정보 자리 (상호, 대표자, 사업자번호, 주소, 전화, 이메일)</p>
+  </div>
+  <div class="footer-links">
+    <a href="#">이용약관</a>
+    <a href="#">개인정보처리방침</a>
+    <p class="slot">인스타그램 링크 자리</p>
+  </div>
+</footer>
+<div class="fab-anchor">
+  <div class="fab">
+    <ul class="fab-menu" id="fab-menu">
+      <li><a href="#">카카오톡 상담</a></li>
+      <li><a href="#">인스타그램</a></li>
+      <li><a href="#">블로그</a></li>
+      <li><a class="main" href="contact.html#apply">지원하기</a></li>
+    </ul>
+    <button class="fab-button" type="button" aria-expanded="false" aria-controls="fab-menu" aria-label="상담·지원 바로가기 열기">
+      <svg class="talk" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5h16v10.5H10.5L6 19.5V16H4z"/><path d="M8.5 10.8h.01M12 10.8h.01M15.5 10.8h.01" stroke-width="2.2"/></svg>
+      <svg class="x" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+</div>
+<script>
+(function () {
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var FX = document.documentElement.classList.contains('fx');
+  var body = document.body;
+
+  /* 두 화면(지원하기 = 흰 화면 / 비즈니스 문의 = 검은 화면). 주소 끝 #apply·#business가 화면을 정한다 */
+  var mode = 'apply';
+  function setMode(m) {
+    mode = m; body.setAttribute('data-mode', m);
+    $('#done').hidden = true;
+    $('#form-apply').hidden = m !== 'apply'; $('#form-business').hidden = m !== 'business';
+  }
+  // 새 화면의 칸이 0.04초 간격으로 떠오른다
+  function riseFields(delay) {
+    if (!FX) return;
+    var f = $(mode === 'apply' ? '#form-apply' : '#form-business');
+    [$('.k-top')].concat($$('.k-field, .agree-wrap, .actions', f)).forEach(function (el, i) {
+      if (el.animate) el.animate([{ opacity: 0, transform: 'translateY(18px)' }, { opacity: 1, transform: 'none' }], { duration: 700, delay: (delay || 0) + i * 40, easing: 'cubic-bezier(0.16, 1, 0.3, 1)', fill: 'backwards' });
+    });
+  }
+  // 문을 누르면 그 자리에서 새 화면이 원으로 퍼진다(0.9초). 같은 쪽 화면 넘김을 못 하는 브라우저는 바탕색만 바뀐다
+  var flipping = false;
+  function go(m, from) {
+    if (m === mode || flipping) return;
+    var swap = function () { setMode(m); };
+    if (!FX || !document.startViewTransition) { swap(); riseFields(0); return; }
+    var W = window.innerWidth, H = window.innerHeight;
+    var x = from ? from.x : W / 2, y = from ? from.y : H / 2;
+    var R = Math.hypot(Math.max(x, W - x), Math.max(y, H - y));
+    var root = document.documentElement;
+    flipping = true; root.classList.add('k-flip', 'k-vt');
+    var vt = document.startViewTransition(swap);
+    vt.ready.then(function () {
+      root.animate({ clipPath: ['circle(0px at ' + x + 'px ' + y + 'px)', 'circle(' + R + 'px at ' + x + 'px ' + y + 'px)'] },
+        { duration: 900, easing: 'cubic-bezier(0.7, 0, 0.2, 1)', pseudoElement: '::view-transition-new(root)' });
+      riseFields(380);
+    }, function () {});
+    vt.finished.then(function () { root.classList.remove('k-flip', 'k-vt'); flipping = false; }, function () { root.classList.remove('k-flip', 'k-vt'); flipping = false; });
+  }
+  $$('.k-door').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      e.preventDefault();
+      var m = a.getAttribute('data-go'), r = a.getBoundingClientRect();
+      history.pushState(null, '', '#' + m);
+      go(m, { x: r.left + r.width / 2, y: r.top + r.height / 2 });
+      // 새 화면의 이름으로 초점을 옮긴다(화면 읽기 프로그램이 바뀐 화면을 읽는다)
+      setTimeout(function () { $('#pg-title').focus({ preventScroll: true }); }, 60);
+      if (window.scrollY > 0) window.scrollTo({ top: 0, behavior: 'auto' });
+    });
+  });
+
+  /* 채우면 빈 칸 안내를 지운다 */
+  $$('.form .k-box').forEach(function (inp) {
+    inp.addEventListener('input', function () {
+      var fd = inp.closest('.k-field'); if (fd && inp.value.trim()) { fd.classList.remove('bad'); inp.removeAttribute('aria-invalid'); }
+    });
+  });
+  $$('.form input[type=checkbox]').forEach(function (c) {
+    c.addEventListener('change', function () { if (c.checked) { c.closest('.agree-wrap').classList.remove('bad'); c.removeAttribute('aria-invalid'); } });
+  });
+  $$('.more').forEach(function (m) {
+    m.addEventListener('click', function () {
+      var t = document.getElementById(m.getAttribute('aria-controls')), open = t.hidden;
+      t.hidden = !open; m.setAttribute('aria-expanded', String(open)); m.textContent = open ? '내용 접기' : '내용 보기';
+    });
+  });
+
+  /* 보내기: 아무 데도 보내지 않는다 */
+  $$('.form').forEach(function (f) {
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var first = null;
+      $$('[data-req]', f).forEach(function (fd) {
+        var b = $('.k-box', fd), bad = !b.value.trim();
+        fd.classList.toggle('bad', bad); if (bad) b.setAttribute('aria-invalid', 'true'); else b.removeAttribute('aria-invalid');
+        if (bad && !first) first = b;
+      });
+      var ag = $('input[type=checkbox]', f), aw = ag.closest('.agree-wrap');
+      aw.classList.toggle('bad', !ag.checked); if (!ag.checked) ag.setAttribute('aria-invalid', 'true');
+      if (!ag.checked && !first) first = ag;
+      if (first) { first.focus(); return; }
+      $('#done-title').textContent = mode === 'apply' ? '지원서가 접수되었습니다.' : '문의가 접수되었습니다.';
+      f.hidden = true;
+      var d = $('#done'); d.hidden = false; d.focus({ preventScroll: true });
+      var y = $('.k-sheet').getBoundingClientRect().top + window.scrollY - 80;
+      if (window.scrollY > y) window.scrollTo({ top: Math.max(0, y), behavior: FX ? 'smooth' : 'auto' });
+    });
+  });
+  $('#again').addEventListener('click', function () {
+    $$('.form').forEach(function (f) {
+      f.reset(); $$('.bad', f).forEach(function (x) { x.classList.remove('bad'); });
+      $$('[aria-invalid]', f).forEach(function (x) { x.removeAttribute('aria-invalid'); });
+      $$('.terms', f).forEach(function (t) { t.hidden = true; });
+      $$('.more', f).forEach(function (m) { m.setAttribute('aria-expanded', 'false'); m.textContent = '내용 보기'; });
+    });
+    // 처음으로: 지금 화면(지원하기 또는 비즈니스 문의)의 빈 양식으로 돌아간다
+    setMode(mode);
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    riseFields(0);
+    $('#pg-title').focus({ preventScroll: true });
+  });
+
+  // 다른 쪽의 "지원하기"(contact.html#apply)·"비즈니스 문의"(#business)로 들어오면 그 화면을 연다.
+  // 처음 열 때는 바로, 뒤로 가기·앞으로 가기로 바뀔 때는 화면 가운데에서 원이 퍼진다
+  function fromHash() { var h = location.hash.slice(1); return h === 'business' || h === 'apply' ? h : 'apply'; }
+  setMode(fromHash());
+  window.addEventListener('popstate', function () { go(fromHash()); });
+  window.addEventListener('hashchange', function () { go(fromHash()); });
+})();
+</script>
+<script>
+(function () {
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var EASE = 'cubic-bezier(0.16, 1, 0.3, 1)';
+  var anim = function (el, kf, o) { return el && el.animate ? el.animate(kf, o) : null; };
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  // 카톡 상담·인스타·블로그: 주소를 아직 받지 않아 어디로도 가지 않는다(가짜 주소를 넣지 않는다)
+  $$('a[href="#"]').forEach(function (a) { a.addEventListener('click', function (e) { e.preventDefault(); }); });
+
+  /* ───────── 떠 있는 버튼(다른 쪽과 같다) ───────── */
+  var fabButton = $('.fab-button'), fabBox = $('.fab'), fabItems = $$('.fab-menu a');
+  function setFab(open, refocus) {
+    if (document.body.classList.contains('fab-open') === open) return;
+    document.body.classList.toggle('fab-open', open);
+    fabButton.setAttribute('aria-expanded', String(open));
+    fabButton.setAttribute('aria-label', open ? '상담·지원 바로가기 닫기' : '상담·지원 바로가기 열기');
+    if (open && !reduce) fabItems.slice().reverse().forEach(function (a, i) {
+      anim(a, [{ opacity: 0, transform: 'translateY(10px)' }, { opacity: 1, transform: 'none' }], { duration: 200, delay: i * 40, fill: 'backwards', easing: EASE });
+    });
+    if (refocus) fabButton.focus();
+  }
+  fabButton.addEventListener('click', function () { setFab(!document.body.classList.contains('fab-open')); });
+  fabItems.forEach(function (a) { a.addEventListener('click', function () { setFab(false); }); });
+  document.addEventListener('click', function (e) { if (!fabBox.contains(e.target)) setFab(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && document.body.classList.contains('fab-open')) setFab(false, true); });
+
+  // 카톡 상담: 채널 주소를 아직 받지 않아 어디로도 가지 않는다(가짜 주소를 넣지 않는다)
+  $$('a[href="#"]').forEach(function (a) { a.addEventListener('click', function (e) { e.preventDefault(); }); });
+
+})();
+</script>
+<script src="site-menu.js"></script>
+<script type="speculationrules">{"prefetch": [{"source": "document", "where": {"selector_matches": ".site-header a, .menu-panel a"}, "eagerness": "moderate"}]}</script>
+<!-- 메뉴에 마우스를 올리면 그 쪽을 미리 받는다(쪽 사이 이동이 빨라진다) -->
+</body>
+</html>

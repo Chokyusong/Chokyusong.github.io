@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>ASTRA 홈 움직이는 시안</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Noto+Serif+KR:wght@300..600&family=Geist:wght@100..900&family=Cinzel:wght@600;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="../pages/pages.css">
+<style>
+/* 홈은 확정된 것을 그대로 한 파일로 모았다(대표 11-12 "홈은 저게 끝이야"). 값은 캔버스 홈 PC 판(DesignHome.dc.html)과 확정 시험본 그대로다.
+   움직이는 배경: ../../home-hero-motion.html → home-motion.js. 굵기가 숨 쉬는 ASTRA: ../../astra-wordmark.html */
+.home-gl { display: none; }
+.home-gl.ready { display: block; position: absolute; inset: 0; width: 100%; height: 100%; }
+.astra { font-weight: 400; }
+/* 휴대폰에서 가운데 ASTRA가 작다(대표 11-14): 글자 크기 20vw → 23vw, 폭이 화면의 약 87%(393px 폭에서 300→343px). PC는 그대로 */
+@media (max-width: 900px) { .astra { font-size: min(23vw, 47vh); } }
+.astra-letter { animation: astra-breath 1.5s cubic-bezier(.37,0,.63,1) infinite alternate both; }
+@keyframes astra-breath { from { font-variation-settings: "wght" 100; } to { font-variation-settings: "wght" 900; } }
+@media (prefers-reduced-motion: reduce) { .astra-letter { animation: none; font-variation-settings: "wght" 600; } }
+/* 회사소개로 넘어갈 때 덮는 막. 값은 회사소개 첫 화면의 어두운 막(../pages/pages.css .hero-bg::after)과 같다 */
+/* 회사소개에서 홈을 눌러 돌아왔을 때(PC, about.html이 5초 안에 남긴 표시): 홈→회사소개를 거꾸로. 회사소개가 이미 홈 밝기·빛줄기로 되돌려 놓았으므로
+   홈은 ASTRA만 다시 맺는다: 떠날 때 마지막에 사라진 오른쪽 A부터 0.045초씩, 흐림 14px·위로 6%·1.06배에서 제자리로(0.8초), WE MAKE NEXT는 뒤에.
+   멈춘 그림은 확대가 달라 튀므로 숨기고, 쪽 사이 겹침은 0.6초. 다른 화면에서 왔으면 어둠이 0.7초에 걷힌다(대표 11-13) */
+@media (prefers-reduced-motion: no-preference) {
+  html.from-about .home-bg img { visibility: hidden; }
+  html.from-about::view-transition-old(root), html.from-about::view-transition-new(root) { animation-duration: 0.6s; }
+  html.from-about .astra { animation: about-back-astra 0.8s cubic-bezier(.25,.8,.45,1) 0.05s both; }
+  html.from-about .astra-letter { animation: astra-breath 1.5s cubic-bezier(.37,0,.63,1) infinite alternate both, about-back-letter 0.48s cubic-bezier(.25,.8,.45,1) both; }
+  html.from-about .astra-letter:nth-child(5) { animation-delay: -12s, 0.13s !important; }
+  html.from-about .astra-letter:nth-child(4) { animation-delay: -12s, 0.175s !important; }
+  html.from-about .astra-letter:nth-child(3) { animation-delay: -12s, 0.22s !important; }
+  html.from-about .astra-letter:nth-child(2) { animation-delay: -12s, 0.265s !important; }
+  html.from-about .astra-letter:nth-child(1) { animation-delay: -12s, 0.31s !important; }
+  html.from-about .home-tag { animation: about-back-tag 0.45s cubic-bezier(.25,.8,.45,1) 0.4s both; }
+  html.from-about-dark body::after { content: ""; position: fixed; inset: 0; z-index: 25; pointer-events: none; background: #0a0a0a; animation: about-back-dark 0.7s ease 0.1s both; }
+}
+@keyframes about-back-astra { from { transform: translateY(-6%) scale(1.06); filter: blur(14px); } }
+@keyframes about-back-letter { from { opacity: 0; } }
+@keyframes about-back-tag { from { opacity: 0; filter: blur(8px); } }
+@keyframes about-back-dark { to { opacity: 0; } }
+.home-veil { position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0; background: linear-gradient(to bottom, rgba(10, 10, 10, 0.5) 0, rgba(10, 10, 10, 0) 170px), linear-gradient(to top, #0a0a0a 0, rgba(10, 10, 10, 0) 34%), radial-gradient(ellipse 70% 60% at 50% 50%, rgba(10, 10, 10, 0.66), rgba(10, 10, 10, 0.4) 100%); }
+</style>
+<script>(function () { try { var o = JSON.parse(sessionStorage.getItem('astra-from-about') || 'null'); sessionStorage.removeItem('astra-from-about');
+  if (o && Date.now() - o.t < 5000) { var r = document.documentElement; r.classList.add('from-about'); if (o.dark) r.classList.add('from-about-dark'); window.__fromAbout = o.s || null;
+    setTimeout(function () { r.classList.remove('from-about', 'from-about-dark'); }, 1300); } } catch (e) {} })();</script>
+</head>
+<body>
+<a href="../../../index.html#work-astra" target="_top" style="position:fixed;left:16px;bottom:16px;z-index:2147483000;background:rgba(10,10,10,.82);color:#fff;font:600 13px/1.4 system-ui,sans-serif;padding:9px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.25);text-decoration:none;backdrop-filter:blur(6px)">포트폴리오용 시안 · 양식은 실제로 접수되지 않습니다 · 포트폴리오로 돌아가기</a>
+<header class="site-header">
+  <a class="wordmark" href="home.html" aria-label="ASTRA 홈"><img class="wordmark-type" src="../pages/img/logo-astra-star.svg" alt=""></a>
+  <a class="quick-apply" href="contact.html#apply">빠른 지원하기</a>
+  <button class="menu-button" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="menu-panel"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5h18M3 12h18M3 17.5h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+  <nav class="nav" aria-label="주 메뉴"><a href="home.html" aria-current="page">홈</a><a href="about.html">회사소개</a><a href="mcn.html">MCN</a><a href="../brand/brand-v3.html">브랜드</a><a href="entertainment.html">엔터테인먼트</a><a href="media.html">미디어</a><a href="partners.html">협력사</a><a href="contact.html">CONTACT</a><a class="btn btn-solid" href="contact.html#apply">지원하기</a></nav>
+</header>
+<nav class="menu-panel" id="menu-panel" aria-label="주 메뉴 (펼침)" hidden>
+  <button class="menu-close" type="button" aria-label="메뉴 닫기"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+  <div class="menu-list">
+    <a href="home.html" aria-current="page">홈</a>
+    <a href="about.html">회사소개</a>
+    <a href="mcn.html">MCN</a>
+    <a href="../brand/brand-v3.html">브랜드</a>
+    <a href="entertainment.html">엔터테인먼트</a>
+    <a href="media.html">미디어</a>
+    <a href="partners.html">협력사</a>
+    <a href="contact.html">CONTACT</a>
+  </div>
+</nav>
+<main class="home">
+  <div class="home-bg" aria-hidden="true"><picture style="display: contents"><source media="(max-width: 900px)" srcset="../pages/img/home-bg-m.webp"><img src="../pages/img/home-bg.webp" alt="" style="object-position: 50% 50%"></picture><canvas class="home-gl"></canvas></div>
+  <h1 class="astra" aria-label="ASTRA"><span class="astra-letter" aria-hidden="true" style="animation-delay: -12s">A</span><span class="astra-letter" aria-hidden="true" style="animation-delay: -11.75s">S</span><span class="astra-letter" aria-hidden="true" style="animation-delay: -11.5s">T</span><span class="astra-letter" aria-hidden="true" style="animation-delay: -11.25s">R</span><span class="astra-letter" aria-hidden="true" style="animation-delay: -11s">A</span></h1>
+  <p class="home-tag">WE MAKE NEXT</p>
+</main>
+<div class="fab-anchor">
+  <div class="fab">
+    <ul class="fab-menu" id="fab-menu">
+      <li><a href="#">카카오톡 상담</a></li>
+      <li><a href="#">인스타그램</a></li>
+      <li><a href="#">블로그</a></li>
+      <li><a class="main" href="contact.html#apply">지원하기</a></li>
+    </ul>
+    <button class="fab-button" type="button" aria-expanded="false" aria-controls="fab-menu" aria-label="상담·지원 바로가기 열기">
+      <svg class="talk" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5h16v10.5H10.5L6 19.5V16H4z"/><path d="M8.5 10.8h.01M12 10.8h.01M15.5 10.8h.01" stroke-width="2.2"/></svg>
+      <svg class="x" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+</div>
+<script src="home-motion.js"></script>
+<script>
+/* 홈: 움직이는 배경, 굵기가 숨 쉬는 ASTRA, 떠 있는 버튼, 마우스 반응(대표 11-12 "홈에서도 마우스 인터랙티브") */
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cv = document.querySelector('.home-gl');
+  // 마우스 반응: 회사소개 첫 화면과 같은 값. 마우스 둘레(창 가로의 18%)에서 별이 켜지고 소나무가 더 흔들리고
+  // 기와·문양에 빛이 스치고 달빛이 밝아진다. 빛줄기는 마우스 쪽으로 기울며 밝아진다. 0.18초 늦게 따라오고,
+  // 2.5초 쉬면 30% 세기로 24초에 한 바퀴 돈다. 그림 전체가 마우스 반대쪽으로 최대 10px(0.8초 늦게) 움직인다.
+  // 마우스가 있는 PC에서만. 휴대폰은 아래 phoneLight가 같은 빛을 스스로 움직인다(대표 11-14)
+  var hover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var M = { x: 0, y: 0, at: 0 }, HS = { x: 0.5, y: 0.45, i: 0, px: 0, py: 0, last: 0 };
+  var lag = function (dt, s) { return 1 - Math.exp(-dt / 1000 / s); };
+  window.addEventListener('pointermove', function (e) { if (e.pointerType === 'mouse') { M.x = e.clientX; M.y = e.clientY; M.at = performance.now(); } }, { passive: true });
+  // 회사소개에서 홈을 눌러 왔으면 빛 자리·세기·그림 위치·마우스를 이어받는다
+  var FA = window.__fromAbout;
+  if (FA && FA.W && hover && cv) {
+    HS.x = FA.x; HS.y = FA.y; HS.i = FA.i; HS.px = FA.px; HS.py = FA.py;
+    if (FA.live) { M.x = FA.mx * window.innerWidth / FA.W; M.y = FA.my * window.innerHeight / FA.H; M.at = performance.now(); }
+    cv.style.transform = 'translate3d(' + HS.px.toFixed(2) + 'px,' + HS.py.toFixed(2) + 'px,0) scale(1.03)';
+  }
+  function mouse() {
+    var t = performance.now(), dt = Math.min(t - (HS.last || t), 100); HS.last = t;
+    var W = window.innerWidth, H = window.innerHeight, live = M.at && t - M.at < 2500, tx, ty, ti, k;
+    if (live) { tx = M.x / W; ty = M.y / H; ti = 1; k = lag(dt, 0.18); }
+    else { var a = t / 24000 * 6.283; tx = 0.5 + 0.3 * Math.cos(a); ty = 0.42 + 0.18 * Math.sin(a); ti = 0.3; k = lag(dt, 0.6); }
+    HS.x += (tx - HS.x) * k; HS.y += (ty - HS.y) * k; HS.i += (ti - HS.i) * lag(dt, 0.5);
+    var mx = M.at ? M.x / W * 2 - 1 : 0, my = M.at ? M.y / H * 2 - 1 : 0;
+    HS.px += (-mx * 10 - HS.px) * lag(dt, 0.8); HS.py += (-my * 10 - HS.py) * lag(dt, 0.8);
+    cv.style.transform = 'translate3d(' + HS.px.toFixed(2) + 'px,' + HS.py.toFixed(2) + 'px,0) scale(1.03)';
+    return [HS.x, HS.y, HS.i, 0.18];
+  }
+  // 휴대폰·마우스 없는 화면: PC 마우스 빛과 같은 효과를 모션그래픽으로. 손가락으로는 빛을 끌 수 없으니 빛이 스스로 그림 위를
+  // 천천히 떠돈다(가로 20~80%, 세로 22~72%, 약 26초에 한 바퀴의 8자 길). 세기는 PC 마우스(1)에 가까운 0.85,
+  // 반지름은 좁은 화면에 맞춰 가로의 42%. 처음 2초 동안 서서히 켜지고, 그림은 빛 반대쪽으로 최대 6px 움직인다
+  function phoneLight() {
+    var t = performance.now(), dt = Math.min(t - (HS.last || t), 100); HS.last = t;
+    var a = t / 26000 * 6.283, tx = 0.5 + 0.3 * Math.sin(a), ty = 0.47 + 0.25 * Math.sin(a * 2 + 0.6);
+    if (!HS.on) { HS.on = 1; HS.x = tx; HS.y = ty; }
+    HS.x += (tx - HS.x) * lag(dt, 0.6); HS.y += (ty - HS.y) * lag(dt, 0.6); HS.i += (0.85 - HS.i) * lag(dt, 0.7);
+    HS.px += (-(HS.x * 2 - 1) * 6 - HS.px) * lag(dt, 0.8); HS.py += (-(HS.y * 2 - 1) * 6 - HS.py) * lag(dt, 0.8);
+    cv.style.transform = 'translate3d(' + HS.px.toFixed(2) + 'px,' + HS.py.toFixed(2) + 'px,0) scale(1.03)';
+    return [HS.x, HS.y, HS.i, 0.42];
+  }
+  // 회사소개로 넘어갈 때 빛·그림 위치를 넘겨 회사소개가 이어받는다(대표 11-13 "배경이랑 인터랙티브가 끊겨 보인다")
+  window.HomeLeaveState = function () {
+    return { x: HS.x, y: HS.y, i: HS.i, px: HS.px, py: HS.py, mx: M.x, my: M.y, W: window.innerWidth, H: window.innerHeight,
+      live: !!(hover && M.at && performance.now() - M.at < 2500) };
+  };
+  // 배경: 확정 시험본처럼 늘 움직이고, 움직임 줄이기 설정이면 한 장만 그린다. 창이 안 보이면 쉰다
+  if (cv && window.HomeMotion) window.HomeMotion.start(cv, function () { return !reduce && !document.hidden; }, reduce ? null : hover ? mouse : phoneLight);
+  if (reduce && cv) window.addEventListener('resize', function () { if (cv.__draw) cv.__draw(0); });
+  // ASTRA: 글자마다 0.25초씩 늦게 가늘어졌다 두꺼워진다(캔버스 홈 판과 같은 값)
+  if (!reduce) document.querySelectorAll('.astra-letter').forEach(function (el, i) {
+    el.animate([{ fontVariationSettings: '"wght" 100' }, { fontVariationSettings: '"wght" 900' }],
+      { duration: 1500, delay: -12000 + i * 250, iterations: Infinity, direction: 'alternate', easing: 'cubic-bezier(.37,0,.63,1)' });
+  });
+  // 떠 있는 버튼: 누르면 네 개가 펼쳐지고 다시 누르면 닫힌다(다른 쪽과 같다)
+  var button = document.querySelector('.fab-button'), box = document.querySelector('.fab');
+  function setFab(open, refocus) {
+    if (document.body.classList.contains('fab-open') === open) return;
+    document.body.classList.toggle('fab-open', open);
+    button.setAttribute('aria-expanded', String(open));
+    button.setAttribute('aria-label', open ? '상담·지원 바로가기 닫기' : '상담·지원 바로가기 열기');
+    if (refocus) button.focus();
+  }
+  button.addEventListener('click', function () { setFab(!document.body.classList.contains('fab-open')); });
+  document.addEventListener('click', function (e) { if (!box.contains(e.target)) setFab(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && document.body.classList.contains('fab-open')) setFab(false, true); });
+})();
+</script>
+<script>
+/* 휠을 내리거나(PC) 손가락으로 위로 밀면(휴대폰) 홈이 흐려지며 사라지고 회사소개로 넘어간다(대표 11-13 "홈에서 휠다운하면 페이드어웨이로
+   회사소개로 자연스럽게"). 회사소개에서 올려도 홈으로 돌아오지 않는다(대표 11-13). 들어온 뒤 0.8초, 메뉴·떠 있는 버튼이 열려 있을 때는
+   반응하지 않는다. 휠은 0.25초 안에 60px 넘게 내려야 넘어간다(터치패드를 살짝 문지른 것은 무시). 화면이 낮아 홈이 스크롤되면 맨 아래에서만 넘어간다.
+   ASTRA 글자가 0.045초씩 늦게(0.72초 안에 모두) 사라지며 위로 떠 흐려지고, 배경은 꺼지지 않고 회사소개 첫 화면 밝기까지 서서히 어두워진 뒤(0.85초) 회사소개로 간다.
+   회사소개는 같은 배경 위에 글이 나타나는 것처럼 이어진다.
+   움직임 줄이기 설정이면 바로 넘어간다. 뒤로 가기로 돌아오면 처음 모습으로 되돌린다 */
+(function () {
+  var NEXT = 'about.html', reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var root = document.documentElement, bornAt = performance.now(), going = false, anims = [], acc = 0, accAt = 0, ty = null, tx = 0;
+  function atBottom() { var max = root.scrollHeight - window.innerHeight; return max <= 2 || window.scrollY >= max - 2; }
+  function blocked() { return going || performance.now() - bornAt < 800 || root.classList.contains('menu-open') || document.body.classList.contains('fab-open'); }
+  function go() {
+    if (blocked() || !atBottom()) return;
+    going = true;
+    if (reduce) { location.href = NEXT; return; }
+    var IN = 'cubic-bezier(.55,0,.75,.2)', a = function (el, k, o) { if (el) anims.push(el.animate(k, Object.assign({ fill: 'forwards', easing: IN }, o))); };
+    document.querySelectorAll('.astra-letter').forEach(function (el, i) { a(el, [{ opacity: 1 }, { opacity: 0 }], { duration: 480, delay: 60 + i * 45 }); });
+    a(document.querySelector('.astra'), [{ transform: 'none', filter: 'blur(0)' }, { transform: 'translateY(-6%) scale(1.06)', filter: 'blur(14px)' }], { duration: 800 });
+    a(document.querySelector('.home-tag'), [{ opacity: 1, filter: 'blur(0)' }, { opacity: 0, filter: 'blur(8px)' }], { duration: 450 });
+    // 배경은 꺼지지 않는다: 회사소개 첫 화면과 같은 그림이므로, 회사소개의 어두운 막(pages.css .hero-bg::after)을 그대로 천천히 덮어
+    // 회사소개 첫 화면 밝기에 맞춘다(대표 11-13 "아예 꺼졌다 없어지는 것보다 서서히 어두워져서 회사소개로 맞춰지게"). 홈의 가운데 막은 걷는다
+    var bg = document.querySelector('.home-bg'), veil = document.createElement('div');
+    veil.className = 'home-veil'; bg.appendChild(veil);
+    a(veil, [{ opacity: 0 }, { opacity: 1 }], { duration: 850, easing: 'cubic-bezier(.4,0,.6,1)' });
+    a(bg, [{ opacity: 1 }, { opacity: 0 }], { duration: 850, easing: 'cubic-bezier(.4,0,.6,1)', pseudoElement: '::after' });
+    // 빛줄기 세기도 회사소개 첫 화면 값(1.7배)까지 같이 올린다
+    var cv = document.querySelector('.home-gl'), lt = performance.now();
+    (function lgStep() { var u = Math.min(1, (performance.now() - lt) / 850); if (!going) return; cv.__lg = 1 + 0.7 * u * u * (3 - 2 * u); if (u < 1) requestAnimationFrame(lgStep); })();
+    setTimeout(function () {
+      // 떠나는 순간의 빛·그림 위치를 남긴다. 회사소개는 5초 안에 받으면 이어받고, 첫 화면 글이 툭 튀어나오지 않고 천천히 떠오른다
+      try { sessionStorage.setItem('astra-from-home', JSON.stringify({ t: Date.now(), s: window.HomeLeaveState ? window.HomeLeaveState() : null })); } catch (e) {}
+      location.href = NEXT;
+    }, 850);
+  }
+  window.addEventListener('wheel', function (e) {
+    if (e.ctrlKey) return;
+    var t = performance.now();
+    if (t - accAt > 250 || e.deltaY <= 0) acc = 0;
+    accAt = t;
+    if (e.deltaY > 0) { acc += e.deltaMode ? e.deltaY * 40 : e.deltaY; if (acc >= 60) go(); }
+  }, { passive: true });
+  window.addEventListener('keydown', function (e) {
+    var k = e.key, onPage = e.target === document.body || e.target === root;
+    if (k === 'ArrowDown' || k === 'PageDown' || (k === ' ' && onPage)) go();
+  });
+  window.addEventListener('touchstart', function (e) { if (e.touches.length === 1) { ty = e.touches[0].clientY; tx = e.touches[0].clientX; } else ty = null; }, { passive: true });
+  window.addEventListener('touchend', function (e) {
+    if (ty === null) return;
+    var p = e.changedTouches[0], dy = ty - p.clientY, dx = Math.abs(p.clientX - tx);
+    ty = null;
+    if (dy > 50 && dy > dx * 1.5) go();
+  }, { passive: true });
+  window.addEventListener('pageshow', function (e) {
+    if (!e.persisted) return;
+    anims.forEach(function (x) { x.cancel(); }); anims = []; going = false; bornAt = performance.now();
+    document.querySelectorAll('.home-veil').forEach(function (v) { v.remove(); });
+    var cv = document.querySelector('.home-gl'); if (cv) cv.__lg = null;
+  });
+})();
+</script>
+<script src="site-menu.js"></script>
+<script type="speculationrules">{"prefetch": [{"source": "document", "where": {"selector_matches": ".site-header a, .menu-panel a"}, "eagerness": "moderate"}, {"source": "list", "urls": ["about.html"], "eagerness": "immediate"}]}</script>
+<!-- 메뉴에 마우스를 올리면 그 쪽을 미리 받는다(쪽 사이 이동이 빨라진다) -->
+</body>
+</html>

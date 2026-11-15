@@ -14,7 +14,32 @@
       dlg.showModal();
       document.body.classList.add("dlg-open");
       dlg.querySelectorAll("video.loop").forEach(play);
+      dlg.querySelectorAll(".live-frame").forEach(loadLive);
     });
+  });
+
+  // 움직이는 시안: 창을 열 때만 불러오고, PC 화면(1440×900)을 창 폭에 맞춰 줄여 보여 준다.
+  // 휴대폰처럼 창이 좁으면 휴대폰 화면(390×844)으로 띄운다.
+  function fitLive(box) {
+    var f = box.querySelector("iframe");
+    if (!f) return;
+    var phone = box.parentElement.clientWidth < 640;
+    var w = phone ? 390 : 1440, h = phone ? 844 : 900;
+    box.style.aspectRatio = w + " / " + h;
+    if (phone) { box.style.width = "min(100%, 300px)"; box.style.marginInline = "auto"; }
+    else { box.style.width = ""; box.style.marginInline = ""; }
+    f.style.width = w + "px";
+    f.style.height = h + "px";
+    f.style.transform = "scale(" + (box.clientWidth / w) + ")";
+  }
+  function loadLive(box) {
+    var f = box.querySelector("iframe");
+    if (!f) return;
+    fitLive(box);
+    if (!f.getAttribute("src")) f.setAttribute("src", box.getAttribute("data-live"));
+  }
+  window.addEventListener("resize", function () {
+    document.querySelectorAll("dialog[open] .live-frame").forEach(fitLive);
   });
   document.querySelectorAll("dialog").forEach(function (dlg) {
     dlg.addEventListener("click", function (e) {
@@ -23,6 +48,7 @@
     dlg.addEventListener("close", function () {
       document.body.classList.remove("dlg-open");
       dlg.querySelectorAll("video").forEach(function (v) { v.pause(); });
+      dlg.querySelectorAll(".live-frame iframe").forEach(function (f) { f.removeAttribute("src"); });
       if (lastButton) lastButton.focus();
     });
   });

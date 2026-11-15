@@ -284,7 +284,7 @@ dialog[open] { animation: dlg-in .35s cubic-bezier(.16,1,.3,1); }
 @media (prefers-reduced-motion: reduce) { dialog[open] { animation: none; } }
 .dlg { position: relative; padding: 36px 36px 32px; display: grid; gap: 22px; }
 .dlg h2 { font-size: 28px; font-weight: 750; padding-right: 40px; margin-top: -14px; }
-.dlg-tag { font-size: 13px; color: var(--accent); font-weight: 600; }
+.dlg-tag { font-size: 13px; color: var(--accent); font-weight: 600; padding-right: 44px; }
 .dlg img, .dlg video { width: 100%; border-radius: 10px; border: 1px solid var(--line); }
 .dlg-close {
   all: unset; cursor: pointer; position: absolute; top: 18px; right: 18px;
@@ -369,4 +369,16 @@ body.dlg-open { overflow: hidden; }
   .contact .cta { margin-top: 14px; }
   .foot { order: 10; padding-bottom: 0; }
   a { color: inherit; }
+}
+
+/* 움직이는 시안을 창 안에서 그대로 보기 */
+dialog.dlg-wide { width: min(1080px, calc(100% - 32px)); }
+.live-frame { position: relative; aspect-ratio: 16 / 10; overflow: hidden; border-radius: 10px; border: 1px solid var(--line); background: #0a0a0a; }
+.live-frame iframe { position: absolute; top: 0; left: 0; width: 1440px; height: 900px; border: 0; transform-origin: 0 0; }
+.live-poster { display: none; }
+.live-help { font-size: 14px; color: var(--muted); }
+.live-pages { display: flex; flex-wrap: wrap; gap: 6px 16px; }
+@media print {
+  .live-frame, .live-help { display: none; }
+  .live-poster { display: block; }
 }
