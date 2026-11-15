@@ -216,18 +216,20 @@ h3 {{ font-size:10.5pt; margin-bottom:2.5mm; padding-bottom:1.5mm; border-bottom
   <p class="lead">기획, 디자인, 개발, 배포, 운영까지 AI와 함께 혼자 끝내는 AI&nbsp;Builder입니다. 방송 자동화 제품 AutoLed를 만들어 팔고, 업무 자동화 프로그램, 홈페이지, 서버, 영상까지 직접 만들고 운영합니다. 코드는 AI 코딩 도구와 함께 쓰고, 무엇을 만들고 언제 내보낼지는 제가 정합니다.</p>
   <div class="stats">
     <div><b>2.1.0</b><span>AutoLed 현재 버전 · 판매 중</span></div>
-    <div><b>2,600+</b><span>소개한 저장소의 커밋</span></div>
+    <div><b>6년</b><span>방송·MCN 현장부터 제품 개발까지</span></div>
     <div><b>2,200+</b><span>소개한 작업의 자동 테스트</span></div>
     <div><b>{B.N}</b><span>소개한 작업</span></div>
   </div>
-  <p class="asof">{B.ASOF} 기준. 커밋과 테스트 수는 각 저장소 기록입니다.</p>
+  <p class="asof">{B.ASOF} 기준. 테스트 수는 각 저장소 기록, 경력은 이력서 기준입니다.</p>
   <div class="cols">
     <div><h3>연혁</h3><ol class="hist">
-      <li><time>2025.10</time>AutoLed 개발 시작</li>
-      <li><time>2026.06</time>PDF2Obsidian 공개, AIOS 시작</li>
+      <li><time>2020.10</time>방송 기술 회사 입사. 장비 세팅과 방송 디자인</li>
+      <li><time>2021.07</time>MCN 회사 콘텐츠기획팀 팀장. 정산·자동 전환 프로그램을 회사 안에서 만듦</li>
+      <li><time>2025.09</time>오닉소프트 시작, AutoLed 개발</li>
+      <li><time>2026.06</time>PDF2Obsidian 공개</li>
       <li><time>2026.08</time>로그인 서버 운영, AutoLed 정식 배포, 회사 홈페이지</li>
       <li><time>2026.09</time>모션그래픽 작업실, 유튜브 채널, 납품 업체 엑셀 장부 자동화</li>
-      <li><time>2026.10</time>큰손탐지기 서버, 엔터 정산, CCTV 관제, 거래장부 프로그램</li>
+      <li><time>2026.10</time>후원 데이터 집계 서버, 엔터 정산, CCTV 관제, 거래장부</li>
       <li><time>2026.11</time>AutoLed 2.1.0, 엔터 회사 홈페이지 ASTRA 제작</li>
     </ol></div>
     <div class="stack"><h3>주로 쓰는 기술</h3>
@@ -245,7 +247,7 @@ h3 {{ font-size:10.5pt; margin-bottom:2.5mm; padding-bottom:1.5mm; border-bottom
     <div><b>공개 범위를 나눕니다</b><p>제품 소스와 핵심 로직은 비공개로 둡니다. 화면은 모두 예시 데이터로 찍었습니다.</p></div>
   </div>
   <div class="contact">
-    <div><span>웹 포트폴리오</span>chokyusong.github.io</div>
+    <div><span>웹 포트폴리오 · 이력서</span>chokyusong.github.io</div>
     <div><span>이메일</span>{e(B.EMAIL)}</div>
     <div><span>GitHub</span>github.com/Chokyusong</div>
     <div><span>카카오톡</span>pf.kakao.com/_exgErX</div>

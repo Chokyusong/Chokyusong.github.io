@@ -3,7 +3,7 @@
 
     py -3 tools/build.py
 
-index.html(첫 화면), work/<slug>.html(작업 11개 상세), print.html(PDF용 인쇄 판)을
+index.html(첫 화면), work/<slug>.html(작업마다 상세), print.html(PDF용 인쇄 판), resume.html(이력서)을
 아래 PROJECTS 자료 하나에서 만든다. 글을 고칠 때는 이 파일을 고치고 다시 돌린다.
 그림 크기는 assets/img 안의 실제 파일에서 읽는다.
 """
@@ -65,12 +65,9 @@ PROJECTS = [
         "story": [
             ("문제", "후원이 들어올 때마다 방송 중인 사람이 알림을 보고 장면을 바꾸고, 조명과 연출을 손으로 틀어야 했습니다. 방송을 하면서 동시에 하기에는 놓치는 순간이 많았습니다."),
             ("만든 것", "팬더TV, SOOP, 투네이션, 위플랩, 펀네이션 후원 알림을 감지해 <strong>후원 개수에 맞춘 OBS 장면 전환, Resolume LED 칼럼, 조명과 카메라, 배경음악 음소거</strong>를 실행합니다. 연출은 음원에 맞춰 놓는 시간축 편집기(Timeline)로 직접 짭니다."),
-            ("결과", "버튼을 누르지 않아도 후원이 들어오는 순간 연출이 실행되고 스스로 원래 장면으로 돌아옵니다. 처음 설치한 사람도 준비 단계 화면만 따라 하면 방송을 시작할 수 있습니다."),
+            ("결과", "버튼을 누르지 않아도 후원이 들어오는 순간 연출이 실행되고 스스로 원래 장면으로 돌아옵니다. 처음 설치한 사람도 준비 단계 화면만 따라 하면 방송을 시작할 수 있습니다. 지금 유료 고객이 실제 방송에 쓰고 있습니다."),
         ],
         "blocks": [
-            ("yt", {"title": "영상으로 보기", "text": "AutoLed 홍보영상과, 제품을 만든 과정을 담은 유튜브 영상입니다.", "items": [
-                ("yISU4NWuGQY", "AutoLed 홍보영상 | 후원이 들어오면, 방송이 알아서"),
-                ("OynwWtQM3Lg", "BJ 방송 자동화 프로그램, 1년 손님 한 곳에서 BJ 10명까지")]}),
             ("states", {"title": "상태를 눌러 보세요", "text": "기본창은 지금 무슨 일이 일어나는지 한눈에 보이게 다섯 가지 상태로 나눴습니다. 아래 버튼을 누르면 실제 화면이 바뀝니다.", "items": [
                 ("state-0", "연결 필요", "OBS나 장비가 아직 연결되지 않은 상태. 무엇을 연결하면 되는지 알려 줍니다."),
                 ("state-1", "대기", "연결은 끝났고, 감시를 시작하기 전입니다."),
@@ -107,7 +104,11 @@ PROJECTS = [
                 ("ph-user-circle", "계정과 이용 기간은 직접 만든 로그인 서버가 확인합니다."),
                 ("ph-cpu", "소스를 기계어로 컴파일(Nuitka)하고 설치 파일(Inno Setup)로 배포합니다."),
                 ("ph-test-tube", "자동 테스트 2,051개를 통과시키고, 실제 OBS에서 한 번 더 확인한 뒤 내보냅니다."),
+                ("ph-bug-beetle", "방송 중 화면이 멈추는 문제는 멈추는 조건부터 다시 만들어 찾았습니다. 고치기 전 3번 모두 멈추던 상황이, 고친 뒤 5번 모두 정상으로 돌아왔습니다."),
             ]}),
+            ("yt", {"title": "영상으로 보기", "text": "AutoLed 홍보영상과, 제품을 만든 과정을 담은 유튜브 영상입니다.", "items": [
+                ("yISU4NWuGQY", "AutoLed 홍보영상 | 후원이 들어오면, 방송이 알아서"),
+                ("OynwWtQM3Lg", "BJ 방송 자동화 프로그램, 1년 손님 한 곳에서 BJ 10명까지")]}),
         ],
         "notice": "소스 코드와 후원 감지 방식은 공개하지 않습니다. 공개 저장소에는 설치 파일만 둡니다. 화면은 예시 데이터로 띄워 찍었습니다.",
         "links": [("제품 페이지", "https://onicsoft.co.kr/autoled.html"), ("설치 파일 저장소", "https://github.com/Chokyusong/AutoLed-Releases")],
@@ -191,7 +192,7 @@ PROJECTS = [
         "tags": "Windows 앱 · 정산",
         "year": "2026.10",
         "short": "엑셀 여러 장으로 하던 주간 정산을 프로그램으로",
-        "summary": "엑셀 시트 여러 장으로 하던 주간 정산을, 자료 수집부터 계산까지 프로그램이 맡고 담당자는 예외만 확인해 확정하도록 바꿨습니다.",
+        "summary": "엑셀 시트 여러 장으로 하던 주간 정산을, 자료 수집부터 계산까지 프로그램이 맡고 담당자는 예외만 확인해 확정하도록 바꿨습니다. 기존 정산 엑셀 48주 치와 맞춰 보니 47주의 계산 결과가 같았습니다.",
         "preview": ("enter-payroll", "cover"),
         "meta": [("맡은 일", "기획 · 개발 · 배포 (1인)"), ("시작", "2026년 10월"), ("기술", "Python, PySide6, SQLite, Nuitka"), ("기록", "커밋 28 · 자동 테스트 141")],
         "cover": ("enter-payroll", "cover", "이번 주 받을 돈, 줄 돈, 회사 몫 카드와 확인이 필요한 항목 목록. 예시 데이터"),
@@ -307,8 +308,8 @@ PROJECTS = [
     },
     {
         "slug": "bighand",
-        "title": "큰손탐지기 수집 서버",
-        "lines": ["큰손탐지기", "수집 서버"],
+        "title": "후원 데이터 집계 서버",
+        "lines": ["후원 데이터", "집계 서버"],
         "kind": "데이터 수집 서버 · 비공개 저장소",
         "tags": "서버 · 성능 개선",
         "year": "2026.10",
@@ -322,10 +323,10 @@ PROJECTS = [
         "story": [
             ("목적", "AutoLed와 조회 화면에 쓸 방송 후원 통계를 직접 모으는 서버가 필요했습니다."),
             ("만든 것", "공개 라이브 방송 수백 곳의 후원 기록을 모아 저장하고 집계합니다. 방송 목록은 1분마다 새로 확인합니다. 관리자만 보는 대시보드에서 기간별 방송 순위와 집계를 봅니다."),
-            ("성능", "시험용으로 만든 3달 치 기록 1,350만 건으로 부하 시험을 해 병목을 고쳤습니다. 실제로는 <strong>하루 7만여 건을 1vCPU, 1GB 서버 한 대</strong>로 받습니다."),
+            ("성능", "시험용으로 만든 3달 치 기록 1,350만 건으로 부하 시험을 해 병목을 고쳤습니다. 실제 운영에서는 <strong>하루 78,844건(2026년 10월 6일 기록)을 1vCPU, 1GB 서버 한 대</strong>로 받았습니다."),
         ],
         "blocks": [
-            ("kpis", {"title": "운영 숫자", "items": [("7만여 건", "하루에 받는 후원 기록"), ("1vCPU · 1GB", "서버 한 대로 운영"), ("약 20초", "재부팅 시험에서 모두 복구"), ("84개", "코드가 바뀌면 도는 자동 테스트")]}),
+            ("kpis", {"title": "운영 숫자", "items": [("78,844건", "하루에 받은 후원 기록 (2026.10.6)"), ("1vCPU · 1GB", "서버 한 대로 운영"), ("약 20초", "재부팅 시험에서 모두 복구"), ("84개", "코드가 바뀌면 도는 자동 테스트")]}),
             ("points", {"title": "멈추지 않게, 잃지 않게", "items": [
                 ("ph-power", "서비스는 부팅하면 저절로 켜지고, 5분마다 멈춤을 감시합니다."),
                 ("ph-lock-key", "매일 암호화 백업을 받고, 매달 백업을 실제로 풀어 건수를 맞춰 보는 복원 연습을 자동으로 돌립니다."),
@@ -402,35 +403,6 @@ PROJECTS = [
         "links": [("효과 95가지 미리보기", "https://chokyusong.github.io/motion-parts/"), ("모션그래픽 페이지", "https://onicsoft.co.kr/motion/"), ("유튜브 채널", YOUTUBE)],
     },
     {
-        "slug": "aios",
-        "title": "AIOS",
-        "lines": ["AIOS"],
-        "kind": "개발 도구 · 개발 중",
-        "tags": "AI 에이전트 · 개발 도구",
-        "year": "2026.06 —",
-        "short": "사람이 승인한 범위 안에서만 AI가 개발을 이어 가는 도구",
-        "summary": "프로그램 아이디어를 질문으로 구체화해 설계 문서를 만들고, 사람이 승인한 범위 안에서만 AI 개발 에이전트가 구현과 검증을 반복하는 로컬 개발 도구입니다.",
-        "preview": None,
-        "pv_stat": ("설계 승인 → 구현", "사람이 승인한 범위 안에서만 AI가 일합니다"),
-        "meta": [("맡은 일", "기획 · 개발 (1인)"), ("시작", "2026년 6월"), ("기술", "Python, Git"), ("기록", "커밋 591 · 개발 중")],
-        "cover": None,
-        "first": ("flow", {"items": [("아이디어", "만들고 싶은 것"), ("질문으로 구체화", "빠진 조건을 묻기"), ("설계 문서", "완료 조건까지 적기"), ("사람 승인", "여기부터 권한이 생김", True), ("구현 · 검증 반복", "테스트로 확인"), ("사람 최종 확인", "마지막은 사람")]}),
-        "story": [
-            ("무엇인가", "프로그램 아이디어를 질문으로 구체화해 설계 문서를 만들고, 사람이 승인하면 그 범위 안에서 AI 개발 에이전트가 작업을 나눠 구현, 테스트, 검증을 반복하는 로컬 개발 도구입니다."),
-            ("안전하게", "<strong>설계를 승인하기 전에는 파일을 고칠 권한이 없습니다.</strong> 승인 뒤에도 기본은 읽기 전용이고, 코드는 따로 떼어 낸 Git 작업 공간에서만 바뀝니다. push, PR, 배포, 결제는 승인에 포함되지 않아 자동으로 하지 않습니다."),
-            ("끝나는 조건", "설계에 적은 완료 조건을 모두 테스트로 확인했을 때만 최종 결과를 만들고, 그 뒤 사람이 마지막으로 확인합니다."),
-        ],
-        "blocks": [
-            ("cards", {"title": "AI에게 맡기지 않는 것", "cols": 3, "items": [
-                ("승인 전 수정", "설계가 승인되기 전에는 어떤 파일도 고치지 않습니다."),
-                ("원본 작업 공간", "코드는 따로 떼어 낸 Git 작업 공간에서만 바뀝니다."),
-                ("밖으로 내보내기", "push, PR, 배포, 결제는 자동으로 하지 않습니다."),
-            ]}),
-        ],
-        "notice": "개발 중인 프로젝트라 화면은 싣지 않았습니다.",
-        "links": [],
-    },
-    {
         "slug": "pdf2obsidian",
         "title": "PDF2Obsidian",
         "lines": ["PDF2Obsidian"],
@@ -463,7 +435,7 @@ PROJECTS = [
 # 작업 분류. 첫 화면 03 카드, 04 작업 목록 탭, 인쇄판 목차가 모두 이 분류를 쓴다.
 # (키, 이름, 아이콘, 설명, 대표 그림(폴더, 이름) 또는 None, 속한 작업 순서)
 CATS = [
-    ("program", "프로그램", "ph-app-window", "설치해서 쓰는 Windows 프로그램과 도구입니다. 방송 자동화 제품 AutoLed는 직접 판매하고 업데이트까지 운영합니다.", ("autoled", "ui-timeline"), ["autoled", "cctv", "aios", "pdf2obsidian"]),
+    ("program", "프로그램", "ph-app-window", "설치해서 쓰는 Windows 프로그램과 도구입니다. 방송 자동화 제품 AutoLed는 직접 판매하고 업데이트까지 운영합니다.", ("autoled", "ui-timeline"), ["autoled", "cctv", "pdf2obsidian"]),
     ("automation", "업무 자동화", "ph-briefcase", "회사에서 사람이 손으로 반복하던 일을 그 회사에 맞춘 프로그램으로 바꿉니다. 지금까지 주간 정산과 거래장부를 만들었습니다.", ("ledger", "cover"), ["enter-payroll", "ledger"]),
     ("web", "홈페이지", "ph-browser", "회사 사이트와 손님 홈페이지를 기획, 디자인, 개발하고 블로그와 구축 사례까지 운영합니다.", ("astra", "home-pc"), ["onicsoft-homepage", "astra"]),
     ("server", "서버", "ph-hard-drives", "로그인과 이용 기간을 확인하는 서버, 24시간 수집 서버를 세우고 감시와 백업까지 맡습니다.", ("login-server", "dashboard"), ["login-server", "bighand"]),
@@ -489,7 +461,7 @@ def shell(title, desc, body, rel, og="assets/img/autoled/ui-overview.webp", home
     nav = f"""<header class="nav"><div class="wrap nav-in">
   <a class="brand" href="{rel}index.html" aria-label="조규송 포트폴리오 처음으로"><span class="brand-mark" aria-hidden="true">{'<i></i>' * 9}</span>조규송 <small>CHO KYUSONG</small></a>
   <div class="nav-meta" aria-hidden="true"><span class="live-dot"></span>KST <span data-clock></span></div>
-  <nav class="nav-links" aria-label="주요 메뉴"><a href="{to}#works">작업</a><a href="{to}#about">소개</a><a class="nav-keep" href="{rel}{PDF}">PDF</a><a class="nav-cta" href="{to}#contact">연락</a></nav>
+  <nav class="nav-links" aria-label="주요 메뉴"><a href="{to}#works">작업</a><a href="{to}#about">소개</a><a class="nav-keep" href="{rel}resume.html">이력서</a><a class="nav-keep" href="{rel}{PDF}">PDF</a><a class="nav-cta" href="{to}#contact">연락</a></nav>
 </div></header>"""
     foot = f"""<footer class="foot wrap"><p>© 2026 조규송 (Cho Kyusong)</p><p>비공개 저장소의 소스 코드와 핵심 로직은 공개하지 않습니다. 화면 속 이름, 금액, 계정은 예시입니다.</p></footer>"""
     return f"""<!doctype html>
@@ -801,9 +773,8 @@ def home():
     stage_imgs = "".join(img("autoled", n, "AutoLed " + lab + " 화면. 예시 데이터", rel) for n, lab, *_ in show_steps)
     bars = "<i><b></b></i>" * len(show_steps)
 
-    reel_ids = [("chromeText", "크롬 글자", "3D"), ("fireBurst", "불꽃 폭발", "3D · Blender"), ("hologram", "홀로그램", "3D"), ("glassBottle", "유리병 제품", "3D · Blender"),
-                ("alertPop", "후원 알림", "방송 화면"), ("glitchText", "글리치", "타이포"), ("dotGlobe", "점 지구", "3D"), ("logo3D", "3D 로고", "3D"),
-                ("synthGrid", "신스웨이브", "배경"), ("audioCircle", "원형 이퀄라이저", "음악 연동")]
+    reel_ids = [("chromeText", "크롬 글자", "3D"), ("fireBurst", "불꽃 폭발", "3D · Blender"), ("alertPop", "후원 알림", "방송 화면"),
+                ("glitchText", "글리치", "타이포"), ("audioCircle", "원형 이퀄라이저", "음악 연동")]
     reel = "".join(
         f'<figure class="reel-item"><video data-autoplay data-src="{CLIPS}{c}.mp4" poster="{CLIPS}{c}.jpg" muted loop playsinline preload="none" aria-label="{e(n)} 효과"></video>'
         f'<figcaption>{e(n)}<span>{e(k)}</span></figcaption></figure>' for c, n, k in reel_ids)
@@ -811,13 +782,15 @@ def home():
     marquee_words = ["Python", "Windows 앱", "업무 자동화", "FastAPI", "홈페이지", "방송 자동화", "라이선스 서버", "PySide6", "SQLite", "서버 운영", "모션그래픽", "three.js", "자동 테스트", "OBS WebSocket"]
     mq = "".join(f"<span>{e(w)}</span>" for w in marquee_words) * 2
 
-    history = [("2025.10", "AutoLed 개발 시작"), ("2026.06", "PDF2Obsidian 공개, AIOS 시작"), ("2026.08", "로그인 서버 운영, AutoLed 정식 배포, 회사 홈페이지"),
-               ("2026.09", "모션그래픽 작업실, 유튜브 채널 시작, 납품 업체 엑셀 장부 자동화"), ("2026.10", "큰손탐지기 서버, 엔터 정산, CCTV 관제, 거래장부 프로그램"),
+    history = [("2020.10", "방송 기술 회사 입사. 방송 장비 세팅과 방송 화면 디자인"),
+               ("2021.07", "MCN 회사 콘텐츠기획팀 팀장. 크리에이터 관리와 함께 정산, 계산서 확인, OBS·레졸룸 자동 전환 프로그램을 회사 안에서 만듦"),
+               ("2025.09", "오닉소프트 시작"), ("2025.10", "AutoLed 개발 시작"), ("2026.06", "PDF2Obsidian 공개"), ("2026.08", "로그인 서버 운영, AutoLed 정식 배포, 회사 홈페이지"),
+               ("2026.09", "모션그래픽 작업실, 유튜브 채널 시작, 납품 업체 엑셀 장부 자동화"), ("2026.10", "후원 데이터 집계 서버, 엔터 정산, CCTV 관제, 거래장부 프로그램"),
                ("2026.11", "AutoLed 2.1.0, 엔터 회사 홈페이지 ASTRA 제작")]
     by = {p["slug"]: p for p in PROJECTS}
-    short = {"autoled": "AutoLed", "cctv": "CCTV 관제", "bighand": "큰손탐지기 서버", "enter-payroll": "엔터 주간 정산", "ledger": "납품 거래장부",
+    short = {"autoled": "AutoLed", "cctv": "CCTV 관제", "bighand": "후원 집계 서버", "enter-payroll": "엔터 주간 정산", "ledger": "납품 거래장부",
              "pdf2obsidian": "PDF2Obsidian", "onicsoft-homepage": "회사 홈페이지", "astra": "ASTRA 손님 홈페이지", "login-server": "로그인 서버",
-             "motion": "모션그래픽", "aios": "AIOS"}
+             "motion": "모션그래픽"}
     cards = []
     for k, (key, name, ic, txt, pic, sls) in enumerate(CATS):
         if pic:
@@ -840,7 +813,7 @@ def home():
     <h1 class="h-display hero-title" data-lines data-hero><span class="line-mask"><span>AI로 필요한 것을</span></span><span class="line-mask"><span>만들고, 팔고,</span></span><span class="line-mask"><span><em>직접 운영</em>합니다.</span></span></h1>
     <div class="hero-foot">
       <p class="lead" data-hero-fade>기획, 디자인, 개발, 배포, 운영까지 AI와 함께 혼자 끝내는 AI&nbsp;Builder입니다. 방송 자동화 제품 AutoLed를 만들어 팔고, 업무 자동화 프로그램, 홈페이지, 서버, 영상까지 직접 만들고 운영합니다. 이 페이지에서 만든 것을 전부 직접 보고 눌러 볼 수 있습니다.</p>
-      <div class="btn-row" data-hero-fade><a class="btn btn-primary" href="#works" data-magnet>작업 보기<i class="ph ph-arrow-down" aria-hidden="true"></i></a><a class="btn btn-ghost" href="{GITHUB}" data-magnet><i class="ph ph-github-logo" aria-hidden="true"></i>GitHub</a></div>
+      <div class="btn-row" data-hero-fade><a class="btn btn-primary" href="#works" data-magnet>작업 보기<i class="ph ph-arrow-down" aria-hidden="true"></i></a><a class="btn btn-ghost" href="resume.html" data-magnet><i class="ph ph-identification-card" aria-hidden="true"></i>이력서</a></div>
     </div>
     <div class="hero-meta" data-hero-fade><div>ROLE<b>AI Builder · 프로덕트 엔지니어</b></div><div>NOW<b>AutoLed 2.1.0 판매 중</b></div><div>FOCUS<b>앱 · 업무 자동화 · 웹 · 서버</b></div></div>
   </div>
@@ -856,11 +829,11 @@ def home():
   </div>
   <div class="stats">
     <div class="stat" data-reveal><span class="stat-num" data-scramble="2.1.0">2.1.0</span><span class="stat-label">AutoLed 현재 버전 · 판매 중</span></div>
-    <div class="stat" data-reveal><span class="stat-num"><span data-count="2600">2,600</span><small>+</small></span><span class="stat-label">여기 소개한 저장소의 커밋</span></div>
+    <div class="stat" data-reveal><span class="stat-num"><span data-count="6">6</span><small>년</small></span><span class="stat-label">방송·MCN 현장부터 제품 개발까지 경력</span></div>
     <div class="stat" data-reveal><span class="stat-num"><span data-count="2200">2,200</span><small>+</small></span><span class="stat-label">소개한 작업의 자동 테스트</span></div>
     <div class="stat" data-reveal><span class="stat-num"><span data-count="{N}">{N}</span></span><span class="stat-label">상세 페이지로 소개한 작업</span></div>
   </div>
-  <p class="stats-note">{ASOF} 기준. 커밋과 테스트 수는 각 저장소 기록입니다.</p>
+  <p class="stats-note">{ASOF} 기준. 테스트 수는 각 저장소 기록, 경력은 이력서 기준입니다.</p>
 </section>
 
 <section class="show" data-show id="autoled">
@@ -916,8 +889,8 @@ def home():
 
 <section class="section wrap" id="history">
   <div class="section-head">
-    <div><p class="idx" data-reveal>07 — 연혁</p>{lines_html(["1년 동안", "만든 것들"], "h2", "h-1")}</div>
-    <p class="lead" data-reveal>각 저장소를 만든 달 기준입니다.</p>
+    <div><p class="idx" data-reveal>07 — 연혁</p>{lines_html(["방송 현장에서", "제품까지"], "h2", "h-1")}</div>
+    <p class="lead" data-reveal>MCN과 방송 현장에서 6년 동안 일하며 필요한 프로그램을 직접 만들었고, 2025년 9월부터는 오닉소프트에서 제품으로 만들어 팝니다. 오닉소프트 뒤의 날짜는 각 저장소를 만든 달입니다.</p>
   </div>
   <div class="tl"><span class="tl-line" aria-hidden="true"><b></b></span><ol>{tl}</ol></div>
 </section>
@@ -944,10 +917,11 @@ def home():
     <a href="{GITHUB}">GitHub<span>Chokyusong</span></a>
     <a href="https://onicsoft.co.kr/">회사 홈페이지<span>onicsoft.co.kr</span></a>
     <a href="{YOUTUBE}">유튜브 채널<span>AI로 회사키우기</span></a>
-    <a href="{PDF}">PDF로 받기<span>인쇄용 한 권</span></a>
+    <a href="resume.html">이력서<span>경력 · 역량 · PDF</span></a>
+    <a href="{PDF}">포트폴리오 PDF<span>인쇄용 한 권</span></a>
   </div>
 </section>"""
-    desc = "기획부터 디자인, 개발, 운영까지 AI와 함께 혼자 끝내는 AI Builder 조규송. 방송 자동화 제품 AutoLed, 업무 자동화 프로그램, 홈페이지, 서버, 영상까지 작업 11가지. 화면, 영상, 움직이는 시안을 직접 볼 수 있습니다."
+    desc = f"기획부터 디자인, 개발, 운영까지 AI와 함께 혼자 끝내는 AI Builder 조규송. 방송 자동화 제품 AutoLed, 업무 자동화 프로그램, 홈페이지, 서버, 영상까지 작업 {N}가지. 화면, 영상, 움직이는 시안을 직접 볼 수 있습니다."
     return shell("조규송 · AI Builder 포트폴리오", desc, body, rel, home=True)
 
 
@@ -963,6 +937,8 @@ def main():
         build_print.main(PROJECTS)
     except ImportError:
         pass
+    import build_resume
+    build_resume.main()
     print("만든 페이지:", 1 + N)
 
 
