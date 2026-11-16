@@ -70,6 +70,8 @@ RESUME_EN = {
                          "Led customer feedback, incident response and product improvement"],
                  "got": ["Commercialized as an automation tool for live streamers (including Korean “Excel broadcast” shows) with about 15 paying customers; version 2.1.0 on sale",
                          "Unified donation alerts from PandaTV, SOOP, Toonation, Weflab and Funnation into one processing flow, automating everything from OBS and Resolume effects to returning to the original scene",
+                         "Turned an in-house control-room tool into a product, then widened it to solo streamers who use only OBS (hid unneeded panels, 5-step first setup)",
+                         "Reproduced a customer's \"Not responding\" report at real scale (10,000 rows): window open 12.1 s → 2.2 s, reload 13–16 s → 0.6 s",
                          "Fixed an on-air screen freeze by reproducing its conditions: froze 3 of 3 times before the fix, ran normally 5 of 5 times after",
                          "Runs 2,051 automated tests, version control, release approval and update integrity checks (signatures and checksums)"],
                  "tech": "Python, Tkinter, OBS WebSocket, Resolume OSC, Nuitka, Inno Setup"},
