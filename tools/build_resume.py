@@ -116,7 +116,7 @@ RESUME = {
     "tools": ["ChatGPT · Claude Code · Codex", "Python (기초)", "Photoshop", "After Effects", "Excel"],
     "built": ["Python 앱 (Tkinter · PySide6)", "FastAPI", "SQLite", "Linux · Nginx", "HTML · CSS · JavaScript", "OBS WebSocket · Resolume OSC",
               "three.js · Blender · FFmpeg", "GitHub Actions"],
-    "language": "영어 · 일상 회화",
+    "language": None,
 }
 
 
@@ -163,6 +163,7 @@ def render(r, base="", private=False):
     if r.get("education"):
         edu = f'<h2>{L["edu"]}</h2><ul class="plain">{li(r["education"])}</ul>'
     tools = "".join(f"<span>{e(t)}</span>" for t in r["tools"])
+    lang = f'<small>{L["language"]}: {e(r["language"])}</small>' if r.get("language") else ""
     built = "".join(f"<span>{e(t)}</span>" for t in r.get("built", []))
     avail = f'<p class="avail">{e(r["availability"])}</p>' if r.get("availability") else ""
     robots = '<meta name="robots" content="noindex">'
@@ -263,7 +264,7 @@ h3.built small {{ font-weight:400; color:var(--mute); margin-left:2mm; font-size
   {"".join(jobs)}
   <h2>{L["extra"]}</h2><ul class="plain">{extra}</ul>
   {edu}
-  <h2>{L["tools"]}<small>{L["language"]}: {e(r["language"])}</small></h2><div class="tools own">{tools}</div>
+  <h2>{L["tools"]}{lang}</h2><div class="tools own">{tools}</div>
   <h3 class="built">{L["built"]}<small>{L["built_note"]}</small></h3><div class="tools">{built}</div>
   <p class="foot">{L["foot"]}</p>
 </main>

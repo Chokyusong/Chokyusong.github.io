@@ -134,7 +134,7 @@ RESUME_EN = {
     "tools": ["ChatGPT · Claude Code · Codex", "Python (basic)", "Photoshop", "After Effects", "Excel"],
     "built": ["Python apps (Tkinter · PySide6)", "FastAPI", "SQLite", "Linux · Nginx", "HTML · CSS · JavaScript", "OBS WebSocket · Resolume OSC",
               "three.js · Blender · FFmpeg", "GitHub Actions"],
-    "language": "Korean (native) · English (conversational)",
+    "language": "Korean (native)",
 }
 
 
