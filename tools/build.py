@@ -20,7 +20,7 @@ KAKAO = "https://pf.kakao.com/_exgErX/chat"
 EMAIL = "joung2156@gmail.com"
 YOUTUBE = "https://www.youtube.com/@onicsoft-ai"
 PDF = "assets/cho-kyusong-portfolio.pdf"
-ASOF = "2026년 11월 15일"
+ASOF = "2026년 11월 19일"
 from build_resume import RESUME  # 직무 이름은 이력서와 한 곳에서 같이 쓴다
 ROLE = RESUME["title"]
 
@@ -435,6 +435,52 @@ PROJECTS = [
         "links": [("효과 95가지 미리보기", "https://chokyusong.github.io/motion-parts/"), ("모션그래픽 페이지", "https://onicsoft.co.kr/motion/"), ("유튜브 채널", YOUTUBE)],
     },
     {
+        "slug": "viral-agent",
+        "title": "바이럴 마케팅 AI 에이전트",
+        "lines": ["바이럴 마케팅", "AI 에이전트"],
+        "kind": "AI 에이전트 · AI PM 채용 과제",
+        "tags": "AI 에이전트 · 마케팅 자동화",
+        "year": "2026.11",
+        "short": "특정 업체를 영상 맥락에 맞춰 알리는 유튜브 댓글 AI 에이전트",
+        "summary": "유튜브 영상을 고르면 AI가 영상 속 고민을 한 줄로 정리하고, 그 고민에 맞춰 특정 업체를 자연스럽게 알리는 댓글 초안을 씁니다. 사람이 읽고 [댓글 달기]를 한 번 누르면 고른 크롬 계정으로 입력, 게시, 확인까지 합니다.",
+        "preview": ("viral-agent", "dashboard"),
+        "meta": [("맡은 일", "기획 · 설계 · 개발 (1인, AI 코딩 도구)"), ("기간", "2026년 11월 16일 – 19일 (4일)"),
+                 ("들어간 기술", "Python, FastAPI, pywebview, Playwright, YouTube Data API, Codex · Ollama"), ("기록", "커밋 167 · 자동 테스트 1,507")],
+        "cover": ("viral-agent", "dashboard", "에이전트 작업 화면. 왼쪽 영상 목록, 가운데 영상 속 고민과 댓글 초안, 오른쪽 게시와 기록. 시험용 예시 데이터"),
+        "story": [
+            ("과제", "AI PM 채용 과제로 받은 일입니다. 연애 고민 영상에 의뢰 업체(연애 사주 상담)를 알리는 댓글을 다는 마케팅 에이전트를 만들어, 처음 보는 사람도 설명 없이 쓸 수 있게 하는 것이 조건이었습니다."),
+            ("만든 것", "영상을 고르면 AI가 자막, 설명, 인기 댓글을 읽고 <strong>영상 속 고민 한 줄과 근거</strong>를 뽑습니다. 그 고민에서 이어지는 시청자 말투의 댓글 초안을 쓰고, 사람이 [댓글 달기]를 누르면 고른 크롬 계정이 열려 한 글자씩 입력하고, 게시하고, 내 댓글이 달렸는지 확인합니다."),
+            ("원칙", "<strong>AI는 쓰고, 규칙은 코드가 지키고, 올릴지는 사람이 정합니다.</strong> 업체를 써 본 척하는 후기, 지어낸 사연, \"무조건 맞힌다\" 같은 단정은 코드가 막습니다. 광고 표기([광고])는 운영자가 켜고 끌 수 있고, 고른 결과는 기록에 남습니다."),
+            ("배운 것", "처음에는 초안이 어색할 때마다 코드 규칙을 하나씩 더했습니다. 규칙은 하나하나 맞았는데, 합치니 AI가 글을 쓰는 게 아니라 빈칸을 채우게 됐습니다. 그래서 <strong>코드는 금지할 것만, 글은 AI가</strong> 쓰도록 역할을 처음부터 다시 나눴습니다."),
+            ("결과", "실제 영상으로 초안을 뽑아 한 문장씩 읽고, 문제 하나만 고쳐 다시 돌리기를 38회 했습니다. 마지막 회차에서 10개 모두 AI 검수를 한 번에 통과했고, 초안 하나에 8~9초가 걸립니다. 실제 유튜브에 두 계정으로 게시해 입력부터 확인까지 끝까지 되는 것을 확인했습니다."),
+        ],
+        "blocks": [
+            ("flow", {"title": "댓글 하나가 달리기까지", "text": "막는 것은 코드의 규칙 검사뿐입니다. AI 검수는 \"어색할 수 있어요\"와 이유를 보여 주는 데서 그치고, 마지막은 사람이 정합니다.", "items": [
+                ("영상 불러오기", "검색 · 링크 · 뜨기 직전"), ("고민 정리", "AI가 근거와 함께"), ("댓글 초안", "시청자 말투"), ("규칙 검사", "코드가 막음"), ("사람 확인", "[댓글 달기] 한 번", True), ("게시 · 확인", "내 댓글까지 확인")]}),
+            ("kpis", {"title": "숫자로 본 결과", "items": [("38회", "실제 영상으로 초안을 다듬은 횟수"), ("10 / 10", "마지막 회차 AI 검수 한 번에 통과"), ("8~9초", "초안 하나 만드는 시간"), ("1,507개", "인터넷·AI 없이 도는 자동 테스트")]}),
+            ("cards", {"title": "코드가 막는 것", "cols": 3, "items": [
+                ("길이와 형식", "40~120자 한 줄, 링크와 해시태그 금지."),
+                ("광고 표기", "켜면 [광고]로 시작하는지 확인합니다."),
+                ("영상 근거", "AI가 짚었다는 구절이 영상 자료에 실제로 있는지 대조합니다."),
+                ("거짓 후기·사연", "써 본 척하는 후기, 날짜와 사람이 있는 지어낸 연애 이야기를 막습니다."),
+                ("효능 단정", "\"무조건\" \"100%\" 같은 말과 새로 지어낸 평판을 막습니다."),
+                ("되풀이", "이미 올린 글과 사실상 같은 글, 같은 영상에 두 번 다는 것을 막습니다."),
+            ]}),
+            ("points", {"title": "쓰는 사람과 계정을 지키는 장치", "items": [
+                ("ph-database", "영상당 댓글 1개, 하루 상한(기본 10개)은 화면이 아니라 DB가 지킵니다. 단추를 빠르게 두 번 눌러도 두 번 달리지 않습니다."),
+                ("ph-swap", "AI는 바꿔 끼울 수 있습니다. 내 PC 모델(Ollama), API 키(ChatGPT·Claude·Gemini·Grok), 로그인된 Codex·Claude Code 가운데 고릅니다. 밖의 AI를 고르면 영상 자료가 그 회사로 간다는 것을 먼저 알립니다."),
+                ("ph-lock-key", "API 키는 프로그램 안에서 넣고 Windows가 암호화해 저장합니다. 저장소에는 올라가지 않습니다."),
+                ("ph-mouse-simple", "받아서 더블클릭 한 번이면 필요한 것을 스스로 설치하고 창을 띄웁니다. 처음 켜면 준비 안 된 것만 알려 주고 그 자리에서 해결하게 합니다."),
+            ]}),
+            ("gallery", {"title": "작업 화면", "text": "시험용 예시 데이터로 찍은 화면입니다. 업체 이름은 가렸습니다.", "group": "viral-agent", "items": [
+                ("dashboard", "세 칸 작업 화면. 영상을 고르면 고민 정리와 초안이 자동으로 이어지고, 다음에 누를 단추 하나만 밝게 보입니다.", "w8"),
+                ("draft", "영상 속 고민 한 줄과 근거, 광고 표기를 켠 댓글 초안. 아래에 규칙 검사 결과가 나옵니다.", "w4", True),
+            ]}),
+        ],
+        "notice": "과제를 준 회사와 의뢰 업체 이름은 밝히지 않습니다. 화면 속 영상과 채널은 시험용 예시 데이터입니다. 자동 입력은 유튜브 정책상 계정이 제한될 수 있어, 하루 상한과 영상당 1개로 위험을 줄였습니다.",
+        "links": [],
+    },
+    {
         "slug": "pdf2obsidian",
         "title": "PDF2Obsidian",
         "lines": ["PDF2Obsidian"],
@@ -467,7 +513,7 @@ PROJECTS = [
 # 작업 분류. 첫 화면 03 카드, 04 작업 목록 탭, 인쇄판 목차가 모두 이 분류를 쓴다.
 # (키, 이름, 아이콘, 설명, 대표 그림(폴더, 이름) 또는 None, 속한 작업 순서)
 CATS = [
-    ("program", "프로그램", "ph-app-window", "설치해서 쓰는 Windows 프로그램과 도구입니다. 방송 자동화 제품 AutoLed는 직접 판매하고 업데이트까지 운영합니다.", ("autoled", "ui-timeline"), ["autoled", "cctv", "pdf2obsidian"]),
+    ("program", "프로그램", "ph-app-window", "설치해서 쓰는 Windows 프로그램과 도구입니다. 방송 자동화 제품 AutoLed는 직접 판매하고 업데이트까지 운영합니다.", ("autoled", "ui-timeline"), ["autoled", "viral-agent", "cctv", "pdf2obsidian"]),
     ("automation", "업무 자동화", "ph-briefcase", "회사에서 사람이 손으로 반복하던 일을 그 회사에 맞춘 프로그램으로 바꿉니다. MCN 재직 때 정산 자동화부터 시작해 주간 정산과 거래장부를 만들었습니다.", ("ledger", "cover"), ["mcn-automation", "enter-payroll", "ledger"]),
     ("server", "서버", "ph-hard-drives", "로그인과 이용 기간을 확인하는 서버, 24시간 수집 서버를 세우고 감시와 백업까지 맡습니다.", ("login-server", "dashboard"), ["login-server", "bighand"]),
     ("web", "홈페이지", "ph-browser", "회사 사이트와 손님 홈페이지를 기획, 디자인, 개발하고 블로그와 구축 사례까지 운영합니다.", ("astra", "home-pc"), ["onicsoft-homepage", "astra"]),
@@ -821,11 +867,11 @@ def home():
                ("2021.07", "MCN 회사 콘텐츠기획팀 팀장. 팀원 5명과 크리에이터 20명 관리. 2021.10까지 방송 기술 회사와 겸직. 재직하는 동안 OBS·레졸룸 자동 전환 프로그램을 만들고, ChatGPT가 나온 뒤에는 GPT와 Python으로 정산, 계산서 확인, 크리에이터 랭킹·동향 확인을 자동화함(정산 5시간 → 3분, 계산서·랭킹 확인 1시간 → 30초)"),
                ("2025.09", "오닉소프트 시작. 2025.11까지 MCN 회사와 겸직"), ("2025.10", "AutoLed 개발 시작"), ("2026.06", "PDF2Obsidian 공개"), ("2026.08", "로그인 서버 운영, AutoLed 정식 배포, 회사 홈페이지"),
                ("2026.09", "모션그래픽 작업실, 유튜브 채널 시작, 납품 업체 엑셀 장부 자동화"), ("2026.10", "후원 데이터 집계 서버, 엔터 정산, CCTV 관제, 거래장부 프로그램"),
-               ("2026.11", "AutoLed 2.1.0, 엔터 회사 홈페이지 ASTRA 제작")]
+               ("2026.11", "AutoLed 2.1.0, 엔터 회사 홈페이지 ASTRA 제작, 바이럴 마케팅 AI 에이전트")]
     by = {p["slug"]: p for p in PROJECTS}
     short = {"autoled": "AutoLed", "cctv": "CCTV 관제", "bighand": "후원 집계 서버", "mcn-automation": "MCN 정산 자동화", "enter-payroll": "엔터 주간 정산", "ledger": "납품 거래장부",
              "pdf2obsidian": "PDF2Obsidian", "onicsoft-homepage": "회사 홈페이지", "astra": "ASTRA 손님 홈페이지", "login-server": "로그인 서버",
-             "motion": "모션그래픽"}
+             "motion": "모션그래픽", "viral-agent": "바이럴 마케팅 에이전트"}
     cards = []
     for k, (key, name, ic, txt, pic, sls) in enumerate(CATS):
         if pic:
@@ -866,7 +912,7 @@ def home():
   <div class="stats">
     <div class="stat" data-reveal><span class="stat-num"><span data-count="15">15</span><small>명</small></span><span class="stat-label">AutoLed 유료 고객(약) · 2.1.0 판매 중</span></div>
     <div class="stat" data-reveal><span class="stat-num"><span data-count="6">6</span><small>년</small></span><span class="stat-label">방송·MCN 현장부터 제품 개발까지 경력</span></div>
-    <div class="stat" data-reveal><span class="stat-num"><span data-count="2200">2,200</span><small>+</small></span><span class="stat-label">소개한 작업의 자동 테스트</span></div>
+    <div class="stat" data-reveal><span class="stat-num"><span data-count="3700">3,700</span><small>+</small></span><span class="stat-label">소개한 작업의 자동 테스트</span></div>
     <div class="stat" data-reveal><span class="stat-num"><span data-count="3">3</span><small>분</small></span><span class="stat-label">5시간 걸리던 MCN 정산 · GPT와 Python으로 자동화</span></div>
   </div>
   <p class="stats-note">{ASOF} 기준. 테스트 수는 각 저장소 기록, 경력은 이력서 기준입니다.</p>

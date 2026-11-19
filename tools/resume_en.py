@@ -127,7 +127,8 @@ RESUME_EN = {
                         "Created broadcast design assets (signature emotes, LIVE standby screens, banner GIFs) in Photoshop"],
         },
     ],
-    "extra_projects": [("PDF2Obsidian", "Open-source tool that turns PDFs and lecture transcripts into Obsidian notes (2026.06, MIT). "
+    "extra_projects": [("Viral marketing AI agent", "Reads the worry in a YouTube video and drafts a natural comment that introduces a client business; code enforces the rules and a person decides what gets posted. Refined over 38 rounds on real videos until all 10 final drafts passed AI review (AI PM hiring assignment, 2026.11, 4 days)", "work/viral-agent.html"),
+                       ("PDF2Obsidian", "Open-source tool that turns PDFs and lecture transcripts into Obsidian notes (2026.06, MIT). "
                         "Code and automated tests are public.", "work/pdf2obsidian.html"),
                        ("AI content planning", "A one-source multi-use system that adapts one piece of content to blog, YouTube, Naver and social formats; SEO; thumbnails and ad creatives with AI image tools (2026.09 –)", None),
                        ("Websites", "Planned, built and run the ONICSOFT website; 22 industry samples; an 8-page animated draft for the ASTRA entertainment company (2026.08 –)", "work/onicsoft-homepage.html"),

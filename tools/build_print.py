@@ -220,7 +220,7 @@ h3 {{ font-size:10.5pt; margin-bottom:2.5mm; padding-bottom:1.5mm; border-bottom
   <div class="stats">
     <div><b>약 15명</b><span>AutoLed 유료 고객 · 2.1.0 판매 중</span></div>
     <div><b>6년</b><span>방송·MCN 현장부터 제품 개발까지</span></div>
-    <div><b>2,200+</b><span>소개한 작업의 자동 테스트</span></div>
+    <div><b>3,700+</b><span>소개한 작업의 자동 테스트</span></div>
     <div><b>5시간 → 3분</b><span>MCN 정산 자동화 (GPT·Python)</span></div>
   </div>
   <p class="asof">{B.ASOF} 기준. 테스트 수는 각 저장소 기록, 경력은 이력서 기준입니다.</p>
@@ -233,7 +233,7 @@ h3 {{ font-size:10.5pt; margin-bottom:2.5mm; padding-bottom:1.5mm; border-bottom
       <li><time>2026.08</time>로그인 서버 운영, AutoLed 정식 배포, 회사 홈페이지</li>
       <li><time>2026.09</time>모션그래픽 작업실, 유튜브 채널, 납품 업체 엑셀 장부 자동화</li>
       <li><time>2026.10</time>후원 데이터 집계 서버, 엔터 정산, CCTV 관제, 거래장부</li>
-      <li><time>2026.11</time>AutoLed 2.1.0, 엔터 회사 홈페이지 ASTRA 제작</li>
+      <li><time>2026.11</time>AutoLed 2.1.0, ASTRA 홈페이지, 바이럴 마케팅 AI 에이전트</li>
     </ol></div>
     <div class="stack"><h3>직접 다루는 도구 · 제품에 들어간 기술</h3>
       <div><b>직접 다룸</b>ChatGPT · Claude Code · Codex, Python(기초), Photoshop, After Effects, Excel</div>
